@@ -197,10 +197,6 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
         <main className="flex-grow container mx-auto py-8">{children}</main>
-
-        <footer className="border-t py-4 text-center">
-          © {new Date().getFullYear()} MyApp
-        </footer>
       </body>
     </html>
   );
