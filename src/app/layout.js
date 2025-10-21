@@ -1,5 +1,6 @@
 // app/layout.tsx
 import { Inter, Playfair_Display } from "next/font/google";
+import { neueHaasDisplay } from "./fonts/neue-haas-display";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,16 +15,6 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-// Optional: drop your Satoshi files into /public/fonts then uncomment
-// const satoshi = localFont({
-//   src: [
-//     { path: "../public/fonts/Satoshi-Variable.ttf", style: "normal", weight: "100 900" },
-//     { path: "../public/fonts/Satoshi-VariableItalic.ttf", style: "italic", weight: "100 900" },
-//   ],
-//   variable: "--font-heading",
-//   display: "swap",
-// });
-
 export const metadata = {
   title: "The Akaai Project",
   description:
@@ -32,7 +23,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={neueHaasDisplay.variable}>
       <body className="font-sans bg-beige text-charcoal">{children}</body>
     </html>
   );
