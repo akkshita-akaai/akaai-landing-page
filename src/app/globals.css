@@ -21,6 +21,7 @@
      For Playfair we expose --font-accent so you can use class "font-accent".
    */
   --font-accent: var(--font-accent);
+  --font-playfair: 'Playfair Display', serif;
 }
 
 /* Base */

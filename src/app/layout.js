@@ -9,7 +9,8 @@ const inter = Inter({
   display: "swap",
 });
 const playfair = Playfair_Display({
-  style: ["italic"],
+  style: ["italic", "normal"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-accent",
   display: "swap",
@@ -23,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={neueHaasDisplay.variable}>
+    <html lang="en" className={`${neueHaasDisplay.variable} ${playfair.variable}`}>
       <body className="font-sans bg-beige text-charcoal">{children}</body>
     </html>
   );
