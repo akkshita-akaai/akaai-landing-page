@@ -10,6 +10,7 @@ import NumbersSection from "@/components/landing/numbersSection";
 import ContactSection from "@/components/landing/contactsSection";
 import HeroSnapGate from "@/components/layout/heroSnapGate";
 import LenisProvider from "@/components/lenis/lenisProvider";
+import Footer from "./footer";
 
 export default function Page() {
   return (
@@ -24,33 +25,29 @@ export default function Page() {
 
       {/* Hero */}
       <HeroSection />
-
-      {/* Scroll thread reveals only after hero is past */}
       <ScrollThread
         color="#B33C46"
         width={3}
-        baseAmplitude={10}
+        baseAmplitude={50}
         bigAmplitude={26}
         pitch={80}
         bigEvery={6}
         startAfter="#home"
       />
 
+      {/* Scroll thread reveals only after hero is past */}
+
       {/* Content sections */}
       <WelcomeSection />
+
       <ServicesSection />
       <ProcessSection />
       <NumbersSection />
       <ContactSection />
 
       {/* Footer */}
-      <footer className="bg-charcoal text-offwhite text-center py-8">
-        <div className="container">
-          <p>
-            &copy; {new Date().getFullYear()} The Akaai Project. All rights
-            reserved. | Not an agency. A narrative lab.
-          </p>
-        </div>
+      <footer>
+        <Footer />
       </footer>
     </LenisProvider>
   );
