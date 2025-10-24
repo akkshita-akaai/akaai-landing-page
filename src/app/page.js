@@ -25,7 +25,7 @@ export default function Page() {
 
       {/* Hero */}
       <HeroSection />
-      <ScrollThread
+      {/* <ScrollThread
         color="#B33C46"
         width={3}
         baseAmplitude={50}
@@ -33,7 +33,7 @@ export default function Page() {
         pitch={80}
         bigEvery={6}
         startAfter="#home"
-      />
+      /> */}
 
       {/* Scroll thread reveals only after hero is past */}
 
