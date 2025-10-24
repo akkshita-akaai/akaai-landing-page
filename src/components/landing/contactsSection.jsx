@@ -49,7 +49,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/digitalCampaignStrategy.svg",
                   alt: "",
-                  className: "absolute -top-8 right-8 w-10 h-10" // angled tools above the top border
+                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
                 }}
               />
             </div>
@@ -61,7 +61,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/socialMediaNarrativs.svg",
                   alt: "",
-                  className: "absolute -top-7 right-6 w-12 h-12" // circular stamp sitting on the top edge
+                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
                 }}
               />
             </div>
@@ -73,7 +73,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/thoughLeaderShipNarratives.svg",
                   alt: "",
-                  className: "absolute -top-7 left-1/2 -translate-x-1/2 w-12 h-12" // bulb centered overlapping the border
+                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
                 }}
               />
             </div>
@@ -85,7 +85,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/brandStoryFilms.svg",
                   alt: "",
-                  className: "absolute -top-8 left-1/2 -translate-x-1/2 w-14 h-14" // big circular seal squarely on top edge
+                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
                 }}
               />
             </div>
@@ -97,7 +97,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/editorialDesign.svg",
                   alt: "",
-                  className: "absolute -top-7 left-6 w-11 h-11" // notebook icon clipped into the corner
+                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
                 }}
               />
             </div>
@@ -109,7 +109,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/communityBuilding.svg",
                   alt: "",
-                  className: "absolute -top-7 left-6 w-11 h-11" // building icon touching the inner border
+                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
                 }}
               />
             </div>
@@ -122,7 +122,7 @@ export default function ContactSection() {
             Each brand gets:
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mb-8 md:mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-8 md:mb-10 max-w-4xl mx-auto">
             <BenefitChip
               icon="/images/contactSection/narrativeWorkShops.svg"
               title="1:1 narrative workshops"
@@ -141,8 +141,8 @@ export default function ContactSection() {
             />
           </div>
 
-          {/* CTA aligned left like the poster, but centered on small screens */}
-          <div className="flex justify-center md:justify-start">
+          {/* CTA at the bottom */}
+          <div className="flex justify-center">
             <button className="bg-[#C9966C] text-white px-6 md:px-8 py-3.5 md:py-4 rounded-lg text-sm md:text-lg font-medium shadow-[0_6px_18px_rgba(0,0,0,0.18)] hover:brightness-95 transition">
               {"Let's"} Craft Your Boutique Narrative
             </button>
@@ -164,24 +164,22 @@ function ServiceCard({
     <div className="relative">
       {/* Badge that overlaps the border */}
       {badge ? (
-        <div className={badge.className}>
+        <div className={`${badge.className} bg-[#F5F1E8] rounded-full p-2`}>
           <Image src={badge.src} alt={badge.alt || ""} fill className="object-contain" />
         </div>
       ) : null}
 
       {/* Card */}
       <div className="
-        relative bg-white/85 backdrop-blur-[2px]
-        border-2 border-[#8B4049] rounded-[22px]
-        p-5 md:p-6 pr-6 max-w-[420px]
+        relative bg-transparent
+        border-2 border-[#8B4049] rounded-[28px]
+        p-6 md:p-8 max-w-[420px]
         shadow-[0_4px_12px_rgba(0,0,0,0.08)]
-        before:content-[''] before:absolute before:top-3 before:left-4 before:h-[2px] before:w-16 before:bg-[#8B4049]
-        after:content-[''] after:absolute after:top-3 after:right-4 after:h-[2px] after:w-16 after:bg-[#8B4049]
       ">
-        <h4 className="text-[20px] md:text-[22px] leading-tight font-serif font-bold text-gray-900 mb-3">
+        <h4 className="text-[22px] md:text-[26px] leading-tight font-serif font-bold text-gray-900 mb-4">
           {title}
         </h4>
-        <p className="text-sm md:text-[15px] leading-6 text-gray-800">
+        <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-800">
           {description}
         </p>
       </div>
@@ -193,19 +191,17 @@ function BenefitChip({ icon, title }) {
   return (
     <div
       className="
-        relative bg-white/85 backdrop-blur-[2px]
-        border-2 border-[#8B4049] rounded-xl
-        py-4 px-4 md:py-5 md:px-5
+        relative bg-transparent
+        border-2 border-[#8B4049] rounded-2xl
+        py-3 px-4 md:py-4 md:px-5
         shadow-[0_3px_10px_rgba(0,0,0,0.08)]
-        before:content-[''] before:absolute before:top-2.5 before:left-3.5 before:h-[2px] before:w-10 before:bg-[#8B4049]
-        after:content-[''] after:absolute after:top-2.5 after:right-3.5 after:h-[2px] after:w-10 after:bg-[#8B4049]
       "
     >
-      <div className="flex items-center gap-3">
-        <span className="relative w-8 h-8 md:w-9 md:h-9">
+      <div className="flex items-center gap-2.5">
+        <span className="relative w-6 h-6 md:w-7 md:h-7">
           <Image src={icon} alt="" fill className="object-contain" />
         </span>
-        <h4 className="text-sm md:text-base font-semibold text-gray-900">{title}</h4>
+        <h4 className="text-xs md:text-sm font-semibold text-gray-900">{title}</h4>
       </div>
     </div>
   );
