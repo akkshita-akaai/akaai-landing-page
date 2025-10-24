@@ -31,7 +31,7 @@ export default function ServicesSection() {
           {items.map((s) => (
             <div
               key={s.h}
-              className="fade-in-up rounded-lg border border-charcoal/10 bg-offwhite p-8 hover:-translate-y-0.5 transition"
+              className=" rounded-lg border border-charcoal/10 bg-offwhite p-8 hover:-translate-y-0.5 transition"
             >
               <h3 className="text-lg font-bold">{s.h}</h3>
               <p className="mt-2 opacity-80">{s.b}</p>

@@ -18,10 +18,7 @@ export default function ProcessSection() {
         </p>
         <div className="mt-10 flex flex-wrap items-start justify-between gap-6">
           {steps.map(([n, h, d], i) => (
-            <div
-              key={n}
-              className="fade-in-up min-w-[180px] flex-1 text-center relative"
-            >
+            <div key={n} className=" min-w-[180px] flex-1 text-center relative">
               <div className="mx-auto mb-2 grid h-14 w-14 place-items-center rounded-full bg-cherry text-offwhite text-xl font-bold">
                 {n}
               </div>

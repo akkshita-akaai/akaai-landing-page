@@ -29,7 +29,7 @@ export default function WelcomeSection() {
           ].map((card) => (
             <div
               key={card.t}
-              className="fade-in-up rounded-lg p-8 text-center shadow-[var(--shadow-subtle)] bg-taupe/60 hover:shadow-[var(--shadow-medium)] transition-transform hover:-translate-y-1"
+              className="rounded-lg p-8 text-center shadow-[var(--shadow-subtle)] bg-taupe/60 hover:shadow-[var(--shadow-medium)] transition-transform hover:-translate-y-1"
             >
               <h3 className="text-lg font-bold">{card.t}</h3>
               <p className="mt-1 opacity-80">{card.s}</p>

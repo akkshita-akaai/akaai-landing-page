@@ -16,7 +16,7 @@ export default function NumbersSection() {
         </p>
         <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 text-center">
           {stats.map(([n, l]) => (
-            <div key={n} className="fade-in-up">
+            <div key={n} className="">
               <span className="block font-bold text-5xl text-cherry">{n}</span>
               <span className="mt-1 block text-lg opacity-90">{l}</span>
             </div>
