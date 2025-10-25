@@ -16,14 +16,15 @@ export default function ProcessSection() {
   const pathRef = useRef(null);
 
   // Build a path that loops around each icon
+  // Build a path that detours around each icon without overlapping its ring
   const buildPath = () => {
     const section = sectionRef.current;
     const svg = svgRef.current;
     const path = pathRef.current;
     if (!section || !svg || !path) return;
 
-    const icons = Array.from(section.querySelectorAll(".process-icon"));
-    if (icons.length === 0) return;
+    const iconEls = Array.from(section.querySelectorAll(".process-icon"));
+    if (!iconEls.length) return;
 
     // Size SVG to section
     const sRect = section.getBoundingClientRect();
@@ -31,32 +32,50 @@ export default function ProcessSection() {
     svg.setAttribute("height", `${sRect.height}`);
     svg.setAttribute("viewBox", `0 0 ${sRect.width} ${sRect.height}`);
 
-    const centerX = sRect.width * 0.5;  // main spine x
-    const loopR = Math.min(80, sRect.width * 0.12); // loop radius that wraps icons
+    const centerX = sRect.width * 0.5; // main spine x
+    const pad = 12; // extra clearance from the icon's ring
+    const ease = 28; // small Bezier ease in-out so corners are not sharp
 
-    // Collect icon centers in section coordinates
-    const centers = icons.map(el => {
+    // Collect icon centers and radii from actual DOM size
+    const nodes = iconEls.map(el => {
       const r = el.getBoundingClientRect();
       return {
         cx: r.left - sRect.left + r.width / 2,
         cy: r.top - sRect.top + r.height / 2,
+        r: r.width / 2 + pad, // loop radius just outside the ring
       };
     });
 
     let d = "";
-    let y = Math.max(0, centers[0].cy - loopR * 1.6);
+    // start a little above the first icon's loop
+    let y = Math.max(0, nodes[0].cy - nodes[0].r - 60);
     d += `M ${centerX} ${y}`;
 
-    centers.forEach((p, i) => {
-      // ease toward icon before loop
-      const approachY = p.cy - loopR - 40;
-      d += ` C ${centerX} ${y + 60}, ${p.cx} ${approachY - 60}, ${p.cx} ${approachY}`;
-      // draw a circle loop around the icon using two 180° arcs
-      d += ` A ${loopR} ${loopR} 0 1 1 ${p.cx} ${p.cy + loopR}`;
-      d += ` A ${loopR} ${loopR} 0 1 1 ${p.cx} ${p.cy - loopR}`;
-      y = p.cy + loopR + 40;
-      // head back to spine
-      d += ` C ${p.cx} ${p.cy + loopR + 60}, ${centerX} ${y + 60}, ${centerX} ${y}`;
+    nodes.forEach((n, i) => {
+      const topY = n.cy - n.r;
+      const botY = n.cy + n.r;
+
+      // alternate which side we bulge to
+      const goRight = i % 2 === 0;
+      const sweepFlag = goRight ? 1 : 0;
+      const hx = centerX + (goRight ? ease : -ease);
+
+      // vertical approach to just above the loop
+      d += ` L ${centerX} ${topY - 12}`;
+
+      // ease into the arc so there is no kink on the spine
+      d += ` C ${centerX} ${topY - 6}, ${hx} ${topY - 2}, ${centerX} ${topY}`;
+
+      // half-circle detour around the icon
+      // start at (centerX, topY) end at (centerX, botY)
+      d += ` A ${n.r} ${n.r} 0 0 ${sweepFlag} ${centerX} ${botY}`;
+
+      // ease back to the spine
+      d += ` C ${hx} ${botY + 2}, ${centerX} ${botY + 6}, ${centerX} ${botY + 12}`;
+
+      // continue down to next icon
+      d += ` L ${centerX} ${botY + 40}`;
+      y = botY + 40;
     });
 
     // finish straight down
@@ -64,12 +83,13 @@ export default function ProcessSection() {
 
     path.setAttribute("d", d);
 
-    // dash setup
-    const total = path.getTotalLength(); // MDN: getTotalLength
-    path.style.strokeDasharray = `${total}`;
+    // dash setup with a duplicate length to avoid mid-path seam
+    const total = path.getTotalLength();
+    path.style.strokeDasharray = `${total} ${total}`;
     path.style.strokeDashoffset = `${total}`;
     return total;
   };
+
 
   // Scroll-progress to dashoffset
   const updateProgress = (totalLen) => {
