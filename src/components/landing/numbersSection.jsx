@@ -39,13 +39,16 @@ function StepBubble({
   step,
   className,
   largeIcon = false,
+  isPositioning = false,
 }) {
   return (
     <div className={clsx("absolute flex flex-col items-center text-center", className)}>
       <div className={clsx(
-        "relative mb-3 rounded-full border border-black/10 bg-white/60 backdrop-blur",
+        "relative mb-3 rounded-full border border-black/10",
+        isPositioning && "border-none",
+        "bg-transparent",
         largeIcon ? "w-44 h-44" : "w-32 h-32",
-        "flex items-center justify-center shadow-[0_4px_18px_rgba(0,0,0,0.08)]"
+        "flex items-center justify-center"
       )}>
         <Image
           src={step.icon}
@@ -108,6 +111,7 @@ export default function NumbersSection() {
               step={steps[2]}
               className="right-[140px] top-[10px]"
               largeIcon
+              isPositioning
             />
             {/* 04 lower middle-right */}
             <StepBubble
@@ -121,7 +125,7 @@ export default function NumbersSection() {
             />
 
             {/* Deliverables box bottom-right */}
-            <div className="absolute right-[40px] bottom-[-10px] w-[380px] bg-[#F5F1E8] border-2 border-[#8B3A3A] rounded-lg overflow-hidden">
+            <div className="absolute right-[0px] bottom-[-100px] w-[380px] bg-[#F5F1E8] border-2 border-[#8B3A3A] rounded-lg overflow-hidden">
               <div className="flex items-center gap-3 p-5 border-b-2 border-[#8B3A3A]">
                 <Image
                   src="/images/numbersSection/delivarables.svg"
