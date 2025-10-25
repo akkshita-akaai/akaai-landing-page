@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function ProcessSection() {
@@ -8,47 +11,168 @@ export default function ProcessSection() {
     { title: "Deliver", icon: "/images/processSection/deliver.svg", subtitle: "Uncover your brand DNA." },
   ];
 
+  const sectionRef = useRef(null);
+  const svgRef = useRef(null);
+  const pathRef = useRef(null);
+
+  // Build a path that loops around each icon
+  const buildPath = () => {
+    const section = sectionRef.current;
+    const svg = svgRef.current;
+    const path = pathRef.current;
+    if (!section || !svg || !path) return;
+
+    const icons = Array.from(section.querySelectorAll(".process-icon"));
+    if (icons.length === 0) return;
+
+    // Size SVG to section
+    const sRect = section.getBoundingClientRect();
+    svg.setAttribute("width", `${sRect.width}`);
+    svg.setAttribute("height", `${sRect.height}`);
+    svg.setAttribute("viewBox", `0 0 ${sRect.width} ${sRect.height}`);
+
+    const centerX = sRect.width * 0.5;  // main spine x
+    const loopR = Math.min(80, sRect.width * 0.12); // loop radius that wraps icons
+
+    // Collect icon centers in section coordinates
+    const centers = icons.map(el => {
+      const r = el.getBoundingClientRect();
+      return {
+        cx: r.left - sRect.left + r.width / 2,
+        cy: r.top - sRect.top + r.height / 2,
+      };
+    });
+
+    let d = "";
+    let y = Math.max(0, centers[0].cy - loopR * 1.6);
+    d += `M ${centerX} ${y}`;
+
+    centers.forEach((p, i) => {
+      // ease toward icon before loop
+      const approachY = p.cy - loopR - 40;
+      d += ` C ${centerX} ${y + 60}, ${p.cx} ${approachY - 60}, ${p.cx} ${approachY}`;
+      // draw a circle loop around the icon using two 180° arcs
+      d += ` A ${loopR} ${loopR} 0 1 1 ${p.cx} ${p.cy + loopR}`;
+      d += ` A ${loopR} ${loopR} 0 1 1 ${p.cx} ${p.cy - loopR}`;
+      y = p.cy + loopR + 40;
+      // head back to spine
+      d += ` C ${p.cx} ${p.cy + loopR + 60}, ${centerX} ${y + 60}, ${centerX} ${y}`;
+    });
+
+    // finish straight down
+    d += ` L ${centerX} ${sRect.height + 40}`;
+
+    path.setAttribute("d", d);
+
+    // dash setup
+    const total = path.getTotalLength(); // MDN: getTotalLength
+    path.style.strokeDasharray = `${total}`;
+    path.style.strokeDashoffset = `${total}`;
+    return total;
+  };
+
+  // Scroll-progress to dashoffset
+  const updateProgress = (totalLen) => {
+    const section = sectionRef.current;
+    const path = pathRef.current;
+    if (!section || !path) return;
+
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+
+    // progress 0 when section is just below viewport, 1 when it has fully scrolled past
+    const progress = Math.max(0, Math.min(1, (vh - rect.top) / (rect.height + vh)));
+    const offset = totalLen * (1 - progress); // MDN: stroke-dashoffset
+    path.style.strokeDashoffset = `${offset}`;
+  };
+
+  useEffect(() => {
+    let totalLen = buildPath();
+    if (typeof totalLen !== "number") totalLen = 1;
+
+    const onScroll = () => updateProgress(totalLen);
+    const onResize = () => {
+      const t = buildPath();
+      if (typeof t === "number") {
+        totalLen = t;
+        updateProgress(totalLen);
+      }
+    };
+
+    // Lenis if present, else native scroll
+    const lenis = typeof window !== "undefined" ? window.lenis : null;
+    if (lenis && typeof lenis.on === "function") {
+      lenis.on("scroll", onScroll);
+    } else {
+      window.addEventListener("scroll", onScroll, { passive: true });
+    }
+    window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", onResize);
+
+    // initial paint
+    updateProgress(totalLen);
+
+    return () => {
+      if (lenis && typeof lenis.off === "function") {
+        lenis.off("scroll", onScroll);
+      } else {
+        window.removeEventListener("scroll", onScroll);
+      }
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("orientationchange", onResize);
+    };
+  }, []);
+
   return (
     <section
       id="process"
+      ref={sectionRef}
       className="section relative overflow-hidden bg-[#E8DED0]"
     >
-      {/* Background Image with Low Opacity */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{ backgroundImage: 'url(/images/processSection/bg.svg)', width: "110vw" }}
       />
-
-
-      {/* Color Overlay */}
       <div className="absolute inset-0 bg-[#E8DED0]/60" />
 
-      <div className="container relative z-10">
-        {/* Header */}
+      {/* SVG line overlay */}
+      <svg
+        ref={svgRef}
+        className="pointer-events-none absolute inset-0 z-10"
+        preserveAspectRatio="none"
+      >
+        <path
+          ref={pathRef}
+          d=""
+          fill="none"
+          stroke="#8B2E2E"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
+      <div className="container relative z-20">
         <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 md:mb-24">
-          <span className="text-[#8B2E2E]">
-            We see
-          </span> <span className="italic" style={{ fontFamily: 'Playfair Display, serif' }}>what others feel</span>
+          <span className="text-[#8B2E2E]">We see</span>{" "}
+          <span className="italic" style={{ fontFamily: 'Playfair Display, serif' }}>what others feel</span>
           <span className="text-[#8B2E2E]">!</span>
         </h2>
 
-        {/* Process Steps */}
         <div className="max-w-5xl mx-auto space-y-12 md:space-y-20">
           {steps.map((step, index) => (
             <div
               key={step.title}
-              className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+              className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
             >
-              {/* Left/Right Text */}
               <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center`}>
                 <p className="text-[#8B2E2E] italic text-xl md:text-2xl" style={{ fontFamily: 'Playfair Display, serif' }}>
                   {step.subtitle}
                 </p>
               </div>
 
-              {/* Icon Circle */}
-              <div className="relative flex-shrink-0">
+              {/* add .process-icon so the SVG can find these */}
+              <div className="relative flex-shrink-0 process-icon">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-[#8B2E2E] flex items-center justify-center">
                   <Image
                     src={step.icon}
@@ -60,7 +184,6 @@ export default function ProcessSection() {
                 </div>
               </div>
 
-              {/* Right/Left Text */}
               <div className={`flex-1 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'} text-center`}>
                 <h3 className="text-3xl md:text-5xl font-bold">
                   {step.title}
