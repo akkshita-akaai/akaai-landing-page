@@ -164,7 +164,7 @@ function ServiceCard({
     <div className="relative">
       {/* Badge that overlaps the border */}
       {badge ? (
-        <div className={`${badge.className} bg-[#F5F1E8] rounded-full p-2`}>
+        <div className={`${badge.className} bg-beige rounded-full p-2`}>
           <Image src={badge.src} alt={badge.alt || ""} fill className="object-contain" />
         </div>
       ) : null}
