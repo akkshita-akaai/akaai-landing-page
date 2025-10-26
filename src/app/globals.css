@@ -17,11 +17,27 @@
   --radius-lg: 0.5rem;
 
   /* Fonts
-     We set Inter on --font-sans via next/font.
+     We set Neue Haas Display as default via --font-nhd.
+     Inter is available via --font-sans.
      For Playfair we expose --font-accent so you can use class "font-accent".
    */
   --font-accent: var(--font-accent);
   --font-playfair: 'Playfair Display', serif;
+  
+  /* Font family utilities */
+  --font-family-nhd: var(--font-nhd);
+  --font-family-sans: var(--font-sans);
+}
+
+/* Font utilities */
+.font-nhd {
+  font-family: var(--font-nhd), system-ui, sans-serif;
+}
+.font-sans {
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+.font-accent {
+  font-family: var(--font-accent), serif;
 }
 
 /* Base */
