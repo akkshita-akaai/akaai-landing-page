@@ -155,7 +155,7 @@ export default function ProcessSection() {
       />
 
       {/* SVG line overlay */}
-      {/* <svg
+      <svg
         ref={svgRef}
         className="pointer-events-none absolute inset-0 z-10"
         preserveAspectRatio="none"
@@ -169,7 +169,7 @@ export default function ProcessSection() {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-      </svg> */}
+      </svg>
 
       <div className="container relative z-20">
         <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 md:mb-24">

@@ -79,9 +79,8 @@ export default function HeroSection() {
       >
         {/* Full-bleed hero video */}
         <video
-          className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-500 ${
-            showRipples ? "opacity-0" : "opacity-100"
-          }`}
+          className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-500 ${showRipples ? "opacity-0" : "opacity-100"
+            }`}
           autoPlay
           muted
           playsInline
