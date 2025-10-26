@@ -150,7 +150,7 @@ export default function ProcessSection() {
       className="section relative overflow-hidden bg-beige"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-20"
+        className="absolute inset-0 bg-cover bg-center opacity-5"
         style={{ backgroundImage: 'url(/images/processSection/bg.svg)', width: "110vw" }}
       />
 
