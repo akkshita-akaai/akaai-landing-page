@@ -87,7 +87,7 @@ export default function HeroSection() {
           preload="auto"
           disablePictureInPicture
         >
-          <source src="/images/heroSection3.mp4" type="video/mp4" />
+          <source src="/images/heroSection.mp4" type="video/mp4" />
         </video>
       </div>
 
