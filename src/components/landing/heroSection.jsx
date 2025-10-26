@@ -123,7 +123,7 @@ export default function HeroSection() {
       </div> */}
 
       {/* Center tagline appears after ripple */}
-      {
+      {/* {
         !showRipples && (
           <div className="absolute inset-0 z-30 flex items-center justify-center pt-52">
             <div className="headline-appear text-center  drop-shadow">
@@ -133,7 +133,7 @@ export default function HeroSection() {
             </div>
           </div>
         )
-      }
+      } */}
     </section >
   );
 }
