@@ -18,7 +18,7 @@ export default function ServicesSection() {
     },
   ];
   return (
-    <section id="services" className="section">
+    <section id="services" className="section bg-beige">
       <div className="container">
         <h2 className="text-3xl md:text-5xl font-bold text-center tracking-tight">
           Our Services
@@ -31,7 +31,7 @@ export default function ServicesSection() {
           {items.map((s) => (
             <div
               key={s.h}
-              className=" rounded-lg border border-charcoal/10 bg-offwhite p-8 hover:-translate-y-0.5 transition"
+              className=" rounded-lg border border-charcoal/10 bg-beige p-8 hover:-translate-y-0.5 transition"
             >
               <h3 className="text-lg font-bold">{s.h}</h3>
               <p className="mt-2 opacity-80">{s.b}</p>

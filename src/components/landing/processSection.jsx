@@ -147,13 +147,12 @@ export default function ProcessSection() {
     <section
       id="process"
       ref={sectionRef}
-      className="section relative overflow-hidden bg-[#E8DED0]"
+      className="section relative overflow-hidden bg-beige"
     >
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{ backgroundImage: 'url(/images/processSection/bg.svg)', width: "110vw" }}
       />
-      <div className="absolute inset-0 bg-[#E8DED0]/60" />
 
       {/* SVG line overlay */}
       {/* <svg

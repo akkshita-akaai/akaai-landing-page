@@ -1,6 +1,6 @@
 export default function WelcomeSection() {
   return (
-    <section id="about" className="section bg-offwhite">
+    <section id="about" className="section bg-beige">
       <div className="container">
         <h2 className="text-3xl md:text-5xl font-bold text-center tracking-tight">
           Welcome to The Akaai Project

@@ -124,7 +124,7 @@ export default function NumbersSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen py-16 md:py-20 overflow-hidden bg-[#E8E3D8]">
+    <section ref={sectionRef} className="relative min-h-screen py-16 md:py-20 overflow-hidden bg-beige">
       <div className="absolute inset-0">
         <Image src="/images/numbersSection/bg.svg" alt="" fill className="object-cover" priority />
       </div>

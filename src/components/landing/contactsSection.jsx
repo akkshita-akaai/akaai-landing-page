@@ -11,7 +11,7 @@ import Image from "next/image";
  */
 export default function ContactSection() {
   return (
-    <section id="contact" className="relative min-h-screen py-16 md:py-20 overflow-hidden">
+    <section id="contact" className="relative min-h-screen py-16 md:py-20 overflow-hidden bg-beige">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image src="/images/contactSection/bg.svg" alt="" fill className="object-cover" />
