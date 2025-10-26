@@ -113,26 +113,27 @@ export default function HeroSection() {
       )}
 
       {/* Top-right sticky label with icon, visible during ripple and video */}
-      <div className="pointer-events-auto absolute top-4 right-4 z-40 flex items-center gap-2 rounded-full px-4 py-2 cursor-pointer">
-        {/* Replace src with your bulb icon path or swap for an inline SVG */}
+      {/* <div className="pointer-events-auto absolute top-4 right-4 z-40 flex items-center gap-2 rounded-full px-4 py-2 cursor-pointer">
         <div className="border-2 rounded-full p-2">
           <Lightbulb />
         </div>
         <span className="text-sm md:text-base tracking-tight">
-          Build your own narrative
+          Build your narrative
         </span>
-      </div>
+      </div> */}
 
       {/* Center tagline appears after ripple */}
-      {!showRipples && (
-        <div className="absolute inset-0 z-30 flex items-center justify-center pt-52">
-          <div className="headline-appear text-center  drop-shadow">
-            <p className="px-4 text-2xl font-medium  text-[#1C1C1C] opacity-75">
-              Not an agency. A narrative lab.
-            </p>
+      {
+        !showRipples && (
+          <div className="absolute inset-0 z-30 flex items-center justify-center pt-52">
+            <div className="headline-appear text-center  drop-shadow">
+              <p className="px-4 text-2xl font-medium  text-[#1C1C1C] opacity-75">
+                Not an agency. A narrative lab.
+              </p>
+            </div>
           </div>
-        </div>
-      )}
-    </section>
+        )
+      }
+    </section >
   );
 }

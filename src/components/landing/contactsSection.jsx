@@ -44,18 +44,6 @@ export default function ContactSection() {
             {/* Left column */}
             <div className="md:col-span-5 md:col-start-1">
               <ServiceCard
-                title="Digital Campaign Strategy"
-                description="Story-based content, calendar creation, campaign design."
-                badge={{
-                  src: "/images/contactSection/digitalCampaignStrategy.svg",
-                  alt: "",
-                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
-                }}
-              />
-            </div>
-
-            <div className="md:col-span-5 md:col-start-8 md:row-start-1 md:mt-6">
-              <ServiceCard
                 title="Social Media Narratives"
                 description="Story-based content, calendar creation, campaign design."
                 badge={{
@@ -66,22 +54,22 @@ export default function ContactSection() {
               />
             </div>
 
-            <div className="md:col-span-5 md:col-start-1 md:row-start-2 md:-mt-2">
+            <div className="md:col-span-5 md:col-start-8 md:row-start-1 md:mt-6">
               <ServiceCard
-                title="Thought Leadership Narratives"
-                description="Story-based content, calendar creation, campaign design."
+                title="Digital Campaign Strategy"
+                description="Google + Meta storytelling, narrative-led ad copy, emotional funnels."
                 badge={{
-                  src: "/images/contactSection/thoughLeaderShipNarratives.svg",
+                  src: "/images/contactSection/digitalCampaignStrategy.svg",
                   alt: "",
                   className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
                 }}
               />
             </div>
 
-            <div className="md:col-span-5 md:col-start-8 md:row-start-2 md:-mt-6">
+            <div className="md:col-span-5 md:col-start-1 md:row-start-2 md:-mt-2">
               <ServiceCard
                 title="Brand Story Films"
-                description="Story-based content, calendar creation, campaign design."
+                description="Short-form narrative storytelling for web and social."
                 badge={{
                   src: "/images/contactSection/brandStoryFilms.svg",
                   alt: "",
@@ -90,12 +78,24 @@ export default function ContactSection() {
               />
             </div>
 
+            <div className="md:col-span-5 md:col-start-8 md:row-start-2 md:-mt-6">
+              <ServiceCard
+                title="Thought Leadership Narratives"
+                description="LinkedIn positioning for founders & brand heads."
+                badge={{
+                  src: "/images/contactSection/thoughLeaderShipNarratives.svg",
+                  alt: "",
+                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
+                }}
+              />
+            </div>
+
             <div className="md:col-span-5 md:col-start-1 md:row-start-3 md:-mt-2">
               <ServiceCard
-                title="Editorial Design & Visual Storytelling"
-                description="Story-based content, calendar creation, campaign design."
+                title="Community Building"
+                description="Turning audiences into ambassadors."
                 badge={{
-                  src: "/images/contactSection/editorialDesign.svg",
+                  src: "/images/contactSection/communityBuilding.svg",
                   alt: "",
                   className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
                 }}
@@ -104,10 +104,10 @@ export default function ContactSection() {
 
             <div className="md:col-span-5 md:col-start-8 md:row-start-3 md:-mt-6">
               <ServiceCard
-                title="Community Building"
-                description="Story-based content, calendar creation, campaign design."
+                title="Editorial Design & Visual Storytelling"
+                description="For brands that want design with depth."
                 badge={{
-                  src: "/images/contactSection/communityBuilding.svg",
+                  src: "/images/contactSection/editorialDesign.svg",
                   alt: "",
                   className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
                 }}
@@ -137,7 +137,7 @@ export default function ContactSection() {
             />
             <BenefitChip
               icon="/images/contactSection/measureableemotion.svg"
-              title="Measurable emotion led impact"
+              title="Measurable emotion-led impact"
             />
           </div>
 

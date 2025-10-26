@@ -5,10 +5,11 @@ import Image from "next/image";
 
 export default function ProcessSection() {
   const steps = [
-    { title: "Discover", icon: "/images/processSection/bulb.svg", subtitle: "Uncover your brand DNA." },
-    { title: "Define", icon: "/images/processSection/define.svg", subtitle: "Uncover your brand DNA." },
-    { title: "Design", icon: "/images/processSection/design.svg", subtitle: "Uncover your brand DNA." },
-    { title: "Deliver", icon: "/images/processSection/deliver.svg", subtitle: "Uncover your brand DNA." },
+    { title: "Discover", icon: "/images/processSection/bulb.svg", subtitle: "Uncover brand DNA" },
+    { title: "Define", icon: "/images/processSection/define.svg", subtitle: "Articulate story & tone" },
+    { title: "Design", icon: "/images/processSection/design.svg", subtitle: "Visualise emotion" },
+    { title: "Deploy", icon: "/images/processSection/deliver.svg", subtitle: "Execute across channels" },
+    { title: "Distill", icon: "/images/processSection/deliver.svg", subtitle: "measure, refine, evolve" },
   ];
 
   const sectionRef = useRef(null);
@@ -155,7 +156,7 @@ export default function ProcessSection() {
       />
 
       {/* SVG line overlay */}
-      <svg
+      {/* <svg
         ref={svgRef}
         className="pointer-events-none absolute inset-0 z-10"
         preserveAspectRatio="none"
@@ -169,14 +170,16 @@ export default function ProcessSection() {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-      </svg>
+      </svg> */}
 
       <div className="container relative z-20">
         <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 md:mb-24">
-          <span className="text-[#8B2E2E]">We see</span>{" "}
-          <span className="italic" style={{ fontFamily: 'Playfair Display, serif' }}>what others feel</span>
-          <span className="text-[#8B2E2E]">!</span>
+          <span className="text-[#8B2E2E]">We See</span>{" "}
+          <span className="italic" style={{ fontFamily: 'Playfair Display, serif' }}>What Others Feel</span>
         </h2>
+        <p className="text-center text-lg md:text-xl mb-12 max-w-4xl mx-auto">
+          At The Akaai Project, visualisation isn't just an art, it's interpretation. We translate emotion into visuals, tone into color, and essence into design.
+        </p>
 
         <div className="max-w-5xl mx-auto space-y-12 md:space-y-20">
           {steps.map((step, index) => (

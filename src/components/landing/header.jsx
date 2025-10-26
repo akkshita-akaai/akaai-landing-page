@@ -7,10 +7,9 @@ import { useEffect } from "react";
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Labs", href: "#labs" },
-  { name: "Services", href: "#services" },
+  { name: "What We Do", href: "#services" },
   { name: "Process", href: "#process" },
-  { name: "Numbers", href: "#numbers" },
+  { name: "Strategy", href: "#numbers" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -53,7 +52,7 @@ export function Header() {
         </nav>
         <div className="md:hidden">{/* Mobile menu logic is optional */}</div>
         <Button className="bg-brand-cherry text-white px-4 py-2 rounded-none border-none shadow-md hover:bg-brand-cherry/90 transition">
-          Start Your Story
+          Build your narrative
         </Button>
       </div>
     </header>

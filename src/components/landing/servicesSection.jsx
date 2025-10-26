@@ -11,7 +11,7 @@ export default function ServicesSection() {
 
       <div className="container relative z-10">
         <h2 className="text-3xl md:text-5xl font-bold text-center tracking-tight mb-16">
-          Our Services
+          What We Do
         </h2>
 
         {/* Row 1 */}
@@ -70,9 +70,9 @@ export default function ServicesSection() {
             {/* bullets with pins */}
             <ul className="space-y-2">
               {[
-                "Brand audits and interviews",
-                "Positioning and messaging",
-                "Story frameworks and tone guides"
+                "Brand Strategy & Planning",
+                "Brand Innovation",
+                "Brand Management"
               ].map(item => (
                 <li key={item} className="flex items-start gap-3 text-charcoal/80">
                   <img
@@ -104,9 +104,9 @@ export default function ServicesSection() {
             </p>
             <ul className="space-y-2">
               {[
-                "Editorial strategy and calendars",
-                "Long and short form writing",
-                "Design assets and micro visuals"
+                "AI Integration",
+                "Content and Creative Design",
+                "Packaging"
               ].map(item => (
                 <li key={item} className="flex items-start gap-3 text-charcoal/80">
                   <img

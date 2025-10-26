@@ -6,10 +6,10 @@ import clsx from "clsx";
 
 const steps = [
   { number: "01", title: "Discovery", description: "Deep-dive sessions to uncover your brand DNA.", icon: "/images/numbersSection/discovery.svg" },
-  { number: "02", title: "Narrative Crafting", description: "Deep-dive sessions to uncover your brand DNA.", icon: "/images/numbersSection/narrativeCrafting.svg" },
-  { number: "03", title: "Positioning", description: "Deep-dive sessions to uncover your brand DNA.", icon: "/images/numbersSection/positioning.svg" },
-  { number: "04", title: "Voice & Tone", description: "Deep-dive sessions to uncover your brand DNA.", icon: "/images/numbersSection/voiceAndTone.svg" },
-  { number: "05", title: "Rollout", description: "Deep-dive sessions to uncover your brand DNA.", icon: "/images/numbersSection/rollout.svg" },
+  { number: "02", title: "Narrative Crafting", description: "Building your core story, what you stand for, who you speak to, and how you show up.", icon: "/images/numbersSection/narrativeCrafting.svg" },
+  { number: "03", title: "Positioning", description: "Differentiating you not by category, but by character.", icon: "/images/numbersSection/positioning.svg" },
+  { number: "04", title: "Voice & Tone", description: "Defining how your brand speaks across touchpoints.", icon: "/images/numbersSection/voiceAndTone.svg" },
+  { number: "05", title: "Rollout", description: "Strategic plans that bring your narrative to life across channels.", icon: "/images/numbersSection/rollout.svg" },
 ];
 
 function StepBubble({ step, className, largeIcon = false, isPositioning = false }) {
@@ -33,7 +33,7 @@ function StepBubble({ step, className, largeIcon = false, isPositioning = false 
 }
 
 export default function NumbersSection() {
-  const deliverables = ["Brand Narrative Document", "Brand Narrative Document", "Brand Narrative Document"];
+  const deliverables = ["Brand narrative document", "Purpose & voice guide", "Campaign strategy", "Narrative-led marketing calendar"];
 
   const sectionRef = useRef(null);
   const canvasRef = useRef(null);
@@ -133,8 +133,11 @@ export default function NumbersSection() {
         <div className="mb-10 md:mb-14">
           <h2 className="text-4xl md:text-6xl font-bold leading-tight">
             <span className="text-[#8B3A3A]">Your Brand.</span>{" "}
-            <span className="text-black">Define by Narrative. Driven by Purpose.</span>
+            <span className="text-black">Defined by Narrative. Driven by Purpose.</span>
           </h2>
+          <p className="text-lg md:text-xl mt-6 max-w-4xl">
+            Strategy isn't spreadsheets and slogans, it's storytelling with structure. We align your purpose, audience, and positioning into a cohesive narrative.
+          </p>
         </div>
 
         {/* Canvas. Height should be tall enough to include the box so the path can reach it */}
