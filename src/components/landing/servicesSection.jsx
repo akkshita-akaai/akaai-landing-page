@@ -18,37 +18,11 @@ export default function ServicesSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Paper image card */}
           <div className="relative rounded-2xl border border-[#d9cdb4] shadow-xl overflow-hidden bg-gradient-to-b from-[#f4ead8] to-[#efe3cc]">
-            {/* pins */}
-            <img
-              src="/images/servicesSection/pin.svg"
-              alt=""
-              className="absolute w-6 h-6 -left-2 -top-3 rotate-[-15deg] z-10"
-            />
-            <img
-              src="/images/servicesSection/pin.svg"
-              alt=""
-              className="absolute w-6 h-6 right-3 -top-2 rotate-[20deg] z-10"
-            />
-
-            {/* vintage paper texture overlay */}
-            <div
-              className="absolute inset-0 opacity-20 mix-blend-multiply pointer-events-none"
-              style={{
-                backgroundImage:
-                  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23noiseFilter)' opacity='0.4'/></svg>\")",
-                backgroundSize: "300px 300px"
-              }}
-            />
-
-            {/* aged paper stains */}
-            <div className="absolute top-8 right-12 w-8 h-8 bg-amber-800/10 rounded-full blur-sm" />
-            <div className="absolute bottom-16 left-8 w-6 h-6 bg-amber-900/15 rounded-full blur-sm" />
-            <div className="absolute top-20 left-16 w-4 h-4 bg-amber-800/8 rounded-full blur-sm" />
 
             <img
               src="/images/servicesSection/brandConsultation.svg"
               alt="Brand Consultation Services"
-              className="relative w-full h-64 md:h-80 object-contain p-8"
+              className="relative w-full object-fill"
             />
 
           </div>
@@ -122,37 +96,11 @@ export default function ServicesSection() {
 
           {/* Paper image card */}
           <div className="relative rounded-2xl border border-[#d9cdb4] shadow-xl overflow-hidden bg-gradient-to-b from-[#f4ead8] to-[#efe3cc] order-1 lg:order-2">
-            {/* pins */}
-            <img
-              src="/images/servicesSection/pin.svg"
-              alt=""
-              className="absolute w-6 h-6 -left-1 -top-3 rotate-[12deg] z-10"
-            />
-            <img
-              src="/images/servicesSection/pin.svg"
-              alt=""
-              className="absolute w-6 h-6 right-2 -top-1 rotate-[-18deg] z-10"
-            />
-
-            {/* vintage paper texture overlay */}
-            <div
-              className="absolute inset-0 opacity-20 mix-blend-multiply pointer-events-none"
-              style={{
-                backgroundImage:
-                  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><filter id='noiseFilter2'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23noiseFilter2)' opacity='0.4'/></svg>\")",
-                backgroundSize: "300px 300px"
-              }}
-            />
-
-            {/* aged paper stains */}
-            <div className="absolute top-12 left-10 w-6 h-6 bg-amber-800/12 rounded-full blur-sm" />
-            <div className="absolute bottom-20 right-12 w-8 h-8 bg-amber-900/10 rounded-full blur-sm" />
-            <div className="absolute top-32 right-8 w-4 h-4 bg-amber-800/8 rounded-full blur-sm" />
 
             <img
               src="/images/servicesSection/contentMarketing.svg"
               alt="Content Marketing"
-              className="relative w-full h-64 md:h-80 object-contain p-8"
+              className="relative w-full object-fill"
             />
 
             <div className="absolute top-4 left-4 text-xs md:text-sm font-extrabold tracking-wider bg-black text-white px-3 py-1 rounded">
