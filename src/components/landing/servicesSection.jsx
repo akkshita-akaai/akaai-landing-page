@@ -103,9 +103,7 @@ export default function ServicesSection() {
               className="relative w-full object-fill"
             />
 
-            <div className="absolute top-4 left-4 text-xs md:text-sm font-extrabold tracking-wider bg-black text-white px-3 py-1 rounded">
-              CONTENT MARKETING
-            </div>
+
           </div>
         </div>
       </div>
