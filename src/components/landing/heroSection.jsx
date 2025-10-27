@@ -77,8 +77,8 @@ export default function HeroSection() {
         className="absolute inset-0 will-change-transform"
         style={{ transform: "translate3d(0, var(--hero-parallax, 0px), 0)" }}
       >
-        {/* Full-bleed hero video */}
-        <video
+        {/* Full-bleed hero video - COMMENTED OUT */}
+        {/* <video
           className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-500 ${showRipples ? "opacity-0" : "opacity-100"
             }`}
           autoPlay
@@ -88,7 +88,10 @@ export default function HeroSection() {
           disablePictureInPicture
         >
           <source src="/images/heroSection.mp4" type="video/mp4" />
-        </video>
+        </video> */}
+
+        {/* Background consistent with website theme */}
+        <div className="absolute inset-0 bg-beige" />
       </div>
 
       {/* Ripple intro overlay */}
@@ -121,6 +124,19 @@ export default function HeroSection() {
           Build your narrative
         </span>
       </div> */}
+
+      {/* Logo appears after ripple */}
+      {!showRipples && (
+        <div className="absolute inset-0 z-30 flex items-center justify-center">
+          <div className="headline-appear">
+            <img
+              src="/images/logo/The Akaai project-01.png"
+              alt="The Akaai Project"
+              className="max-w-md w-full h-auto drop-shadow-lg"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Center tagline appears after ripple */}
       {/* {
