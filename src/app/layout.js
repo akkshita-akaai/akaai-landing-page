@@ -20,6 +20,9 @@ export const metadata = {
   title: "The Akaai Project",
   description:
     "We build brands from scratch with stories that stick. A narrative lab where ideas take shape, stories find voice, and brands become movements.",
+  icons : {
+    icon : "/favicon.ico"
+  }
 };
 
 export default function RootLayout({ children }) {
