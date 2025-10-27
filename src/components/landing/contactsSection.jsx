@@ -56,7 +56,7 @@ export default function ContactSection() {
 
             <div className="md:col-span-5 md:col-start-8 md:row-start-1 md:mt-6">
               <ServiceCard
-                title="Digital Campaign Strategy"
+                title="Digital & Mainline Campaign Strategy"
                 description="Google + Meta storytelling, narrative-led ad copy, emotional funnels."
                 badge={{
                   src: "/images/contactSection/digitalCampaignStrategy.svg",

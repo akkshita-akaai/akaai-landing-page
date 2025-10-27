@@ -20,7 +20,7 @@ export default function Footer() {
             {/* <div className="w-32 h-24 relative">
 
             </div> */}
-            <Image src="/images/logo/The Akaai project-11.png" width={200} height={30} alt="logo" className="object-fill" />
+            <Image src="/images/logo/The Akaai project-03.png" width={200} height={30} alt="logo" className="object-fill" />
             {/* <h2 className="text-5xl tracking-[0.2em] text-[#2C2416]">AKAAI</h2> */}
           </div>
         </div>
