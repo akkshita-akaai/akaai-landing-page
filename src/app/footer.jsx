@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
 
         {/* Footer Section */}
-        <div className="flex justify-between items-start gap-16">
+        <div className="flex flex-col md:flex-row md:justify-between items-start gap-8 md:gap-16">
           {/* Contact Details */}
           <div>
             <h3 className="text-2xl mb-6 text-[#2C2416]">Contact Details</h3>
@@ -42,7 +42,7 @@ export default function Footer() {
           {/* Social Icons */}
           <div>
             <h3 className="text-2xl mb-6 text-[#2C2416]">Social</h3>
-            <div className="flex gap-6">
+            <div className="flex gap-4 md:gap-6">
               <a
                 href="https://www.instagram.com/theakaaiproject?igsh=YjlyaDFhMGxlanFq"
                 className="w-12 h-12 rounded-full bg-[#C74940] flex items-center justify-center text-white hover:opacity-80 transition-opacity"
