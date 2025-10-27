@@ -2,12 +2,12 @@ export default function ServicesSection() {
   return (
     <section id="services" className="relative overflow-hidden bg-beige p-10">
       {/* torn paper background */}
-      <img
+      {/* <img
         src="/images/servicesSection/bg.svg"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-      />
+      /> */}
 
       <div className="container relative z-10">
         <h2 className="text-3xl md:text-5xl font-bold text-center tracking-tight mb-16">
