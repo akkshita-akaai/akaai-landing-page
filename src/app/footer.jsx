@@ -29,8 +29,11 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl mb-6 text-[#2C2416]">Contact Details</h3>
             <div className="space-y-2 text-[#2C2416]">
-              <p className="text-lg">Email: hello@akaai.com</p>
-              <p className="text-lg">Phone: +1 (555) 123-4667</p>
+              <div>
+
+                <a href="mailto:collab@theakaaiproject.com" className="text-lg">Email: collab@theakaaiproject.com</a>
+              </div>
+              <a href="tel:9910176157" className="text-lg">Phone: (+91) 99101 76157 </a>
             </div>
           </div>
 
@@ -39,26 +42,26 @@ export default function Footer() {
             <h3 className="text-2xl mb-6 text-[#2C2416]">Social</h3>
             <div className="flex gap-6">
               <a
-                href="#"
+                href="https://www.instagram.com/theakaaiproject?igsh=YjlyaDFhMGxlanFq"
                 className="w-12 h-12 rounded-full bg-[#C74940] flex items-center justify-center text-white hover:opacity-80 transition-opacity"
                 aria-label="Instagram"
               >
                 <Instagram className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/the-akaai-project/"
                 className="w-12 h-12 rounded-full bg-[#2C2416] flex items-center justify-center text-white hover:opacity-80 transition-opacity"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="w-12 h-12 rounded-full bg-[#2C2416] flex items-center justify-center text-white hover:opacity-80 transition-opacity"
                 aria-label="YouTube"
               >
                 <Youtube className="w-6 h-6" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
