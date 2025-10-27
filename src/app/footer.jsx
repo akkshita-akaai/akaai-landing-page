@@ -1,6 +1,7 @@
 "use client";
 
 import { Instagram, Linkedin, Youtube } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -16,10 +17,11 @@ export default function Footer() {
 
           {/* Knot Logo and Brand Name */}
           <div className="flex flex-col items-center gap-6 mb-4">
-            <div className="w-32 h-24 relative">
+            {/* <div className="w-32 h-24 relative">
 
-            </div>
-            <h2 className="text-5xl tracking-[0.2em] text-[#2C2416]">AKAAI</h2>
+            </div> */}
+            <Image src="/images/logo/The Akaai project-11.png" width={200} height={30} alt="logo" className="object-fill" />
+            {/* <h2 className="text-5xl tracking-[0.2em] text-[#2C2416]">AKAAI</h2> */}
           </div>
         </div>
 
