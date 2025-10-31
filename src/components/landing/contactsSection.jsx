@@ -49,7 +49,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/socialMediaNarrativs.svg",
                   alt: "",
-                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
+                  className: "absolute -top-6 left-1/2 -translate-x-1/2 -ml-1 w-12 h-12 z-10"
                 }}
               />
             </div>
@@ -61,7 +61,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/digitalCampaignStrategy.svg",
                   alt: "",
-                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
+                  className: "absolute -top-6 left-1/2 -translate-x-1/2 -ml-1 w-12 h-12 z-10"
                 }}
               />
             </div>
@@ -73,7 +73,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/brandStoryFilms.svg",
                   alt: "",
-                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
+                  className: "absolute -top-6 left-1/2 -translate-x-1/2 -ml-1 w-12 h-12 z-10"
                 }}
               />
             </div>
@@ -85,7 +85,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/thoughLeaderShipNarratives.svg",
                   alt: "",
-                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
+                  className: "absolute -top-6 left-1/2 -translate-x-1/2 -ml-1 w-12 h-12 z-10"
                 }}
               />
             </div>
@@ -97,7 +97,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/communityBuilding.svg",
                   alt: "",
-                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
+                  className: "absolute -top-6 left-1/2 -translate-x-1/2 -ml-1 w-12 h-12 z-10"
                 }}
               />
             </div>
@@ -109,7 +109,7 @@ export default function ContactSection() {
                 badge={{
                   src: "/images/contactSection/editorialDesign.svg",
                   alt: "",
-                  className: "absolute -top-8 left-1/2 -translate-x-1/2 -ml-1 w-16 h-16 z-10"
+                  className: "absolute -top-6 left-1/2 -translate-x-1/2 -ml-1 w-12 h-12 z-10"
                 }}
               />
             </div>
