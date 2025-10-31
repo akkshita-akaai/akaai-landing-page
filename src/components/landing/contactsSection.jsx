@@ -40,7 +40,7 @@ export default function ContactSection() {
           </h3>
 
           {/* 12-col grid to lock left and right columns like the poster */}
-          <div className="grid grid-cols-1 md:grid-cols-12 md:gap-x-10 gap-y-8 md:gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-12 md:gap-x-10 gap-y-12 md:gap-y-16">
             {/* Left column */}
             <div className="md:col-span-5 md:col-start-1">
               <ServiceCard
