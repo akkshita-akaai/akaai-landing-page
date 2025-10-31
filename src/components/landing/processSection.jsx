@@ -9,7 +9,6 @@ export default function ProcessSection() {
     { title: "Define", icon: "/images/processSection/define.svg", subtitle: "Articulate story & tone" },
     { title: "Design", icon: "/images/processSection/design.svg", subtitle: "Visualise emotion" },
     { title: "Deploy", icon: "/images/processSection/deliver.svg", subtitle: "Execute across channels" },
-    { title: "Distill", icon: "/images/processSection/deliver.svg", subtitle: "measure, refine, evolve" },
   ];
 
   const sectionRef = useRef(null);

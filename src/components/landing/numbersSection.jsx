@@ -188,12 +188,12 @@ export default function NumbersSection() {
             </div>
           </div>
 
-          {/* Mobile fallback unchanged */}
+          {/* Mobile fallback */}
           <div className="md:hidden grid grid-cols-2 gap-6">
             {steps.map((s, idx) => (
               <div key={idx} className="flex flex-col items-center text-center">
-                <div className="w-28 h-28 rounded-full border border-black/10 bg-white/60 flex items-center justify-center mb-2">
-                  <Image src={s.icon} alt={s.title} width={56} height={56} />
+                <div className="w-28 h-28 rounded-full bg-transparent flex items-center justify-center mb-2">
+                  <Image src={s.icon} alt={s.title} width={60} height={60} className="object-contain" />
                 </div>
                 <h3 className="text-sm md:text-base font-bold">{s.number} {s.title}</h3>
                 <p className="text-xs md:text-sm text-black/70">{s.description}</p>
