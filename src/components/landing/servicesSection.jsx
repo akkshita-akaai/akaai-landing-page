@@ -29,14 +29,13 @@ export default function ServicesSection() {
 
           {/* Text block */}
           <div className="relative p-8">
-            <div className="flex items-center mb-3 ">
-
+            <div className="relative mb-3">
               <img
                 src="/images/servicesSection/pin.svg"
                 alt=""
-                className=" w-6 h-6 rotate-[-20deg] z-10 mb-3"
+                className="absolute w-6 h-6 -left-1 -top-1 rotate-[-45] z-10"
               />
-              <h3 className="text-xl md:text-2xl font-bold text-charcoal">
+              <h3 className="text-xl md:text-2xl font-bold text-charcoal pl-6">
                 Brand Consultation Services
               </h3>
             </div>
@@ -51,11 +50,11 @@ export default function ServicesSection() {
                 "Brand Innovation",
                 "Brand Management"
               ].map(item => (
-                <li key={item} className="flex items-start gap-3 text-sm md:text-base text-charcoal/80">
+                <li key={item} className="flex items-start gap-2 text-sm md:text-base text-charcoal/80">
                   <img
                     src="/images/servicesSection/pin.svg"
                     alt=""
-                    className="mt-1 w-4 h-4 shrink-0 rotate-12"
+                    className="w-4 h-4 shrink-0 rotate-[-15deg]"
                   />
                   <span>{item}</span>
                 </li>
@@ -68,13 +67,13 @@ export default function ServicesSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-14">
           {/* Text block (left on desktop) */}
           <div className="relative p-8 order-2 lg:order-1">
-            <div className="flex items-center mb-3 ">
+            <div className="relative mb-3">
               <img
                 src="/images/servicesSection/pin.svg"
                 alt=""
-                className=" w-6 h-6 rotate-[-20deg] z-10 mb-3"
+                className="absolute w-6 h-6 -left-1 -top-1 rotate-[-45] z-10"
               />
-              <h3 className="text-xl md:text-2xl font-bold text-charcoal">
+              <h3 className="text-xl md:text-2xl font-bold text-charcoal pl-6">
                 Content Marketing
               </h3>
             </div>
@@ -91,7 +90,7 @@ export default function ServicesSection() {
                   <img
                     src="/images/servicesSection/pin.svg"
                     alt=""
-                    className="mt-1 w-4 h-4 shrink-0 rotate-[-8deg]"
+                    className="w-4 h-4 shrink-0 rotate-[-15deg]"
                   />
                   <span>{item}</span>
                 </li>
