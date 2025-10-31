@@ -124,12 +124,12 @@ export default function NumbersSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen py-16 md:py-20 overflow-hidden bg-beige">
+    <section ref={sectionRef} className="relative min-h-screen py-16 md:py-20 px-10 overflow-hidden bg-beige">
       <div className="absolute inset-0">
         <Image src="/images/numbersSection/bg.svg" alt="" fill className="object-cover" priority />
       </div>
 
-      <div className="relative container mx-auto px-4">
+      <div className="relative container mx-auto">
         <div className="mb-10 md:mb-14 text-center flex flex-col items-center">
           <h2 className="text-4xl md:text-6xl font-bold leading-tight">
             <span className="text-[#8B3A3A]">Your Brand.</span>{" "}

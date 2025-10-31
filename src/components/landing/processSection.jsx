@@ -148,7 +148,7 @@ export default function ProcessSection() {
     <section
       id="process"
       ref={sectionRef}
-      className="section relative overflow-hidden bg-beige"
+      className="py-24 px-10 relative overflow-hidden bg-beige"
     >
       <div
         className="absolute inset-0 bg-cover bg-center opacity-5"
