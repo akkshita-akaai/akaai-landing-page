@@ -198,7 +198,7 @@ function BenefitChip({ icon, title }) {
       "
     >
       <div className="flex items-center gap-2.5">
-        <span className="relative w-6 h-6 md:w-7 md:h-7">
+        <span className="relative w-8 h-8">
           <Image src={icon} alt="" fill className="object-contain" />
         </span>
         <h4 className="text-xs md:text-sm lg:text-base font-semibold text-gray-900">{title}</h4>
