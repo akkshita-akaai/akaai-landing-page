@@ -39,12 +39,12 @@ export default function ServicesSection() {
                 Brand Consultation Services
               </h3>
             </div>
-            <p className="text-base md:text-lg text-charcoal/80 leading-relaxed mb-4">
+            <p className="text-base md:text-lg text-charcoal/80 leading-relaxed mb-4 pl-6">
               Deep dive brand DNA discovery and narrative crafting. We uncover the essence of your brand and build strategic foundations that resonate.
             </p>
 
             {/* bullets with pins */}
-            <ul className="space-y-2">
+            <ul className="space-y-2 pl-6">
               {[
                 "Brand Strategy & Planning",
                 "Brand Innovation",
@@ -77,16 +77,16 @@ export default function ServicesSection() {
                 Content Marketing
               </h3>
             </div>
-            <p className="text-base md:text-lg text-charcoal/80 leading-relaxed mb-4">
+            <p className="text-base md:text-lg text-charcoal/80 leading-relaxed mb-4 pl-6">
               Story based content and visual storytelling. We create content that connects, engages, and converts through powerful narratives.
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-2 pl-6">
               {[
                 "AI Integration",
                 "Content and Creative Design",
                 "Packaging"
               ].map(item => (
-                <li key={item} className="flex items-start gap-3 text-sm md:text-base text-charcoal/80">
+                <li key={item} className="flex items-start gap-2 text-sm md:text-base text-charcoal/80">
                   <img
                     src="/images/servicesSection/pin.svg"
                     alt=""
