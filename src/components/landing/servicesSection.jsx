@@ -1,3 +1,5 @@
+import { Asterisk, Clover } from "lucide-react";
+
 export default function ServicesSection() {
   return (
     <section id="services" className="relative overflow-hidden bg-beige p-10">
@@ -17,10 +19,10 @@ export default function ServicesSection() {
         {/* Row 1 */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Paper image card */}
-          <div className="relative rounded-2xl border border-[#d9cdb4] shadow-xl overflow-hidden bg-gradient-to-b from-[#f4ead8] to-[#efe3cc]">
+          <div className="relative rounded border border-[#d9cdb4] shadow-xl overflow-hidden bg-gradient-to-b from-[#f4ead8] to-[#efe3cc]">
 
             <img
-              src="/images/servicesSection/brandConsultation.svg"
+              src="/images/servicesSection/brandConsultation.png"
               alt="Brand Consultation Services"
               className="relative w-full object-fill"
             />
@@ -50,12 +52,8 @@ export default function ServicesSection() {
                 "Brand Innovation",
                 "Brand Management"
               ].map(item => (
-                <li key={item} className="flex items-start gap-2 text-sm md:text-base text-charcoal/80">
-                  <img
-                    src="/images/servicesSection/pin.svg"
-                    alt=""
-                    className="w-4 h-4 shrink-0 rotate-[-15deg]"
-                  />
+                <li key={item} className="flex items-center gap-2 text-sm md:text-base text-charcoal/80">
+                  <Asterisk className="w-4 h-4 shrink-0 rotate-[-15deg] text-cherry" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -86,12 +84,8 @@ export default function ServicesSection() {
                 "Content and Creative Design",
                 "Packaging"
               ].map(item => (
-                <li key={item} className="flex items-start gap-2 text-sm md:text-base text-charcoal/80">
-                  <img
-                    src="/images/servicesSection/pin.svg"
-                    alt=""
-                    className="w-4 h-4 shrink-0 rotate-[-15deg]"
-                  />
+                <li key={item} className="flex items-center gap-2 text-sm md:text-base text-charcoal/80">
+                  <Asterisk className="w-4 h-4 shrink-0 rotate-[-15deg] text-cherry" />
                   <span>{item}</span>
                 </li>
               ))}
