@@ -30,35 +30,39 @@ export default function WelcomeSection() {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center tracking-tight">
           Welcome to The Akaai Project
         </h2>
-        <p className="mt-6 font-accent text-lg md:text-xl italic text-center">
+        <p className="mt-6 font-accent text-lg md:text-xl italic text-center sm:block">
           "A Narrative Lab where ideas take shape, stories find voice, and
           brands become movements."
         </p>
-        <p className="mt-6 text-base md:text-lg text-center max-w-2xl mx-auto opacity-70">
+        <p className="mt-6 text-base md:text-lg text-center max-w-2xl mx-auto opacity-70 sm:block">
           We do not chase trends. We trace roots. We design narratives, not
           templates. We build brand presence, not noise. Meaning is the new
           marketing.
         </p>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-2 md:gap-4 grid-cols-2 sm:grid-cols-4">
           {cards.map((card) => (
             <div
               key={card.t}
-              className="rounded-lg p-8 text-center shadow-[var(--shadow-subtle)] bg-taupe/60 hover:shadow-[var(--shadow-medium)] transition-transform hover:-translate-y-1 border-2 border-[#8B3A3A]"
+              className="rounded-lg p-4 md:p-6 shadow-[var(--shadow-subtle)] bg-taupe/60 hover:shadow-[var(--shadow-medium)] transition-transform hover:-translate-y-1 border md:border-2 border-[#8B3A3A]"
             >
-              <div className="flex justify-center mb-4">
-                <div className="w-24 h-24 rounded-full border-4 border-[#8B3A3A] p-1 flex items-center justify-center">
-                  <Image
-                    src={card.image}
-                    alt={card.t}
-                    width={80}
-                    height={80}
-                    className="w-full h-full rounded-full object-cover"
-                    unoptimized
-                  />
+              <div className="flex flex-col items-center gap-2 text-center">
+                <div className="max-sm:flex-shrink-0 sm:flex sm:justify-center sm:mb-3">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 md:border-4 border-[#8B3A3A] p-0.5 flex items-center justify-center">
+                    <Image
+                      src={card.image}
+                      alt={card.t}
+                      width={60}
+                      height={60}
+                      className="w-full h-full rounded-full object-cover"
+                      unoptimized
+                    />
+                  </div>
+                </div>
+                <div className="max-sm:flex-1 max-sm:text-left sm:text-center">
+                  <h3 className="text-sm md:text-base font-bold">{card.t}</h3>
+                  <p className="mt-1 max-sm:hidden text-xs md:text-sm opacity-80">{card.s}</p>
                 </div>
               </div>
-              <h3 className="text-base md:text-lg font-bold">{card.t}</h3>
-              <p className="mt-1 text-sm md:text-base opacity-80">{card.s}</p>
             </div>
           ))}
         </div>
