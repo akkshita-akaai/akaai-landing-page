@@ -1,4 +1,5 @@
 import Image from "next/image";
+import clsx from "clsx";
 
 export default function WelcomeSection() {
   const cards = [
@@ -40,10 +41,10 @@ export default function WelcomeSection() {
           marketing.
         </p>
         <div className="mt-10 grid gap-2 md:gap-4 grid-cols-2 sm:grid-cols-4">
-          {cards.map((card) => (
+          {cards.map((card, idx) => (
             <div
               key={card.t}
-              className="rounded-lg p-4 md:p-6 shadow-[var(--shadow-subtle)] bg-taupe/60 hover:shadow-[var(--shadow-medium)] transition-transform hover:-translate-y-1 border md:border-2 border-[#8B3A3A]"
+              className={clsx("rounded-lg p-4 md:p-6 shadow-[var(--shadow-subtle)] bg-taupe/60 hover:shadow-[var(--shadow-medium)] transition-transform hover:-translate-y-1 border md:border-2 border-[#8B3A3A]", idx === 0 && "rounded-br-none", idx === 1 && "rounded-bl-none", idx === 2 && "rounded-tr-none", idx === 3 && "rounded-tl-none")}
             >
               <div className="flex flex-col items-center gap-2 text-center">
                 <div className="max-sm:flex-shrink-0 sm:flex sm:justify-center sm:mb-3">
