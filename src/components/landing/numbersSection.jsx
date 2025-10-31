@@ -130,7 +130,7 @@ export default function NumbersSection() {
       </div>
 
       <div className="relative container mx-auto px-4">
-        <div className="mb-10 md:mb-14">
+        <div className="mb-10 md:mb-14 text-center flex flex-col items-center">
           <h2 className="text-4xl md:text-6xl font-bold leading-tight">
             <span className="text-[#8B3A3A]">Your Brand.</span>{" "}
             <span className="text-black">Defined by Narrative. Driven by Purpose.</span>

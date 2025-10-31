@@ -29,14 +29,17 @@ export default function ServicesSection() {
 
           {/* Text block */}
           <div className="relative p-8">
-            <img
-              src="/images/servicesSection/pin.svg"
-              alt=""
-              className="absolute w-6 h-6 left-0 top-0 rotate-[15deg] z-10"
-            />
-            <h3 className="text-2xl font-bold text-charcoal mb-3 pl-7">
-              Brand Consultation Services
-            </h3>
+            <div className="flex items-center mb-3 ">
+
+              <img
+                src="/images/servicesSection/pin.svg"
+                alt=""
+                className=" w-6 h-6 rotate-[-20deg] z-10 mb-3"
+              />
+              <h3 className="text-2xl font-bold text-charcoal">
+                Brand Consultation Services
+              </h3>
+            </div>
             <p className="text-charcoal/80 leading-relaxed mb-4">
               Deep dive brand DNA discovery and narrative crafting. We uncover the essence of your brand and build strategic foundations that resonate.
             </p>
@@ -65,14 +68,16 @@ export default function ServicesSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-14">
           {/* Text block (left on desktop) */}
           <div className="relative p-8 order-2 lg:order-1">
-            <img
-              src="/images/servicesSection/pin.svg"
-              alt=""
-              className="absolute w-6 h-6 left-0 top-0 rotate-[-10deg] z-10"
-            />
-            <h3 className="text-2xl font-bold text-charcoal mb-3 pl-7">
-              Content Marketing
-            </h3>
+            <div className="flex items-center mb-3 ">
+              <img
+                src="/images/servicesSection/pin.svg"
+                alt=""
+                className=" w-6 h-6 rotate-[-20deg] z-10 mb-3"
+              />
+              <h3 className="text-2xl font-bold text-charcoal">
+                Content Marketing
+              </h3>
+            </div>
             <p className="text-charcoal/80 leading-relaxed mb-4">
               Story based content and visual storytelling. We create content that connects, engages, and converts through powerful narratives.
             </p>

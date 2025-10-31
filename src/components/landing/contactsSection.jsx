@@ -35,7 +35,7 @@ export default function ContactSection() {
 
         {/* Services include */}
         <div className="relative">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-[#C9956B] mb-8 md:mb-10">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-black mb-8 md:mb-10">
             Our Services Include
           </h3>
 
@@ -118,7 +118,7 @@ export default function ContactSection() {
 
         {/* Bottom band */}
         <div className="mt-16 md:mt-20">
-          <h3 className="text-2xl md:text-3xl font-light text-[#C9956B] text-center mb-8 md:mb-10">
+          <h3 className="text-2xl md:text-3xl font-light text-black text-center mb-8 md:mb-10">
             Each brand gets:
           </h3>
 
