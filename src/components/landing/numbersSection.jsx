@@ -24,10 +24,10 @@ function StepBubble({ step, className, largeIcon = false, isPositioning = false 
       )}>
         <Image src={step.icon} alt={step.title} width={largeIcon ? 88 : 60} height={largeIcon ? 88 : 60} className="object-contain" priority />
       </div>
-      <h3 className="text-[18px] md:text-[20px] font-bold text-black mb-1 leading-tight">
+      <h3 className="text-base md:text-lg font-bold text-black mb-1 leading-tight">
         {step.number} {step.title}
       </h3>
-      <p className="text-[13px] text-black/70 max-w-[220px]">{step.description}</p>
+      <p className="text-sm md:text-base text-black/70 max-w-[220px]">{step.description}</p>
     </div>
   );
 }
@@ -135,7 +135,7 @@ export default function NumbersSection() {
             <span className="text-[#8B3A3A]">Your Brand.</span>{" "}
             <span className="text-black">Defined by Narrative. Driven by Purpose.</span>
           </h2>
-          <p className="text-lg md:text-xl mt-6 max-w-4xl">
+          <p className="text-base md:text-lg lg:text-xl mt-6 max-w-4xl">
             Strategy isn't spreadsheets and slogans, it's storytelling with structure. We align your purpose, audience, and positioning into a cohesive narrative.
           </p>
         </div>
@@ -168,7 +168,7 @@ export default function NumbersSection() {
             <div className="numbers-deliverables absolute right-[0px] bottom-[10px] w-[380px] bg-[#F5F1E8] border-2 border-[#8B3A3A] rounded-lg overflow-hidden">
               <div className="flex items-center gap-3 p-5 border-b-2 border-[#8B3A3A]">
                 <Image src="/images/numbersSection/delivarables.svg" alt="Deliverables" width={48} height={48} />
-                <h3 className="text-2xl font-bold text-black">Deliverables</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-black">Deliverables</h3>
               </div>
               <div className="p-5 space-y-3">
                 {deliverables.map((item, i) => (
@@ -176,12 +176,12 @@ export default function NumbersSection() {
                     <svg className="w-5 h-5 text-[#8B3A3A] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-black">{item}</span>
+                    <span className="text-sm md:text-base text-black">{item}</span>
                   </div>
                 ))}
               </div>
               <div className="bg-[#C4A574] p-5 text-center">
-                <button className="text-white font-semibold text-lg hover:opacity-90 transition-opacity">
+                <button className="text-white font-semibold text-base md:text-lg hover:opacity-90 transition-opacity">
                   Let&apos;s Write Your Brand Narrative
                 </button>
               </div>
@@ -195,8 +195,8 @@ export default function NumbersSection() {
                 <div className="w-28 h-28 rounded-full border border-black/10 bg-white/60 flex items-center justify-center mb-2">
                   <Image src={s.icon} alt={s.title} width={56} height={56} />
                 </div>
-                <h3 className="text-base font-bold">{s.number} {s.title}</h3>
-                <p className="text-xs text-black/70">{s.description}</p>
+                <h3 className="text-sm md:text-base font-bold">{s.number} {s.title}</h3>
+                <p className="text-xs md:text-sm text-black/70">{s.description}</p>
               </div>
             ))}
           </div>

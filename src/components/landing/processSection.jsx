@@ -177,7 +177,7 @@ export default function ProcessSection() {
           <span className="text-[#8B2E2E]">We See</span>{" "}
           <span className="italic" style={{ fontFamily: 'Playfair Display, serif' }}>What Others Feel</span>
         </h2>
-        <p className="text-center text-lg md:text-xl mb-12 max-w-4xl mx-auto">
+        <p className="text-center text-base md:text-lg lg:text-xl mb-12 max-w-4xl mx-auto">
           At The Akaai Project, visualisation isn't just an art, it's interpretation. We translate emotion into visuals, tone into color, and essence into design.
         </p>
 
@@ -188,7 +188,7 @@ export default function ProcessSection() {
               className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
             >
               <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center`}>
-                <p className="text-[#8B2E2E] italic text-xl md:text-2xl" style={{ fontFamily: 'Playfair Display, serif' }}>
+                <p className="text-[#8B2E2E] italic text-lg md:text-xl lg:text-2xl" style={{ fontFamily: 'Playfair Display, serif' }}>
                   {step.subtitle}
                 </p>
               </div>
@@ -207,7 +207,7 @@ export default function ProcessSection() {
               </div>
 
               <div className={`flex-1 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'} text-center`}>
-                <h3 className="text-3xl md:text-5xl font-bold">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold">
                   {step.title}
                 </h3>
               </div>

@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="w-full max-w-6xl">
         {/* Main Content */}
         <div className="text-center mb-32">
-          <h1 className="text-7xl mb-16 text-[#2C2416] tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-16 text-[#2C2416] tracking-tight">
             Let's weave the next story
             <br />
             together.
@@ -29,19 +29,19 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between items-start gap-8 md:gap-16">
           {/* Contact Details */}
           <div>
-            <h3 className="text-2xl mb-6 text-[#2C2416]">Contact Details</h3>
+            <h3 className="text-xl md:text-2xl mb-6 text-[#2C2416]">Contact Details</h3>
             <div className="space-y-2 text-[#2C2416]">
               <div>
 
-                <a href="mailto:collab@theakaaiproject.com" className="text-lg">Email: collab@theakaaiproject.com</a>
+                <a href="mailto:collab@theakaaiproject.com" className="text-base md:text-lg">Email: collab@theakaaiproject.com</a>
               </div>
-              <a href="tel:9910176157" className="text-lg">Phone: (+91) 99101 76157 </a>
+              <a href="tel:9910176157" className="text-base md:text-lg">Phone: (+91) 99101 76157 </a>
             </div>
           </div>
 
           {/* Social Icons */}
           <div>
-            <h3 className="text-2xl mb-6 text-[#2C2416]">Social</h3>
+            <h3 className="text-xl md:text-2xl mb-6 text-[#2C2416]">Social</h3>
             <div className="flex gap-4 md:gap-6">
               <a
                 href="https://www.instagram.com/theakaaiproject?igsh=YjlyaDFhMGxlanFq"

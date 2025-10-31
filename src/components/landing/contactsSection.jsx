@@ -118,7 +118,7 @@ export default function ContactSection() {
 
         {/* Bottom band */}
         <div className="mt-16 md:mt-20">
-          <h3 className="text-2xl md:text-3xl font-light text-black text-center mb-8 md:mb-10">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-black text-center mb-8 md:mb-10">
             Each brand gets:
           </h3>
 
@@ -143,7 +143,7 @@ export default function ContactSection() {
 
           {/* CTA at the bottom */}
           <div className="flex justify-center">
-            <button className="bg-[#C9966C] text-white px-6 md:px-8 py-3.5 md:py-4 rounded-lg text-sm md:text-lg font-medium shadow-[0_6px_18px_rgba(0,0,0,0.18)] hover:brightness-95 transition">
+            <button className="bg-[#C9966C] text-white px-6 md:px-8 py-3.5 md:py-4 rounded-lg text-base md:text-lg font-medium shadow-[0_6px_18px_rgba(0,0,0,0.18)] hover:brightness-95 transition">
               {"Let's"} Craft Your Boutique Narrative
             </button>
           </div>
@@ -176,10 +176,10 @@ function ServiceCard({
         p-6 md:p-8 max-w-[420px]
         shadow-[0_4px_12px_rgba(0,0,0,0.08)]
       ">
-        <h4 className="text-[22px] md:text-[26px] leading-tight font-serif font-bold text-gray-900 mb-4">
+        <h4 className="text-lg md:text-xl lg:text-2xl leading-tight font-serif font-bold text-gray-900 mb-4">
           {title}
         </h4>
-        <p className="text-[15px] md:text-[16px] leading-relaxed text-gray-800">
+        <p className="text-sm md:text-base lg:text-lg leading-relaxed text-gray-800">
           {description}
         </p>
       </div>
@@ -201,7 +201,7 @@ function BenefitChip({ icon, title }) {
         <span className="relative w-6 h-6 md:w-7 md:h-7">
           <Image src={icon} alt="" fill className="object-contain" />
         </span>
-        <h4 className="text-xs md:text-sm font-semibold text-gray-900">{title}</h4>
+        <h4 className="text-xs md:text-sm lg:text-base font-semibold text-gray-900">{title}</h4>
       </div>
     </div>
   );

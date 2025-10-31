@@ -10,7 +10,7 @@ export default function ServicesSection() {
       /> */}
 
       <div className="container relative z-10">
-        <h2 className="text-3xl md:text-5xl font-bold text-center tracking-tight mb-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center tracking-tight mb-16">
           What We Do
         </h2>
 
@@ -36,11 +36,11 @@ export default function ServicesSection() {
                 alt=""
                 className=" w-6 h-6 rotate-[-20deg] z-10 mb-3"
               />
-              <h3 className="text-2xl font-bold text-charcoal">
+              <h3 className="text-xl md:text-2xl font-bold text-charcoal">
                 Brand Consultation Services
               </h3>
             </div>
-            <p className="text-charcoal/80 leading-relaxed mb-4">
+            <p className="text-base md:text-lg text-charcoal/80 leading-relaxed mb-4">
               Deep dive brand DNA discovery and narrative crafting. We uncover the essence of your brand and build strategic foundations that resonate.
             </p>
 
@@ -51,7 +51,7 @@ export default function ServicesSection() {
                 "Brand Innovation",
                 "Brand Management"
               ].map(item => (
-                <li key={item} className="flex items-start gap-3 text-charcoal/80">
+                <li key={item} className="flex items-start gap-3 text-sm md:text-base text-charcoal/80">
                   <img
                     src="/images/servicesSection/pin.svg"
                     alt=""
@@ -74,11 +74,11 @@ export default function ServicesSection() {
                 alt=""
                 className=" w-6 h-6 rotate-[-20deg] z-10 mb-3"
               />
-              <h3 className="text-2xl font-bold text-charcoal">
+              <h3 className="text-xl md:text-2xl font-bold text-charcoal">
                 Content Marketing
               </h3>
             </div>
-            <p className="text-charcoal/80 leading-relaxed mb-4">
+            <p className="text-base md:text-lg text-charcoal/80 leading-relaxed mb-4">
               Story based content and visual storytelling. We create content that connects, engages, and converts through powerful narratives.
             </p>
             <ul className="space-y-2">
@@ -87,7 +87,7 @@ export default function ServicesSection() {
                 "Content and Creative Design",
                 "Packaging"
               ].map(item => (
-                <li key={item} className="flex items-start gap-3 text-charcoal/80">
+                <li key={item} className="flex items-start gap-3 text-sm md:text-base text-charcoal/80">
                   <img
                     src="/images/servicesSection/pin.svg"
                     alt=""
