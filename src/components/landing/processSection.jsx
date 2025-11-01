@@ -181,7 +181,7 @@ export default function ProcessSection() {
               alt=""
               width={24}
               height={60}
-              className="w-4 h-10 md:w-6 md:h-14 lg:w-8 lg:h-16 inline-block mb-3"
+              className="w-4 h-12 inline-block mb-3 ml-1 max-md:h-8"
             />
           </div>
         </h2>

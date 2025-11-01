@@ -8,8 +8,8 @@ const steps = [
   { number: "01", title: "Discovery", description: "Deep-dive sessions to uncover your brand DNA.", icon: "/images/numbersSection/discovery.svg" },
   { number: "02", title: "Narrative Crafting", description: "Building your core story, what you stand for, who you speak to, and how you show up.", icon: "/images/numbersSection/narrativeCrafting.svg" },
   { number: "03", title: "Positioning", description: "Differentiating you not by category, but by character.", icon: "/images/numbersSection/positioning.svg" },
-  { number: "04", title: "Voice & Tone", description: "Defining how your brand speaks across touchpoints.", icon: "/images/numbersSection/voiceAndTone.svg" },
-  { number: "05", title: "Rollout", description: "Strategic plans that bring your narrative to life across channels.", icon: "/images/numbersSection/rollout.svg" },
+  { number: "05", title: "Voice & Tone", description: "Defining how your brand speaks across touchpoints.", icon: "/images/numbersSection/voiceAndTone.svg" },
+  { number: "04", title: "Rollout", description: "Strategic plans that bring your narrative to life across channels.", icon: "/images/numbersSection/rollout.svg" },
 ];
 
 function StepBubble({ step, className, largeIcon = false, isPositioning = false }) {
