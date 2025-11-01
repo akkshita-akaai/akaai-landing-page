@@ -6,22 +6,22 @@ export default function WelcomeSection() {
     {
       t: "Social Lab",
       s: "Where stories go Social",
-      image: "/images/welcomeSection/socialLab.png"
+      image: "/images/welcomeSection/socialLab.svg"
     },
     {
       t: "Strategy Lab",
       s: "Where brands find purpose",
-      image: "/images/welcomeSection/strategyLab.png"
+      image: "/images/welcomeSection/strategyLab.svg"
     },
     {
       t: "Visual Lab",
       s: "We visualize emotions, not just aesthetics",
-      image: "/images/welcomeSection/visualLab.png"
+      image: "/images/welcomeSection/visualLab.svg"
     },
     {
       t: "Founder Lab",
       s: "Where thought leadership meets storytelling",
-      image: "/images/welcomeSection/founderLab.png"
+      image: "/images/welcomeSection/founderLab.svg"
     },
   ];
 
@@ -54,7 +54,7 @@ export default function WelcomeSection() {
                       alt={card.t}
                       width={60}
                       height={60}
-                      className="w-full h-full rounded-full object-cover"
+                      className="w-full h-full rounded-full object-center"
                       unoptimized
                     />
                   </div>
