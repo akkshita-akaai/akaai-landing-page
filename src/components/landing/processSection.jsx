@@ -172,9 +172,16 @@ export default function ProcessSection() {
       </svg> */}
 
       <div className="container relative z-20">
-        <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 md:mb-24">
+        <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 md:mb-24 flex items-center justify-center gap-2 flex-wrap">
           <span className="text-[#8B2E2E]">We See</span>{" "}
           <span className="italic" style={{ fontFamily: 'Playfair Display, serif' }}>What Others Feel</span>
+          <Image
+            src="/images/processSection/exclamationMark.svg"
+            alt=""
+            width={24}
+            height={60}
+            className="w-4 h-10 md:w-6 md:h-14 lg:w-8 lg:h-16 inline-block"
+          />
         </h2>
         <p className="text-center text-base md:text-lg lg:text-xl mb-12 max-w-4xl mx-auto">
           At The Akaai Project, visualisation isn't just an art, it's interpretation. We translate emotion into visuals, tone into color, and essence into design.
