@@ -32,11 +32,11 @@ export default function ServicesSection() {
           {/* Text block */}
           <div className="relative p-8">
             <div className="relative mb-3">
-              <img
+              {/* <img
                 src="/images/servicesSection/pin.svg"
                 alt=""
                 className="absolute w-6 h-6 -left-1 -top-1 rotate-[-45] z-10"
-              />
+              /> */}
               <h3 className="text-xl md:text-2xl font-bold text-charcoal pl-6">
                 Brand Consultation Services
               </h3>
@@ -66,11 +66,11 @@ export default function ServicesSection() {
           {/* Text block (left on desktop) */}
           <div className="relative p-8 order-2 lg:order-1">
             <div className="relative mb-3">
-              <img
+              {/* <img
                 src="/images/servicesSection/pin.svg"
                 alt=""
                 className="absolute w-6 h-6 -left-1 -top-1 rotate-[-45] z-10"
-              />
+              /> */}
               <h3 className="text-xl md:text-2xl font-bold text-charcoal pl-6">
                 Content Marketing
               </h3>
