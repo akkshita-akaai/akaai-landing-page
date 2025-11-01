@@ -22,8 +22,8 @@
      For Playfair we expose --font-accent so you can use class "font-accent".
    */
   --font-accent: var(--font-accent);
-  --font-playfair: 'Playfair Display', serif;
-  
+  --font-playfair: "Playfair Display", serif;
+
   /* Font family utilities */
   --font-family-nhd: var(--font-nhd);
   --font-family-sans: var(--font-sans);
@@ -88,4 +88,18 @@ body {
   box-shadow: 0 0 0 3px
     color-mix(in oklab, var(--color-cherry) 15%, transparent);
   border-color: var(--color-cherry);
+}
+
+@theme inline {
+  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)
+    infinite;
+  @keyframes ripple {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
 }
