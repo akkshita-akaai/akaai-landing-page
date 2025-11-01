@@ -22,7 +22,7 @@ export default function ServicesSection() {
           <div className="relative rounded border border-[#d9cdb4] shadow-xl overflow-hidden bg-gradient-to-b from-[#f4ead8] to-[#efe3cc]">
 
             <img
-              src="/images/servicesSection/brandConsultation.png"
+              src="/images/servicesSection/brandConsultation.svg"
               alt="Brand Consultation Services"
               className="relative w-full object-fill"
             />
@@ -93,7 +93,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Paper image card */}
-          <div className="relative rounded-2xl border border-[#d9cdb4] shadow-xl overflow-hidden bg-gradient-to-b from-[#f4ead8] to-[#efe3cc] order-1 lg:order-2">
+          <div className="relative rounded border border-[#d9cdb4] shadow-xl overflow-hidden bg-gradient-to-b from-[#f4ead8] to-[#efe3cc] order-1 lg:order-2">
 
             <img
               src="/images/servicesSection/contentMarketing.svg"
