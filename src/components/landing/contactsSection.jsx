@@ -85,7 +85,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative min-h-screen py-16 md:py-20 px-6 md:px-10 overflow-hidden bg-beige"
+      className="relative min-h-screen py-16 md:py-20 px-10 overflow-hidden bg-beige"
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -121,15 +121,16 @@ export default function ContactSection() {
           </h2>
 
           {/* tighter center gap */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-y-14 md:gap-x-6 lg:gap-x-8">
+          <div className="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-8 md:gap-y-14 md:gap-x-6 lg:gap-x-8">
             {services.map((s, idx) => (
               <div
                 key={idx}
                 className={[
-                  // 6/6 split, no empty columns
+                  // 2 cols on mobile, 6/6 split on desktop
+                  "col-span-1 md:col-span-6",
                   s.side === "left"
-                    ? "md:col-span-6 md:col-start-1 md:ml-auto" // push toward center
-                    : "md:col-span-6 md:col-start-7 md:mr-auto", // push toward center
+                    ? "md:col-start-1 md:ml-auto" // push toward center on desktop
+                    : "md:col-start-7 md:mr-auto", // push toward center on desktop
                   laneMargin[s.side], // inward lane padding
                   step[s.step],       // vertical stagger
                 ].join(" ")}
@@ -199,15 +200,16 @@ function ServiceCard({
         className="
           relative bg-transparent
           border-2 border-[#8B4049] rounded-[28px]
-          p-6 md:p-8 max-w-[520px]
-          min-h-[170px]
+          pt-8 px-4 pb-4 md:p-6 lg:p-8 max-w-[520px]
+          h-[190px] md:h-[190px]
           shadow-[0_4px_12px_rgba(0,0,0,0.08)]
+          flex flex-col
         "
       >
-        <h4 className="text-lg md:text-xl lg:text-2xl leading-tight font-serif font-bold text-gray-900 mb-3">
+        <h4 className="text-base md:text-lg lg:text-xl xl:text-2xl leading-tight font-serif font-bold text-gray-900 mb-2 md:mb-3">
           {title}
         </h4>
-        <p className="text-sm md:text-base lg:text-lg leading-relaxed text-gray-800">
+        <p className="text-xs md:text-sm lg:text-base xl:text-lg leading-relaxed text-gray-800 flex-1">
           {description}
         </p>
       </div>
