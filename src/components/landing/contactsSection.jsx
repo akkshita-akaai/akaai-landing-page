@@ -8,6 +8,7 @@ export default function ContactSection() {
     {
       side: "left",
       step: 1,
+      leftMargin: "md:ml-24 lg:ml-32",
       title: "Digital Campaign Strategy",
       description: "Story-based content, calendar creation, campaign design.",
       badge: {
@@ -19,6 +20,7 @@ export default function ContactSection() {
     {
       side: "right",
       step: 0,
+      leftMargin: "md:ml-24 lg:ml-32",
       title: "Social Media Narratives",
       description: "Story-based content, calendar creation, campaign design.",
       badge: {
@@ -30,6 +32,7 @@ export default function ContactSection() {
     {
       side: "left",
       step: 2,
+      leftMargin: "md:ml-12 lg:ml-16",
       title: "Thought Leadership Narratives",
       description: "LinkedIn positioning for founders & brand heads.",
       badge: {
@@ -41,6 +44,7 @@ export default function ContactSection() {
     {
       side: "right",
       step: 1,
+      leftMargin: "md:ml-12 lg:ml-16",
       title: "Brand Story Films",
       description: "Short-form narrative storytelling for web and social.",
       badge: {
@@ -52,6 +56,7 @@ export default function ContactSection() {
     {
       side: "left",
       step: 3,
+      leftMargin: "md:ml-0",
       title: "Editorial Design & Visual Storytelling",
       description: "For brands that want design with depth.",
       badge: {
@@ -63,6 +68,7 @@ export default function ContactSection() {
     {
       side: "right",
       step: 2,
+      leftMargin: "md:ml-0",
       title: "Community Building",
       description: "Turning audiences into ambassadors.",
       badge: {
@@ -76,21 +82,21 @@ export default function ContactSection() {
   // tuned vertical stagger
   const step = [
     "md:mt-0",
-    "md:mt-8 lg:mt-10",
-    "md:mt-16 lg:mt-20",
-    "md:mt-28 lg:mt-32",
+    "md:mt-4 lg:mt-6",
+    "md:mt-8 lg:mt-12",
+    "md:mt-12 lg:mt-16",
   ];
 
   // lane paddings and a left nudge to fix the outer margin on the left column
   const laneMargin = {
-    left: "md:pr-4 lg:pr-8 md:-translate-x-6 lg:-translate-x-10 xl:-translate-x-12",
-    right: "md:pl-4 lg:pl-8",
+    left: "md:pr-2 lg:pr-4",
+    right: "md:pl-2 lg:pl-4",
   };
 
   return (
     <section
       id="contact"
-      className="relative min-h-screen py-16 md:py-20 px-10 overflow-hidden bg-beige"
+      className="relative py-16 md:py-20 px-8 md:px-16 lg:px-24 xl:px-32 overflow-hidden bg-beige"
     >
       <div className="absolute inset-0 z-0">
         <Image
@@ -102,7 +108,7 @@ export default function ContactSection() {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto max-w-6xl lg:max-w-7xl">
+      <div className="relative z-10 mx-auto max-w-7xl">
         <header className="text-center mb-12 md:mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             <span className="text-[#8B4049]">Bespoke</span>{" "}
@@ -122,17 +128,18 @@ export default function ContactSection() {
             Our Services Include
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-2">
+          <div className="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-8 md:gap-y-0">
             {services.map((s, idx) => (
               <div
                 key={idx}
                 className={[
-                  "col-span-1 md:col-span-6 w-[400px]",
+                  "col-span-1 md:col-span-6 w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[420px]",
                   s.side === "left"
                     ? "md:col-start-1"
                     : "md:col-start-7",
                   laneMargin[s.side],
                   step[s.step],
+                  s.leftMargin || "",
                 ].join(" ")}
               >
                 <ServiceCard
@@ -200,15 +207,15 @@ function ServiceCard({
           relative bg-transparent
           border-2 border-[#8B4049] rounded-[28px]
           pt-8 px-4 pb-4 md:p-6 lg:p-8 max-w-[520px]
-          h-[190px] md:h-[190px]
+          h-[120px] sm:h-[150px] md:h-[190px]
           shadow-[0_4px_12px_rgba(0,0,0,0.08)]
           flex flex-col
         "
       >
-        <h4 className="text-base md:text-lg lg:text-xl xl:text-2xl leading-tight font-serif font-bold text-gray-900 mb-2 md:mb-3">
+        <h4 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight font-serif font-bold text-gray-900 mb-2 md:mb-3">
           {title}
         </h4>
-        <p className="text-xs md:text-sm lg:text-base xl:text-lg leading-relaxed text-gray-800 flex-1">
+        <p className="hidden sm:block text-xs md:text-sm lg:text-base xl:text-lg leading-relaxed text-gray-800 flex-1">
           {description}
         </p>
       </div>
