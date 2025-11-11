@@ -74,20 +74,20 @@ export default function NumbersSection() {
         </div>
 
         <div ref={canvasRef} className="relative mx-auto w-full max-w-[1080px] h-[520px] md:h-[520px]">
-          <div className="hidden md:block absolute inset-0">
+          <div className="hidden lg:block absolute inset-0">
             {/* 01 Discovery - left side */}
             <StepBubble step={steps[0]} className="left-[40px] top-[280px]" />
             {/* 02 Narrative Crafting - top center-left */}
             <StepBubble step={steps[1]} className="left-[220px] top-[100px]" />
-            {/* 03 Positioning - top right */}
-            <StepBubble step={steps[2]} className="right-[240px] top-[60px]" largeIcon />
+            {/* 03 Positioning - top right (moved up and slightly left) */}
+            <StepBubble step={steps[2]} className="right-[320px] top-[-40px]" largeIcon />
             {/* 04 Voice & Tone - bottom center */}
             <StepBubble step={steps[3]} className="left-[320px] top-[320px]" />
-            {/* 05 Rollout - right side (above deliverables box) */}
-            <StepBubble step={steps[4]} className="right-[80px] top-[180px]" />
+            {/* 05 Rollout - right side (moved up for better visibility) */}
+            <StepBubble step={steps[4]} className="right-[80px] top-[140px]" />
 
             {/* Deliverables box */}
-            <div className="absolute right-0 bottom-2 w-[280px] z-30">
+            <div className="absolute right-0 bottom-[-30px] w-[280px] z-30">
               {/* Book icon positioned outside on the left */}
               <div className="absolute -left-10 top-0 w-[70px] h-[70px] transform -rotate-12 z-10">
                 <Image src="/images/numbersSection/delivarables.svg" alt="Deliverables" fill className="object-contain" />
@@ -113,7 +113,7 @@ export default function NumbersSection() {
                   ))}
                 </div>
 
-                <div className="bg-[#C4A574] p-2.5 text-center">
+                <div className="bg-[#C4A574] p-2.5 text-center rounded-b-md">
                   <button className="w-full text-white font-semibold text-sm hover:opacity-90 transition-opacity">
                     Let&apos;s Write Your Brand Narrative
                   </button>
@@ -122,9 +122,10 @@ export default function NumbersSection() {
             </div>
           </div>
 
-          {/* Mobile */}
-          <div className="md:hidden grid grid-cols-2 gap-5">
-            {steps.map((s, idx) => (
+          {/* Mobile and Tablet */}
+          <div className="lg:hidden grid grid-cols-2 gap-3">
+            {/* Items 01-03 */}
+            {steps.slice(0, 3).map((s, idx) => (
               <div key={idx} className="flex flex-col items-center text-center">
                 <div className="w-[96px] h-[96px] rounded-full flex items-center justify-center mb-2">
                   <Image src={s.icon} alt={s.title} width={52} height={52} className="object-contain" />
@@ -134,26 +135,50 @@ export default function NumbersSection() {
               </div>
             ))}
 
-            <div className="col-span-2 mt-2 w-full bg-[#F5F1E8]/95 border-2 border-[#8B3A3A] rounded-lg shadow-md overflow-hidden">
-              <div className="p-4 border-b-2 border-[#8B3A3A]">
-                <h3 className="text-xl font-bold text-black">Deliverables</h3>
+            {/* Item 04 - Voice & Tone */}
+            <div className="flex flex-col items-center text-center">
+              <div className="w-[96px] h-[96px] rounded-full flex items-center justify-center mb-2">
+                <Image src={steps[3].icon} alt={steps[3].title} width={52} height={52} className="object-contain" />
               </div>
-              <div className="p-4 space-y-3">
+              <h3 className="text-xs font-bold">{steps[3].number} {steps[3].title}</h3>
+              <p className="text-[11px] text-black/70">{steps[3].description}</p>
+            </div>
+
+            {/* Item 05 - Rollout (below 03) */}
+            <div className="flex flex-col items-center text-center">
+              <div className="w-[96px] h-[96px] rounded-full flex items-center justify-center mb-2">
+                <Image src={steps[4].icon} alt={steps[4].title} width={52} height={52} className="object-contain" />
+              </div>
+              <h3 className="text-xs font-bold">{steps[4].number} {steps[4].title}</h3>
+              <p className="text-[11px] text-black/70">{steps[4].description}</p>
+            </div>
+
+            {/* Deliverables box - beside Rollout with max-width */}
+            <div className="relative max-w-[280px] border-2 bg-[#F5F1E8] border-[#8B3A3A] rounded-lg shadow-md h-fit overflow--md overflow-visible">
+              {/* Book icon - positioned on the top-left */}
+              <div className="absolute -left-5 -top-5 w-[40px] h-[40px] transform -rotate-12 z-10">
+                <Image src="/images/numbersSection/delivarables.svg" alt="Deliverables" fill className="object-contain" />
+              </div>
+
+              <div className="p-1.5 border-b-2 border-[#8B3A3A]">
+                <h3 className="text-xs font-bold text-black">Deliverables</h3>
+              </div>
+              <div className="p-1.5 space-y-1">
                 {deliverables.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-[#8B3A3A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <div key={i} className="flex items-start gap-1">
+                    <svg className="w-2.5 h-2.5 text-[#8B3A3A] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                       <path
                         fillRule="evenodd"
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-base text-black leading-relaxed">{item}</span>
+                    <span className="text-[9px] text-black leading-tight">{item}</span>
                   </div>
                 ))}
               </div>
-              <div className="bg-[#C4A574] p-4 text-center">
-                <button className="w-full text-white font-semibold text-base hover:opacity-90 transition-opacity">
+              <div className="bg-[#C4A574] rounded-b-md p-1.5 text-center">
+                <button className="w-full text-white font-semibold text-[9px] hover:opacity-90 transition-opacity">
                   Let&apos;s Write Your Brand Narrative
                 </button>
               </div>
