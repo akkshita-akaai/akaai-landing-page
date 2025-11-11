@@ -3,12 +3,11 @@
 import Image from "next/image";
 
 export default function ContactSection() {
-  // predictable vertical steps per row on desktop
-
+  // manual vertical offsets to match the mock
   const services = [
     {
       side: "left",
-      step: 0,
+      step: 1,
       title: "Digital Campaign Strategy",
       description: "Story-based content, calendar creation, campaign design.",
       badge: {
@@ -19,7 +18,7 @@ export default function ContactSection() {
     },
     {
       side: "right",
-      step: 1,
+      step: 0,
       title: "Social Media Narratives",
       description: "Story-based content, calendar creation, campaign design.",
       badge: {
@@ -30,7 +29,7 @@ export default function ContactSection() {
     },
     {
       side: "left",
-      step: 1,
+      step: 2,
       title: "Thought Leadership Narratives",
       description: "LinkedIn positioning for founders & brand heads.",
       badge: {
@@ -41,7 +40,7 @@ export default function ContactSection() {
     },
     {
       side: "right",
-      step: 2,
+      step: 1,
       title: "Brand Story Films",
       description: "Short-form narrative storytelling for web and social.",
       badge: {
@@ -52,7 +51,7 @@ export default function ContactSection() {
     },
     {
       side: "left",
-      step: 2,
+      step: 3,
       title: "Editorial Design & Visual Storytelling",
       description: "For brands that want design with depth.",
       badge: {
@@ -73,12 +72,18 @@ export default function ContactSection() {
       },
     },
   ];
-  // vertical stagger
-  const step = ["md:mt-0", "md:mt-12", "md:mt-24", "md:mt-36"]; // added a 4th step
 
-  // inward lane margins
+  // tuned vertical stagger
+  const step = [
+    "md:mt-0",
+    "md:mt-8 lg:mt-10",
+    "md:mt-16 lg:mt-20",
+    "md:mt-28 lg:mt-32",
+  ];
+
+  // lane paddings and a left nudge to fix the outer margin on the left column
   const laneMargin = {
-    left: "md:pr-4 lg:pr-8",
+    left: "md:pr-4 lg:pr-8 md:-translate-x-6 lg:-translate-x-10 xl:-translate-x-12",
     right: "md:pl-4 lg:pl-8",
   };
 
@@ -87,7 +92,6 @@ export default function ContactSection() {
       id="contact"
       className="relative min-h-screen py-16 md:py-20 px-10 overflow-hidden bg-beige"
     >
-      {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/contactSection/bg.svg"
@@ -99,7 +103,6 @@ export default function ContactSection() {
       </div>
 
       <div className="relative z-10 container mx-auto max-w-6xl lg:max-w-7xl">
-        {/* Title block */}
         <header className="text-center mb-12 md:mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             <span className="text-[#8B4049]">Bespoke</span>{" "}
@@ -114,25 +117,22 @@ export default function ContactSection() {
           </p>
         </header>
 
-        {/* Services */}
         <div className="relative">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-black mb-8 md:mb-10">
             Our Services Include
           </h2>
 
-          {/* tighter center gap */}
-          <div className="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-8 md:gap-y-14 md:gap-x-6 lg:gap-x-8">
+          <div className="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-2">
             {services.map((s, idx) => (
               <div
                 key={idx}
                 className={[
-                  // 2 cols on mobile, 6/6 split on desktop
-                  "col-span-1 md:col-span-6",
+                  "col-span-1 md:col-span-6 w-[400px]",
                   s.side === "left"
-                    ? "md:col-start-1 md:ml-auto" // push toward center on desktop
-                    : "md:col-start-7 md:mr-auto", // push toward center on desktop
-                  laneMargin[s.side], // inward lane padding
-                  step[s.step],       // vertical stagger
+                    ? "md:col-start-1"
+                    : "md:col-start-7",
+                  laneMargin[s.side],
+                  step[s.step],
                 ].join(" ")}
               >
                 <ServiceCard
@@ -145,7 +145,6 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Bottom band */}
         <div className="mt-16 md:mt-20">
           <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-black text-center mb-8 md:mb-10">
             Each brand gets:
