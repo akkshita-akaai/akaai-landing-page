@@ -1,5 +1,6 @@
 "use client";
 
+import { Header } from "@/components/landing/header";
 import HeroSection from "@/components/landing/heroSection";
 import WelcomeSection from "@/components/landing/welcomeSection";
 import ServicesSection from "@/components/landing/servicesSection";
@@ -12,6 +13,9 @@ import Footer from "./footer";
 export default function Page() {
   return (
     <LenisProvider>
+      {/* Header */}
+      <Header />
+
       {/* Hero */}
       <HeroSection />
 

@@ -1,59 +1,52 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { TextReveal } from "@/components/magicui/text-reveal";
 import Link from "next/link";
-import { useEffect } from "react";
+import Image from "next/image";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "What We Do", href: "#services" },
+  { name: "About Us", href: "#about" },
   { name: "Process", href: "#process" },
-  { name: "Strategy", href: "#numbers" },
-  { name: "Contact", href: "#contact" },
+  { name: "What we do", href: "#services" },
+  { name: "Services", href: "#numbers" },
 ];
 
 export function Header() {
-  // Optional: Smooth scroll behavior on navigation
-  useEffect(() => {
-    const handleNavClick = (e) => {
-      if (e.target.matches("a[href^='#']")) {
-        const id = e.target.getAttribute("href").replace("#", "");
-        const el = document.getElementById(id);
-        if (el) {
-          e.preventDefault();
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }
-    };
-    document.addEventListener("click", handleNavClick);
-    return () => document.removeEventListener("click", handleNavClick);
-  }, []);
-
   return (
-    <header className="sticky top-0 z-30 bg-brand-beige/90 backdrop-blur border-b border-brand-taupe">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link
-          href="/"
-          className="font-accent text-2xl font-bold text-brand-cherry tracking-wide"
-        >
-          <TextReveal>Akaai Project</TextReveal>
-        </Link>
-        <nav className="space-x-6 hidden md:flex">
+    <header className="relative z-50 bg-beige/90 backdrop-blur-sm">
+      <div className="container mx-auto px-6 py-4 grid grid-cols-3 items-center">
+        {/* Left: Navigation */}
+        <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-brand-charcoal font-medium hover:text-brand-cherry transition-colors"
+              className="text-charcoal font-medium hover:text-cherry transition-colors text-sm lg:text-base"
             >
               {link.name}
             </Link>
           ))}
         </nav>
-        <div className="md:hidden">{/* Mobile menu logic is optional */}</div>
-        <Button className="bg-brand-cherry text-white px-4 py-2 rounded-none border-none shadow-md hover:bg-brand-cherry/90 transition">
-          Build your narrative
-        </Button>
+
+        {/* Center: Logo */}
+        <div className="flex justify-center">
+          <Link href="/" className="relative w-32 h-16 md:w-40 md:h-20">
+             <Image
+              src="/images/logo/The Akaai project-01.png"
+              alt="The Akaai Project"
+              fill
+              className="object-contain"
+              priority
+            />
+          </Link>
+        </div>
+
+        {/* Right: Contact Button */}
+        <div className="flex justify-end">
+           <Button variant="outline" className="rounded-md border-charcoal text-charcoal hover:bg-charcoal hover:text-beige transition-colors px-6 py-2 h-auto text-sm md:text-base bg-transparent">
+            Contact Us
+          </Button>
+        </div>
       </div>
     </header>
   );
