@@ -8,6 +8,7 @@ import ProcessSection from "@/components/landing/processSection";
 import BespokeSolutionsSection from "@/components/landing/bespokeSolutionsSection";
 import NarrativeSection from "@/components/landing/narrativeSection";
 import BrandBenefitsSection from "@/components/landing/brandBenefitsSection";
+import GraphSection from "@/components/landing/graphSection";
 import NumbersSection from "@/components/landing/numbersSection";
 import ContactSection from "@/components/landing/contactsSection";
 import LenisProvider from "@/components/lenis/lenisProvider";
@@ -29,6 +30,7 @@ export default function Page() {
       <BespokeSolutionsSection />
       <NarrativeSection />
       <BrandBenefitsSection />
+      <GraphSection />
       <NumbersSection />
       <ContactSection />
 
