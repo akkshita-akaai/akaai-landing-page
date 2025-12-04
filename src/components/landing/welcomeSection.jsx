@@ -1,69 +1,101 @@
 import Image from "next/image";
-import clsx from "clsx";
 
 export default function WelcomeSection() {
   const cards = [
     {
-      t: "Social Lab",
-      s: "Where stories go Social",
-      image: "/images/welcomeSection/socialLab.svg"
+      title: "Strategy lab",
+      subtitle: "Where brands find purpose",
+      description: "We distill insight into strategy: clarifying your brand's purpose, audience, and competitive edge to build a narrative system that drives alignment, coherence, and measurable impact.",
+      icon: "/images/welcomeSection/strategyLab.svg"
     },
     {
-      t: "Strategy Lab",
-      s: "Where brands find purpose",
-      image: "/images/welcomeSection/strategyLab.svg"
+      title: "Visual Lab",
+      subtitle: "where emotions become identity",
+      description: "We turn your brand's truth into design - building identities and systems that convey emotion, create clarity, and feel instantly recognizable.",
+      icon: "/images/welcomeSection/visualLab.svg"
     },
     {
-      t: "Visual Lab",
-      s: "We visualize emotions, not just aesthetics",
-      image: "/images/welcomeSection/visualLab.svg"
+      title: "Media lab",
+      subtitle: "Where precision drives performance",
+      description: "We engineer performance using data, audience intelligence, and channel strategy to plan, optimise, and scale media that delivers measurable growth with precision.",
+      icon: "/images/welcomeSection/mediaLab.svg"
     },
     {
-      t: "Founder Lab",
-      s: "Where thought leadership meets storytelling",
-      image: "/images/welcomeSection/founderLab.svg"
+      title: "Social Lab",
+      subtitle: "Where stories go Social",
+      description: "We turn stories into conversations; building relevance, community, and culture across platforms through content that adapts, resonates, and stays ahead of the moment.",
+      icon: "/images/welcomeSection/socialLab.svg"
     },
   ];
 
   return (
-    <section id="about" className="py-24 px-10 bg-beige">
-      <div className="container">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center tracking-tight">
-          Welcome to The Akaai Project
-        </h2>
-        <p className="mt-6 font-accent text-lg md:text-xl italic text-center sm:block">
-          "A Narrative Lab where ideas take shape, stories find voice, and
-          brands become movements."
-        </p>
-        <p className="mt-6 text-base md:text-lg text-center max-w-2xl mx-auto opacity-70 sm:block">
-          We do not chase trends. We trace roots. We design narratives, not
-          templates. We build brand presence, not noise. Meaning is the new
-          marketing.
-        </p>
-        <div className="mt-10 grid gap-2 md:gap-4 grid-cols-2 sm:grid-cols-4">
-          {cards.map((card, idx) => (
-            <div
-              key={card.t}
-              className={clsx("rounded-lg p-4 md:p-6 shadow-[var(--shadow-subtle)] bg-taupe/60 hover:shadow-[var(--shadow-medium)] transition-transform hover:-translate-y-1 border md:border-2 border-[#8B3A3A]", idx === 0 && "rounded-br-none", idx === 1 && "rounded-bl-none", idx === 2 && "rounded-tr-none", idx === 3 && "rounded-tl-none")}
-            >
-              <div className="flex flex-col items-center gap-2 text-center">
-                <div className="max-sm:flex-shrink-0 sm:flex sm:justify-center sm:mb-3">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 md:border-4 border-[#8B3A3A] p-0.5 flex items-center justify-center">
-                    <Image
-                      src={card.image}
-                      alt={card.t}
-                      width={60}
-                      height={60}
-                      className="w-full h-full rounded-full object-center"
-                      unoptimized
-                    />
-                  </div>
-                </div>
-                <div className="max-sm:flex-1 max-sm:text-left sm:text-center">
-                  <h3 className="text-sm md:text-base font-bold">{card.t}</h3>
-                  <p className="mt-1 max-sm:hidden text-xs md:text-sm opacity-80">{card.s}</p>
-                </div>
+    <section id="about" className="py-16 md:py-24 px-6 md:px-10 bg-[#FAFAFA]">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16">
+          <div className="flex flex-col justify-start">
+            <div className="flex items-baseline gap-4 mb-2">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+                About
+              </h2>
+              <div className="flex items-center gap-2">
+                <span className="text-[#8B1E1E] text-sm md:text-base whitespace-nowrap">( Narrative lab. )</span>
+                <Image 
+                  src="/images/welcomeSection/leftPointingRoundedArrow.svg"
+                  alt="Arrow"
+                  width={40}
+                  height={40}
+                  className="w-6 h-6 md:w-8 md:h-8"
+                />
               </div>
+            </div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+              the Lab
+            </h2>
+          </div>
+          <div className="flex items-center">
+            <p className="text-base md:text-lg leading-relaxed">
+              We're not an agency, because you don't need one. You need strategists and thinkers, storytellers and media architects who dive deep into your narrative and sculpt it into something unforgettable. At The Akaai Project, we blend strategy, creativity, and storytelling to create brands that breathe, feel, and connect. We design narratives, not just templates. We build brand presence, not noise.
+            </p>
+          </div>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+          {cards.map((card) => (
+            <div
+              key={card.title}
+              className="group relative rounded-2xl p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out bg-[#FAFAFA] hover:bg-gradient-to-br hover:from-[#8B1E1E] hover:to-[#250808] border-2 border-transparent hover:border-[#8B1E1E]"
+            >
+              {/* Icon */}
+              <div className="mb-6 transition-all duration-500">
+                <Image
+                  src={card.icon}
+                  alt={card.title}
+                  width={60}
+                  height={60}
+                  className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 group-hover:brightness-0 group-hover:invert"
+                  unoptimized
+                />
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 transition-colors duration-500 group-hover:text-white">
+                {card.title}
+              </h3>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-black/20 group-hover:bg-white/30 transition-colors duration-500 mb-4" />
+
+              {/* Subtitle */}
+              <p className="text-sm md:text-base mb-4 transition-colors duration-500 group-hover:text-white">
+                {card.subtitle}
+              </p>
+
+              {/* Description - visible only on hover */}
+              <p className="text-sm md:text-base leading-relaxed opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-40 text-white">
+                {card.description}
+              </p>
             </div>
           ))}
         </div>
