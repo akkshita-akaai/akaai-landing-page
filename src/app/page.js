@@ -11,9 +11,8 @@ import BrandBenefitsSection from "@/components/landing/brandBenefitsSection";
 import GraphSection from "@/components/landing/graphSection";
 import NumbersSection from "@/components/landing/numbersSection";
 import FormSection from "@/components/landing/formSection";
-import ContactSection from "@/components/landing/contactsSection";
+import FooterSection from "@/components/landing/footerSection";
 import LenisProvider from "@/components/lenis/lenisProvider";
-import Footer from "./footer";
 
 export default function Page() {
   return (
@@ -34,12 +33,15 @@ export default function Page() {
       <GraphSection />
       <NumbersSection />
       <FormSection />
-      <ContactSection />
-
-      {/* Footer */}
-      <footer>
+      
+      {/* Footer Section */}
+      <FooterSection />
+      
+      {/* ContactSection and old Footer removed/commented as requested to add footer after FormSection */}
+      {/* <ContactSection /> */}
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </LenisProvider>
   );
 }
