@@ -16,8 +16,8 @@ const validationSchema = Yup.object({
 
 const FormSection = () => {
   return (
-    <section className="section bg-offwhite">
-      <div className="container">
+    <section className="bg-offwhite py-24">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Side - Form */}
           <div className="lg:col-span-2 bg-cherry rounded-[30px] p-8 md:p-12 text-white relative overflow-hidden">
@@ -57,11 +57,7 @@ const FormSection = () => {
                           placeholder="First Name"
                           className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition font-sans"
                         />
-                        <ErrorMessage
-                          name="firstName"
-                          component="div"
-                          className="text-red-300 text-sm mt-1 font-sans"
-                        />
+
                       </div>
                       <div>
                         <Field
@@ -70,11 +66,7 @@ const FormSection = () => {
                           placeholder="Last Name"
                           className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition font-sans"
                         />
-                        <ErrorMessage
-                          name="lastName"
-                          component="div"
-                          className="text-red-300 text-sm mt-1 font-sans"
-                        />
+
                       </div>
                     </div>
 
@@ -86,11 +78,7 @@ const FormSection = () => {
                           placeholder="Phone Number"
                           className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition font-sans"
                         />
-                        <ErrorMessage
-                          name="phoneNumber"
-                          component="div"
-                          className="text-red-300 text-sm mt-1 font-sans"
-                        />
+
                       </div>
                       <div>
                         <Field
@@ -99,11 +87,7 @@ const FormSection = () => {
                           placeholder="Email Id"
                           className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition font-sans"
                         />
-                        <ErrorMessage
-                          name="email"
-                          component="div"
-                          className="text-red-300 text-sm mt-1 font-sans"
-                        />
+
                       </div>
                     </div>
 
@@ -115,21 +99,17 @@ const FormSection = () => {
                         rows="4"
                         className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition resize-none font-sans"
                       />
-                      <ErrorMessage
-                        name="message"
-                        component="div"
-                        className="text-red-300 text-sm mt-1 font-sans"
-                      />
+
                     </div>
 
-                    {/* Submit Button - Not explicitly shown but needed for form */}
-                    {/* <button
+                    {/* Submit Button */}
+                    <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-white text-cherry px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition disabled:opacity-50 font-sans"
+                      className="bg-white text-black px-8 py-4 rounded-full font-semibold border-2 border-transparent hover:bg-[#8B1E1E] hover:text-white hover:border-white transition-all duration-300 disabled:opacity-50 cursor-pointer font-sans"
                     >
                       Submit
-                    </button> */}
+                    </button>
                   </Form>
                 )}
               </Formik>

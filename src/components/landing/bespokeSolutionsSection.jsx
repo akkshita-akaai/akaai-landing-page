@@ -4,7 +4,7 @@ export default function BespokeSolutionsSection() {
   return (
     <section
       id="bespoke-solutions"
-      className="py-32 px-6 md:px-10 relative overflow-hidden bg-[#8B1E1E]"
+      className="py-32 px-4 md:px-8 lg:px-12 relative overflow-hidden bg-[#8B1E1E]"
     >
       <div className="container relative z-20 max-w-5xl mx-auto text-center">
         <h2 className="text-5xl md:text-7xl lg:text-8xl font-normal text-[#F8F7F5] mb-8 leading-tight">

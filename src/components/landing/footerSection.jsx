@@ -6,10 +6,10 @@ import Link from "next/link";
 
 const FooterSection = () => {
   return (
-    <footer className="bg-[#212121] text-white pt-20 pb-10 px-6 md:px-12 lg:px-24 overflow-hidden">
-      <div className="container mx-auto">
-        {/* Top Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-20 gap-10">
+    <footer className="bg-[#212121] text-white pt-20 pb-10 overflow-hidden">
+      {/* Top Section */}
+      <div className="w-full px-4 md:px-8 lg:px-12 mb-10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
           <div className="max-w-2xl">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-nhd mb-6 leading-tight">
               The narrative doesn't end here - it begins.
@@ -28,20 +28,22 @@ const FooterSection = () => {
             </Link>
           </div>
         </div>
+      </div>
 
-        {/* Banner Image */}
-        <div className="w-full mb-20">
-          <div className="relative w-full aspect-[3/1] md:aspect-[4/1]">
-             <Image 
-               src="/images/footerSection/banner.svg" 
-               alt="Akaai Banner" 
-               fill
-               className="object-contain object-center"
-             />
-          </div>
+      {/* Banner Image */}
+      <div className="w-full mb-10">
+        <div className="relative w-full aspect-[3/1] md:aspect-[4/1]">
+            <Image 
+              src="/images/footerSection/banner.svg" 
+              alt="Akaai Banner" 
+              fill
+              className="object-cover object-center"
+            />
         </div>
+      </div>
 
-        {/* Bottom Section */}
+      {/* Bottom Section */}
+      <div className="w-full px-4 md:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
           <div className="mb-6 md:mb-0">
             <p className="text-sm text-white/60 font-sans">

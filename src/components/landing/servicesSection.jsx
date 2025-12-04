@@ -47,7 +47,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="relative overflow-hidden bg-offwhite py-20 px-6">
+    <section id="services" className="relative overflow-hidden bg-offwhite py-20 px-4 md:px-8 lg:px-12">
       <div className="container max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

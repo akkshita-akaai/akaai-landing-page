@@ -51,7 +51,7 @@ export default function NarrativeSection() {
   return (
     <section
       id="narrative-section"
-      className="py-20 px-6 md:px-10 relative overflow-hidden bg-[#1C1C1C]"
+      className="py-20 px-4 md:px-8 lg:px-12 relative overflow-hidden bg-[#1C1C1C]"
     >
       <div className="container mx-auto">
         {/* Header with title and CTA */}

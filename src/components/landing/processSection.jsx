@@ -126,7 +126,7 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      className="py-24 px-6 md:px-10 relative overflow-hidden bg-[#1C1C1C]"
+      className="py-24 px-4 md:px-8 lg:px-12 relative overflow-hidden bg-[#1C1C1C]"
     >
       <div className="container relative z-20 max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-20">
