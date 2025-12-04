@@ -5,6 +5,7 @@ import HeroSection from "@/components/landing/heroSection";
 import WelcomeSection from "@/components/landing/welcomeSection";
 import ServicesSection from "@/components/landing/servicesSection";
 import ProcessSection from "@/components/landing/processSection";
+import BespokeSolutionsSection from "@/components/landing/bespokeSolutionsSection";
 import NumbersSection from "@/components/landing/numbersSection";
 import ContactSection from "@/components/landing/contactsSection";
 import LenisProvider from "@/components/lenis/lenisProvider";
@@ -23,6 +24,7 @@ export default function Page() {
       <WelcomeSection />
       <ServicesSection />
       <ProcessSection />
+      <BespokeSolutionsSection />
       <NumbersSection />
       <ContactSection />
 
