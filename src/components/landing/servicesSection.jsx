@@ -1,108 +1,129 @@
-import { Asterisk, Clover } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ServicesSection() {
+  const processes = [
+    {
+      title: "Diagnose",
+      description: "Understand category & context",
+      icon: "/images/servicesSection/diagnose.svg",
+      align: "right",
+    },
+    {
+      title: "Discover",
+      description: "Uncover brand DNA",
+      icon: "/images/servicesSection/discover.svg",
+      align: "left",
+    },
+    {
+      title: "Define",
+      description: "Articulate story & tone",
+      icon: "/images/servicesSection/define.svg",
+      align: "right",
+    },
+    {
+      title: "Design",
+      description: "Visualise emotion",
+      icon: "/images/servicesSection/design.svg",
+      align: "left",
+    },
+    {
+      title: "Deploy",
+      description: "Execute across channels",
+      icon: "/images/servicesSection/deploy.svg",
+      align: "right",
+    },
+    {
+      title: "Distill",
+      description: "Measure, refine, evolve",
+      icon: "/images/servicesSection/distill.svg",
+      align: "left",
+    },
+    {
+      title: "Deliver",
+      description: "Track outcomes & optimize progress",
+      icon: "/images/servicesSection/deliver.svg",
+      align: "right",
+    },
+  ];
+
   return (
-    <section id="services" className="relative overflow-hidden bg-beige p-10">
-      {/* torn paper background */}
-      {/* <img
-        src="/images/servicesSection/bg.svg"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-      /> */}
-
-      <div className="container relative z-10">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center tracking-tight mb-16">
-          What We Do
-        </h2>
-
-        {/* Row 1 */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Paper image card */}
-          <div className="relative rounded border border-[#d9cdb4] shadow-xl overflow-hidden bg-gradient-to-b from-[#f4ead8] to-[#efe3cc]">
-
-            <img
-              src="/images/servicesSection/brandConsultation.svg"
-              alt="Brand Consultation Services"
-              className="relative w-full object-fill"
-            />
-
-          </div>
-
-          {/* Text block */}
-          <div className="relative p-8">
-            <div className="relative mb-3">
-              {/* <img
-                src="/images/servicesSection/pin.svg"
-                alt=""
-                className="absolute w-6 h-6 -left-1 -top-1 rotate-[-45] z-10"
-              /> */}
-              <h3 className="text-xl md:text-2xl font-bold text-charcoal pl-6">
-                Brand Consultation Services
-              </h3>
-            </div>
-            <p className="text-base md:text-lg text-charcoal/80 leading-relaxed mb-4 pl-6">
-              Deep dive brand DNA discovery and narrative crafting. We uncover the essence of your brand and build strategic foundations that resonate.
-            </p>
-
-            {/* bullets with pins */}
-            <ul className="space-y-2 pl-6">
-              {[
-                "Brand Strategy & Planning",
-                "Brand Innovation",
-                "Brand Management"
-              ].map(item => (
-                <li key={item} className="flex items-center gap-2 text-sm md:text-base text-charcoal/80">
-                  <Asterisk className="w-4 h-4 shrink-0 rotate-[-15deg] text-cherry" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <section id="services" className="relative overflow-hidden bg-offwhite py-20 px-6">
+      <div className="container max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-light text-charcoal mb-6">
+            Our Process
+          </h2>
+          <p className="text-base md:text-lg text-charcoal/70 max-w-2xl mx-auto leading-relaxed">
+            We turn insight into identity, and identity into impact - guiding your brand from understanding to execution with purpose and precision.
+          </p>
         </div>
 
-        {/* Row 2 */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-14">
-          {/* Text block (left on desktop) */}
-          <div className="relative p-8 order-2 lg:order-1">
-            <div className="relative mb-3">
-              {/* <img
-                src="/images/servicesSection/pin.svg"
-                alt=""
-                className="absolute w-6 h-6 -left-1 -top-1 rotate-[-45] z-10"
-              /> */}
-              <h3 className="text-xl md:text-2xl font-bold text-charcoal pl-6">
-                Content Marketing
-              </h3>
-            </div>
-            <p className="text-base md:text-lg text-charcoal/80 leading-relaxed mb-4 pl-6">
-              Story based content and visual storytelling. We create content that connects, engages, and converts through powerful narratives.
-            </p>
-            <ul className="space-y-2 pl-6">
-              {[
-                "AI Integration",
-                "Content and Creative Design",
-                "Packaging"
-              ].map(item => (
-                <li key={item} className="flex items-center gap-2 text-sm md:text-base text-charcoal/80">
-                  <Asterisk className="w-4 h-4 shrink-0 rotate-[-15deg] text-cherry" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Process Steps */}
+        <div className="relative">
+          {/* Vertical Connecting Line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#8B1E1E]/20 to-transparent -translate-x-1/2" />
 
-          {/* Paper image card */}
-          <div className="relative rounded border border-[#d9cdb4] shadow-xl overflow-hidden bg-gradient-to-b from-[#f4ead8] to-[#efe3cc] order-1 lg:order-2">
+          {processes.map((process, index) => (
+            <motion.div
+              key={process.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="relative mb-20 last:mb-0"
+            >
+              <div className="flex items-center justify-center gap-8 md:gap-16">
+                {/* Left Content */}
+                {process.align === "left" && (
+                  <div className="flex-1 text-right pr-4 md:pr-8">
+                    <h3 className="text-2xl md:text-3xl font-light text-charcoal mb-2">
+                      {process.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-charcoal/60">
+                      {process.description}
+                    </p>
+                  </div>
+                )}
 
-            <img
-              src="/images/servicesSection/contentMarketing.svg"
-              alt="Content Marketing"
-              className="relative w-full object-fill"
-            />
+                {/* Center Icon */}
+                <div className="relative flex-shrink-0">
+                  {/* Outer Circle - Beige */}
+                  <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#e8dcc8] flex items-center justify-center shadow-lg">
+                    {/* Middle Circle - Light Beige */}
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#f0e6d6] flex items-center justify-center">
+                      {/* Inner Circle - Cherry Red */}
+                      <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#8B1E1E] flex items-center justify-center transition-transform duration-300 hover:scale-110">
+                        <img
+                          src={process.icon}
+                          alt={process.title}
+                          className="w-6 h-6 md:w-7 md:h-7 invert brightness-0"
+                          style={{ filter: "invert(1) brightness(2)" }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
+                {/* Right Content */}
+                {process.align === "right" && (
+                  <div className="flex-1 text-left pl-4 md:pl-8">
+                    <h3 className="text-2xl md:text-3xl font-light text-charcoal mb-2">
+                      {process.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-charcoal/60">
+                      {process.description}
+                    </p>
+                  </div>
+                )}
 
-          </div>
+                {/* Spacer for mobile */}
+                {process.align === "left" && (
+                  <div className="flex-1 md:hidden" />
+                )}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
