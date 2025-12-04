@@ -79,7 +79,7 @@ export default function NarrativeSection() {
                 key={index}
                 className="flex-shrink-0 w-[280px] md:w-[320px] snap-start"
               >
-                <div className="group relative h-full bg-[#F8F7F5] bg-opacity-10 rounded-2xl p-6 hover:bg-opacity-15 transition-all duration-300 cursor-pointer">
+                <div className="group relative h-full bg-transparent bg-opacity-10 rounded-2xl p-6 hover:bg-opacity-15 transition-all duration-300 cursor-pointer flex flex-col items-center">
                   {/* Circular image container */}
                   <div className="w-full aspect-square rounded-full overflow-hidden mb-6 bg-[#F8F7F5] bg-opacity-5 flex items-center justify-center">
                     <img
@@ -94,28 +94,10 @@ export default function NarrativeSection() {
                     <h3 className="text-lg md:text-xl font-medium text-[#F8F7F5] flex-1 leading-tight">
                       {service.title}
                     </h3>
-                    <div className="flex-shrink-0 ml-2 w-8 h-8 rounded-full bg-[#F8F7F5] bg-opacity-10 flex items-center justify-center group-hover:bg-opacity-20 transition-all duration-300">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-                      >
-                        <path
-                          d="M3 13L13 3M13 3H5M13 3V11"
-                          stroke="#F8F7F5"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
                   </div>
 
                   {/* Service description */}
-                  <p className="text-sm text-[#F8F7F5] text-opacity-70 leading-relaxed">
+                  <p className="text-sm text-[#F8F7F5] text-opacity-70 text-center">
                     {service.description}
                   </p>
                 </div>
