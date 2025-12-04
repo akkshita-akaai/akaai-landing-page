@@ -10,6 +10,7 @@ import NarrativeSection from "@/components/landing/narrativeSection";
 import BrandBenefitsSection from "@/components/landing/brandBenefitsSection";
 import GraphSection from "@/components/landing/graphSection";
 import NumbersSection from "@/components/landing/numbersSection";
+import FormSection from "@/components/landing/formSection";
 import ContactSection from "@/components/landing/contactsSection";
 import LenisProvider from "@/components/lenis/lenisProvider";
 import Footer from "./footer";
@@ -32,6 +33,7 @@ export default function Page() {
       <BrandBenefitsSection />
       <GraphSection />
       <NumbersSection />
+      <FormSection />
       <ContactSection />
 
       {/* Footer */}
