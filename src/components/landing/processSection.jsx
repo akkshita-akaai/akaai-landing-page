@@ -1,228 +1,208 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function ProcessSection() {
-  const steps = [
-    { title: "Discover", icon: "/images/processSection/bulb.svg", subtitle: "Uncover brand DNA" },
-    { title: "Define", icon: "/images/processSection/define.svg", subtitle: "Articulate story & tone" },
-    { title: "Design", icon: "/images/processSection/design.svg", subtitle: "Visualise emotion" },
-    { title: "Deploy", icon: "/images/processSection/deliver.svg", subtitle: "Execute across channels" },
-  ];
-
-  const sectionRef = useRef(null);
-  const svgRef = useRef(null);
-  const pathRef = useRef(null);
-
-  // Build a path that loops around each icon
-  // Build a path that detours around each icon without overlapping its ring
-  const buildPath = () => {
-    const section = sectionRef.current;
-    const svg = svgRef.current;
-    const path = pathRef.current;
-    if (!section || !svg || !path) return;
-
-    const iconEls = Array.from(section.querySelectorAll(".process-icon"));
-    if (!iconEls.length) return;
-
-    // Size SVG to section
-    const sRect = section.getBoundingClientRect();
-    svg.setAttribute("width", `${sRect.width}`);
-    svg.setAttribute("height", `${sRect.height}`);
-    svg.setAttribute("viewBox", `0 0 ${sRect.width} ${sRect.height}`);
-
-    const centerX = sRect.width * 0.5; // main spine x
-    const pad = 12; // extra clearance from the icon's ring
-    const ease = 28; // small Bezier ease in-out so corners are not sharp
-
-    // Collect icon centers and radii from actual DOM size
-    const nodes = iconEls.map(el => {
-      const r = el.getBoundingClientRect();
-      return {
-        cx: r.left - sRect.left + r.width / 2,
-        cy: r.top - sRect.top + r.height / 2,
-        r: r.width / 2 + pad, // loop radius just outside the ring
-      };
-    });
-
-    let d = "";
-    // start a little above the first icon's loop
-    let y = Math.max(0, nodes[0].cy - nodes[0].r - 60);
-    d += `M ${centerX} ${y}`;
-
-    nodes.forEach((n, i) => {
-      const topY = n.cy - n.r;
-      const botY = n.cy + n.r;
-
-      // alternate which side we bulge to
-      const goRight = i % 2 === 0;
-      const sweepFlag = goRight ? 1 : 0;
-      const hx = centerX + (goRight ? ease : -ease);
-
-      // vertical approach to just above the loop
-      d += ` L ${centerX} ${topY - 12}`;
-
-      // ease into the arc so there is no kink on the spine
-      d += ` C ${centerX} ${topY - 6}, ${hx} ${topY - 2}, ${centerX} ${topY}`;
-
-      // half-circle detour around the icon
-      // start at (centerX, topY) end at (centerX, botY)
-      d += ` A ${n.r} ${n.r} 0 0 ${sweepFlag} ${centerX} ${botY}`;
-
-      // ease back to the spine
-      d += ` C ${hx} ${botY + 2}, ${centerX} ${botY + 6}, ${centerX} ${botY + 12}`;
-
-      // continue down to next icon
-      d += ` L ${centerX} ${botY + 40}`;
-      y = botY + 40;
-    });
-
-    // finish straight down
-    d += ` L ${centerX} ${sRect.height + 40}`;
-
-    path.setAttribute("d", d);
-
-    // dash setup with a duplicate length to avoid mid-path seam
-    const total = path.getTotalLength();
-    path.style.strokeDasharray = `${total} ${total}`;
-    path.style.strokeDashoffset = `${total}`;
-    return total;
-  };
-
-
-  // Scroll-progress to dashoffset
-  const updateProgress = (totalLen) => {
-    const section = sectionRef.current;
-    const path = pathRef.current;
-    if (!section || !path) return;
-
-    const rect = section.getBoundingClientRect();
-    const vh = window.innerHeight;
-
-    // progress 0 when section is just below viewport, 1 when it has fully scrolled past
-    const progress = Math.max(0, Math.min(1, (vh - rect.top) / (rect.height + vh)));
-    const offset = totalLen * (1 - progress); // MDN: stroke-dashoffset
-    path.style.strokeDashoffset = `${offset}`;
-  };
-
-  useEffect(() => {
-    let totalLen = buildPath();
-    if (typeof totalLen !== "number") totalLen = 1;
-
-    const onScroll = () => updateProgress(totalLen);
-    const onResize = () => {
-      const t = buildPath();
-      if (typeof t === "number") {
-        totalLen = t;
-        updateProgress(totalLen);
-      }
-    };
-
-    // Lenis if present, else native scroll
-    const lenis = typeof window !== "undefined" ? window.lenis : null;
-    if (lenis && typeof lenis.on === "function") {
-      lenis.on("scroll", onScroll);
-    } else {
-      window.addEventListener("scroll", onScroll, { passive: true });
+  const services = [
+    {
+      id: 1,
+      title: "Strategic Alliances",
+      icon: "/images/processSection/strategicAlliances.svg",
+      points: [
+        "OEM/Partnerships",
+        "Publishers & Networks",
+        "Influencers & Affiliates",
+        "Media and Digital agencies"
+      ]
+    },
+    {
+      id: 2,
+      title: "Data & Insights",
+      icon: "/images/processSection/dataInsights.svg",
+      points: [
+        "Market & Audience Research",
+        "Surveys, Systems and First hand Feedback",
+        "Competitor & Campaign Analysis",
+        "MMP's and Third party tools"
+      ]
+    },
+    {
+      id: 3,
+      title: "Brand Building",
+      icon: "/images/processSection/brandBuilding.svg",
+      points: [
+        "Strategy & Positioning",
+        "Identity & Guidelines",
+        "GTM",
+        "Product launches"
+      ]
+    },
+    {
+      id: 4,
+      title: "Brand Solutioning",
+      icon: "/images/processSection/brandSolutioning.svg",
+      points: [
+        "Integrated Campaigns",
+        "Digital-first Experiences",
+        "Tech-led Innovations",
+        "Omni Channel communication",
+        "Website and App monetisation"
+      ]
+    },
+    {
+      id: 5,
+      title: "Brand Consultation",
+      icon: "/images/processSection/brandConsultation.svg",
+      points: [
+        "Brand Audits",
+        "Narrative and Advisory",
+        "Growth Road mapping"
+      ]
+    },
+    {
+      id: 6,
+      title: "Brand Innovation",
+      icon: "/images/processSection/brandInnovation.svg",
+      points: [
+        "New Product Concepts",
+        "Trend Mapping",
+        "Brand Extensions"
+      ]
+    },
+    {
+      id: 7,
+      title: "Brand Management",
+      icon: "/images/processSection/brandManagement.svg",
+      points: [
+        "Narrative & Reputation Control, ORM",
+        "Channel and platform Optimization",
+        "Always-on Execution",
+        "Media Mix"
+      ]
+    },
+    {
+      id: 8,
+      title: "Content Marketing",
+      icon: "/images/processSection/contentMarketing.svg",
+      points: [
+        "Multi-format Storytelling Systems",
+        "Platform-specific Content Architecture",
+        "Trend & Culture Mapping",
+        "Campaign Adaptations & Content Extensions"
+      ]
+    },
+    {
+      id: 9,
+      title: "Digital Marketing",
+      icon: "/images/processSection/digitalMarketing.svg",
+      points: [
+        "SEO / SEM / SMM",
+        "Publisher, Website and App monetisation",
+        "Automation and Enterprise",
+        "Social media management",
+        "Campaign execution"
+      ]
+    },
+    {
+      id: 10,
+      title: "Performance Marketing",
+      icon: "/images/processSection/performanceMarketing.svg",
+      points: [
+        "Mobile, Tech, OEM's, Affiliates",
+        "UA & App Growth"
+      ]
+    },
+    {
+      id: 11,
+      title: "Packaging & Design",
+      icon: "/images/processSection/packagingDesign.svg",
+      points: [
+        "Packaging Systems",
+        "Retail, Display & Merch"
+      ]
     }
-    window.addEventListener("resize", onResize);
-    window.addEventListener("orientationchange", onResize);
-
-    // initial paint
-    updateProgress(totalLen);
-
-    return () => {
-      if (lenis && typeof lenis.off === "function") {
-        lenis.off("scroll", onScroll);
-      } else {
-        window.removeEventListener("scroll", onScroll);
-      }
-      window.removeEventListener("resize", onResize);
-      window.removeEventListener("orientationchange", onResize);
-    };
-  }, []);
+  ];
 
   return (
     <section
       id="process"
-      ref={sectionRef}
-      className="py-24 px-10 relative overflow-hidden bg-beige"
+      className="py-24 px-6 md:px-10 relative overflow-hidden bg-[#1C1C1C]"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-5"
-        style={{ backgroundImage: 'url(/images/processSection/bg.svg)', width: "110vw" }}
-      />
+      <div className="container relative z-20 max-w-7xl mx-auto">
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-4">
+            What We Do
+          </h2>
+          <p className="text-sm text-gray-400 italic">
+            ( Narrative lab. )
+          </p>
+        </div>
 
-      {/* SVG line overlay */}
-      {/* <svg
-        ref={svgRef}
-        className="pointer-events-none absolute inset-0 z-10"
-        preserveAspectRatio="none"
-      >
-        <path
-          ref={pathRef}
-          d=""
-          fill="none"
-          stroke="#8B2E2E"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg> */}
-
-      <div className="container relative z-20">
-        <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 md:mb-24 flex items-center justify-center gap-2 flex-wrap">
-          <span className="text-[#8B2E2E]">We See</span>{" "}
-          <div>
-            <span className="italic" style={{ fontFamily: 'Playfair Display, serif' }}>What Others Feel</span>
-            <Image
-              src="/images/processSection/exclamationMark.svg"
-              alt=""
-              width={24}
-              height={60}
-              className="w-4 h-12 inline-block mb-3 ml-1 max-md:h-8"
-            />
-          </div>
-        </h2>
-        <p className="text-center text-base md:text-lg lg:text-xl mb-12 max-w-4xl mx-auto">
-          At The Akaai Project, visualisation isn't just an art, it's interpretation. We translate emotion into visuals, tone into color, and essence into design.
-        </p>
-
-        <div className="max-w-5xl mx-auto space-y-12 md:space-y-20">
-          {steps.map((step, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {services.map((service) => (
             <div
-              key={step.title}
-              className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+              key={service.id}
+              className="service-card group relative bg-[#2A2A2A] rounded-2xl p-6 transition-all duration-500 hover:bg-[#333333] hover:scale-105 hover:shadow-2xl cursor-pointer"
             >
-              <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center`}>
-                <p className="text-[#8B2E2E] italic text-lg md:text-xl lg:text-2xl" style={{ fontFamily: 'Playfair Display, serif' }}>
-                  {step.subtitle}
-                </p>
-              </div>
-
-              {/* add .process-icon so the SVG can find these */}
-              <div className="relative flex-shrink-0 process-icon">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-[#8B2E2E] flex items-center justify-center">
+              {/* Icon */}
+              <div className="mb-6 flex items-center justify-center">
+                <div className="w-16 h-16 flex items-center justify-center">
                   <Image
-                    src={step.icon}
-                    alt={step.title}
-                    width={80}
-                    height={80}
-                    className="w-16 h-16 md:w-20 md:h-20"
+                    src={service.icon}
+                    alt={service.title}
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
               </div>
 
-              <div className={`flex-1 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'} text-center`}>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold">
-                  {step.title}
-                </h3>
-              </div>
+              {/* Title */}
+              <h3 className="text-xl font-semibold text-white mb-4 text-center transition-colors duration-300 group-hover:text-[#F8F7F5]">
+                {service.title}
+              </h3>
+
+              {/* Bullet Points */}
+              <ul className="space-y-2.5">
+                {service.points.map((point, idx) => (
+                  <li
+                    key={idx}
+                    className="text-sm text-[#F8F7F5] flex items-start gap-2"
+                  >
+                    <span className="text-[#F8F7F5] mt-1.5 flex-shrink-0">•</span>
+                    <span className="leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Hover Overlay Effect */}
+              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#F8F7F5]/20 transition-all duration-500 pointer-events-none" />
             </div>
           ))}
+
+          {/* Last Card - CTA */}
+          <div className="group relative bg-[#F8F7F5] rounded-2xl p-6 transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer flex flex-col items-center justify-center text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#1C1C1C] mb-6 leading-tight">
+              Let's build your<br />brand story
+            </h3>
+            <div className="w-12 h-12 bg-[#1C1C1C] rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-45">
+              <Image
+                src="/images/processSection/gotoArrow.svg"
+                alt="Go"
+                width={24}
+                height={24}
+                className="w-6 h-6"
+              />
+            </div>
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .service-card {
+          min-height: 280px;
+        }
+      `}</style>
     </section>
   );
 }
