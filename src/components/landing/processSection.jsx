@@ -118,7 +118,7 @@ export default function ProcessSection() {
       icon: "/images/processSection/packagingDesign.svg",
       points: [
         "Packaging Systems",
-        "Retail, Display & Merch"
+        "Retail, Display & Merchandising"
       ]
     }
   ];
