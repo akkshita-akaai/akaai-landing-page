@@ -73,20 +73,22 @@ export default function ServicesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="relative mb-20 last:mb-0"
             >
-              <div className="flex items-center justify-center gap-8 md:gap-16">
+              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-8 md:gap-16">
                 {/* Left Content */}
-                {process.align === "left" && (
-                  <div className="flex-1 text-right pr-4 md:pr-8">
-                    <h3 className="text-2xl md:text-3xl font-light text-charcoal mb-2">
-                      {process.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-charcoal/60">
-                      {process.description}
-                    </p>
-                  </div>
-                )}
+                <div className={`${process.align === "left" ? "text-right" : ""}`}>
+                  {process.align === "left" && (
+                    <>
+                      <h3 className="text-2xl md:text-3xl font-light text-charcoal mb-2">
+                        {process.title}
+                      </h3>
+                      <p className="text-sm md:text-base text-charcoal/60">
+                        {process.description}
+                      </p>
+                    </>
+                  )}
+                </div>
 
-                {/* Center Icon */}
+                {/* Center Icon - Always in the middle */}
                 <div className="relative flex-shrink-0">
                   {/* Outer Circle - Beige */}
                   <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#e8dcc8] flex items-center justify-center shadow-lg">
@@ -106,21 +108,18 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Right Content */}
-                {process.align === "right" && (
-                  <div className="flex-1 text-left pl-4 md:pl-8">
-                    <h3 className="text-2xl md:text-3xl font-light text-charcoal mb-2">
-                      {process.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-charcoal/60">
-                      {process.description}
-                    </p>
-                  </div>
-                )}
-
-                {/* Spacer for mobile */}
-                {process.align === "left" && (
-                  <div className="flex-1 md:hidden" />
-                )}
+                <div className={`${process.align === "right" ? "text-left" : ""}`}>
+                  {process.align === "right" && (
+                    <>
+                      <h3 className="text-2xl md:text-3xl font-light text-charcoal mb-2">
+                        {process.title}
+                      </h3>
+                      <p className="text-sm md:text-base text-charcoal/60">
+                        {process.description}
+                      </p>
+                    </>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
