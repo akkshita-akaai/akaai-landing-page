@@ -6,22 +6,22 @@ import Image from "next/image";
 
 const navLinks = [
   { name: "About Us", href: "#about" },
-  { name: "Process", href: "#process" },
-  { name: "What we do", href: "#services" },
+  { name: "Process", href: "#services" },
+  { name: "What we do", href: "#process" },
   { name: "Services", href: "#numbers" },
 ];
 
 export function Header() {
   return (
-    <header className="relative z-50 bg-beige/90 backdrop-blur-sm">
-      <div className="container mx-auto px-6 py-4 grid grid-cols-3 items-center">
+    <header className="relative z-50 bg-[#F8F7F5] border-b border-gray-200/50">
+      <div className="container mx-auto px-6 py-5 grid grid-cols-3 items-center">
         {/* Left: Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-charcoal font-medium hover:text-cherry transition-colors text-sm lg:text-base"
+              className="text-charcoal hover:text-cherry transition-colors text-sm"
             >
               {link.name}
             </Link>
@@ -30,7 +30,7 @@ export function Header() {
 
         {/* Center: Logo */}
         <div className="flex justify-center">
-          <Link href="/" className="relative w-32 h-16 md:w-40 md:h-20">
+          <Link href="/" className="relative w-40 h-20">
              <Image
               src="/images/logo/The Akaai project-01.png"
               alt="The Akaai Project"
@@ -43,7 +43,7 @@ export function Header() {
 
         {/* Right: Contact Button */}
         <div className="flex justify-end">
-           <Button variant="outline" className="rounded-md border-charcoal text-charcoal hover:bg-charcoal hover:text-beige transition-colors px-6 py-2 h-auto text-sm md:text-base bg-transparent">
+           <Button variant="outline" className="rounded-md border border-charcoal text-charcoal hover:bg-charcoal hover:text-beige transition-colors px-8 py-2.5 h-auto text-sm bg-transparent">
             Contact Us
           </Button>
         </div>
