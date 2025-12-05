@@ -13,7 +13,7 @@ const navLinks = [
 
 export function Header() {
   return (
-    <header className="relative z-50 bg-[#F8F7F5]">
+    <header className="relative z-50 bg-[#F8F7F5] pt-[30px]">
       <div className="container mx-auto px-6 py-5 grid grid-cols-1 md:grid-cols-3 items-center">
         {/* Left: Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -29,8 +29,8 @@ export function Header() {
         </nav>
 
         {/* Center: Logo */}
-        <div className="flex justify-center">
-          <Link href="/" className="relative w-40 h-20">
+        <div className="relative flex justify-center">
+          <Link href="/" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[221px] h-[229px]">
              <Image
               src="/images/logo/The Akaai project-01.png"
               alt="The Akaai Project"

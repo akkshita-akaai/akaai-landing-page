@@ -12,7 +12,7 @@ const FooterSection = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
           <div className="max-w-2xl">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-nhd mb-6 leading-tight">
-              The narrative doesn't end here - it begins.
+              The Narrative Doesn't End Here - It Begins.
             </h2>
             <p className="text-lg md:text-xl text-white/80 font-sans max-w-xl leading-relaxed">
               We help brands evolve with intention; shaping meaning, building systems, and creating impact that lasts.

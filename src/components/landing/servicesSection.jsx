@@ -100,7 +100,6 @@ export default function ServicesSection() {
                           src={process.icon}
                           alt={process.title}
                           className="w-6 h-6 md:w-7 md:h-7 invert brightness-0"
-                          style={{ filter: "invert(1) brightness(2)" }}
                         />
                       </div>
                     </div>

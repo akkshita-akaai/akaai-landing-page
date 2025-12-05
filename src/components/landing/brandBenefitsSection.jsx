@@ -2,10 +2,10 @@
 
 export default function BrandBenefitsSection() {
   const benefits = [
-    "1:1 consultation",
-    "Custom audit",
-    "Made-for-brand services",
-    "end to end support",
+    "1:1 Consultation",
+    "Custom Audit",
+    "Made-for-Brand Services",
+    "End to End Support",
   ];
 
   return (
