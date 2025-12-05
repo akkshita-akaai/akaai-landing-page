@@ -53,7 +53,7 @@ export default function NarrativeSection() {
       id="narrative-section"
       className="py-20 px-4 md:px-8 lg:px-12 relative overflow-hidden bg-[#1C1C1C]"
     >
-      <div className="container mx-auto">
+      <div className="container">
         {/* Header with title and CTA */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#F8F7F5]">
@@ -105,15 +105,6 @@ export default function NarrativeSection() {
             ))}
           </div>
 
-          {/* Scroll indicator dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {services.map((_, index) => (
-              <div
-                key={index}
-                className="w-2 h-2 rounded-full bg-[#F8F7F5] bg-opacity-20"
-              />
-            ))}
-          </div>
         </div>
       </div>
 
