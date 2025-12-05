@@ -42,6 +42,7 @@ export default function NumbersSection() {
               alt="Background Pattern"
               fill
               className="object-cover opacity-50"
+              unoptimized
             />
           </div>
 
@@ -81,6 +82,7 @@ export default function NumbersSection() {
                     alt={stat.label}
                     fill
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
               </div>

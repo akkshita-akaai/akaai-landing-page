@@ -121,7 +121,7 @@ const FormSection = () => {
             {/* Address */}
             <div className="bg-beige rounded-[20px] p-6 flex items-start gap-4">
               <div className="bg-cherry rounded-full p-3 shrink-0 w-12 h-12 flex items-center justify-center">
-                 <Image src="/images/formSection/address.svg" alt="Address" width={24} height={24} />
+                 <Image src="/images/formSection/address.svg" alt="Address" width={24} height={24} unoptimized />
               </div>
               <div>
                 <h3 className="text-xl font-medium mb-1 text-charcoal">Address</h3>
@@ -134,7 +134,7 @@ const FormSection = () => {
             {/* Call Us */}
             <div className="bg-beige rounded-[20px] p-6 flex items-center gap-4">
               <div className="bg-cherry rounded-full p-3 shrink-0 w-12 h-12 flex items-center justify-center">
-                <Image src="/images/formSection/call.svg" alt="Call" width={24} height={24} />
+                <Image src="/images/formSection/call.svg" alt="Call" width={24} height={24} unoptimized />
               </div>
               <div>
                 <h3 className="text-xl font-medium mb-1 text-charcoal">Call Us</h3>
@@ -145,7 +145,7 @@ const FormSection = () => {
             {/* Email Us */}
             <div className="bg-beige rounded-[20px] p-6 flex items-center gap-4">
               <div className="bg-cherry rounded-full p-3 shrink-0 w-12 h-12 flex items-center justify-center">
-                <Image src="/images/formSection/email.svg" alt="Email" width={24} height={24} />
+                <Image src="/images/formSection/email.svg" alt="Email" width={24} height={24} unoptimized />
               </div>
               <div>
                 <h3 className="text-xl font-medium mb-1 text-charcoal">Email Us</h3>
@@ -156,7 +156,7 @@ const FormSection = () => {
             {/* Download Deck */}
             <div className="bg-beige rounded-[20px] p-6 flex items-center gap-4">
               <div className="bg-cherry rounded-full p-3 shrink-0 w-12 h-12 flex items-center justify-center">
-                <Image src="/images/formSection/deck.svg" alt="Deck" width={24} height={24} />
+                <Image src="/images/formSection/deck.svg" alt="Deck" width={24} height={24} unoptimized />
               </div>
               <div>
                 <h3 className="text-xl font-medium mb-1 text-charcoal">Download our Deck</h3>
@@ -169,10 +169,10 @@ const FormSection = () => {
               <h3 className="text-xl font-medium mb-4">Follow Us on Social Media</h3>
               <div className="flex gap-4">
                  <a href="#" className="hover:opacity-80 transition">
-                    <Image src="/images/formSection/linkedIn.svg" alt="LinkedIn" width={40} height={40} />
+                    <Image src="/images/formSection/linkedIn.svg" alt="LinkedIn" width={40} height={40} unoptimized />
                  </a>
                  <a href="#" className="hover:opacity-80 transition">
-                    <Image src="/images/formSection/insta.svg" alt="Instagram" width={40} height={40} />
+                    <Image src="/images/formSection/insta.svg" alt="Instagram" width={40} height={40} unoptimized />
                  </a>
               </div>
             </div>

@@ -100,6 +100,7 @@ export default function ServicesSection() {
                           src={process.icon}
                           alt={process.title}
                           className="w-6 h-6 md:w-7 md:h-7 invert brightness-0"
+                          style={{ transform: 'translateZ(0)', WebkitBackfaceVisibility: 'hidden' }}
                         />
                       </div>
                     </div>

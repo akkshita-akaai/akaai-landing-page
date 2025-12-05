@@ -105,6 +105,7 @@ export default function ContactSection() {
           fill
           className="object-cover"
           priority
+          unoptimized
         />
       </div>
 
@@ -198,7 +199,7 @@ function ServiceCard({
     <div className="relative w-full">
       {badge ? (
         <span className={`${badge.className} bg-beige rounded-full p-2`}>
-          <Image src={badge.src} alt={badge.alt || ""} fill className="object-contain" />
+          <Image src={badge.src} alt={badge.alt || ""} fill className="object-contain" unoptimized />
         </span>
       ) : null}
 
@@ -235,7 +236,7 @@ function BenefitChip({ icon, title }) {
     >
       <div className="flex items-center gap-2.5">
         <span className="relative w-8 h-8">
-          <Image src={icon} alt="" fill className="object-contain" />
+          <Image src={icon} alt="" fill className="object-contain" unoptimized />
         </span>
         <h4 className="text-xs md:text-sm lg:text-base font-medium text-gray-900">
           {title}

@@ -62,6 +62,7 @@ export default function GraphSection() {
               width={800}
               height={400}
               className="w-full h-auto object-cover"
+              unoptimized
             />
           </div>
         </div>

@@ -153,6 +153,7 @@ export default function ProcessSection() {
                     width={64}
                     height={64}
                     className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    unoptimized
                   />
                 </div>
               </div>
@@ -192,6 +193,7 @@ export default function ProcessSection() {
                 width={24}
                 height={24}
                 className="w-6 h-6"
+                unoptimized
               />
             </div>
           </div>

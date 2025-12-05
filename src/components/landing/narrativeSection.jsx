@@ -86,6 +86,7 @@ export default function NarrativeSection() {
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover"
+                      style={{ transform: 'translateZ(0)', WebkitBackfaceVisibility: 'hidden' }}
                     />
                   </div>
 

@@ -38,6 +38,7 @@ const FooterSection = () => {
               alt="Akaai Banner" 
               fill
               className="object-cover object-center"
+              unoptimized
             />
         </div>
       </div>
@@ -57,7 +58,8 @@ const FooterSection = () => {
                 src="/images/footerSection/linkedIn.svg" 
                 alt="LinkedIn" 
                 width={40} 
-                height={40} 
+                height={40}
+                unoptimized
               />
             </Link>
             <Link href="#" className="hover:opacity-80 transition-opacity">
@@ -65,7 +67,8 @@ const FooterSection = () => {
                 src="/images/footerSection/insta.svg" 
                 alt="Instagram" 
                 width={40} 
-                height={40} 
+                height={40}
+                unoptimized
               />
             </Link>
           </div>
