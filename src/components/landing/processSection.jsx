@@ -129,80 +129,99 @@ export default function ProcessSection() {
       className="py-24 px-4 md:px-8 lg:px-12 relative overflow-hidden bg-[#1C1C1C]"
     >
       <div className="container relative z-20 max-w-7xl mx-auto">
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-5xl md:text-7xl font-normal text-white mb-4">
-            What We Do
-          </h2>
-          <p className="text-sm text-gray-400 italic">
-            ( Narrative lab. )
-          </p>
+        <div className="mb-16 md:mb-20">
+          <div className="flex items-start gap-2">
+            <h2 className="text-5xl md:text-7xl font-normal text-white">
+              What We Do
+            </h2>
+            <div className="flex flex-col items-start -mt-2 ml-2">
+              <p className="text-sm text-gray-400 italic">
+                ( Narrative lab. )
+              </p>
+              <Image
+                src="/images/processSection/leftPointingRoundedArrow.svg"
+                alt=""
+                width={24}
+                height={24}
+                className="w-6 h-6 -mt-3 ml-4 invert brightness-0 invert"
+                unoptimized
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-3">
           {services.map((service) => (
             <div
               key={service.id}
-              className="service-card group relative bg-[#2A2A2A] rounded-2xl p-6 transition-all duration-500 hover:bg-[#333333] hover:scale-105 hover:shadow-2xl cursor-pointer"
+              className="service-card group relative bg-[#2A2A2A] rounded-lg p-5 md:p-6 transition-all duration-300 hover:bg-[#333333] cursor-pointer"
             >
               {/* Icon */}
-              <div className="mb-6 flex items-center justify-center">
-                <div className="w-16 h-16 flex items-center justify-center">
+              <div className="mb-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
                   <Image
                     src={service.icon}
                     alt={service.title}
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain"
                     unoptimized
                   />
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-medium text-white mb-4 text-center transition-colors duration-300 group-hover:text-[#F8F7F5]">
+              <h3 className="text-base md:text-lg font-medium text-white mb-2 transition-colors duration-300">
                 {service.title}
               </h3>
 
-              {/* Bullet Points */}
-              <ul className="space-y-2.5">
+              {/* Bullet Points - Hidden by default, visible on hover/tap */}
+              <ul className="space-y-1 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-40 group-focus:opacity-100 group-focus:max-h-40">
                 {service.points.map((point, idx) => (
                   <li
                     key={idx}
-                    className="text-sm text-[#F8F7F5] flex items-start gap-2"
+                    className="text-xs md:text-sm text-gray-400 flex items-start gap-1.5"
                   >
-                    <span className="text-[#F8F7F5] mt-1.5 flex-shrink-0">•</span>
+                    <span className="text-gray-400 mt-0.5 flex-shrink-0">•</span>
                     <span className="leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>
-
-              {/* Hover Overlay Effect */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#F8F7F5]/20 transition-all duration-500 pointer-events-none" />
             </div>
           ))}
 
           {/* Last Card - CTA */}
-          <div className="group relative bg-[#F8F7F5] rounded-2xl p-6 transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer flex flex-col items-center justify-center text-center">
-            <h3 className="text-2xl md:text-3xl font-medium text-[#1C1C1C] mb-6 leading-tight">
+          <div className="service-card group relative bg-[#F8F7F5] rounded-lg p-5 md:p-6 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+            {/* Arrow Icon - Top Right */}
+            <div className="flex justify-end">
+              <div className="w-8 h-8 bg-[#1C1C1C] rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <Image
+                  src="/images/processSection/gotoArrow.svg"
+                  alt="Go"
+                  width={16}
+                  height={16}
+                  className="w-4 h-4"
+                  unoptimized
+                />
+              </div>
+            </div>
+            
+            {/* Text - Bottom Left */}
+            <h3 className="text-lg md:text-xl font-medium text-[#1C1C1C] leading-tight mt-auto">
               Let's build your<br />brand story
             </h3>
-            <div className="w-12 h-12 bg-[#1C1C1C] rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-45">
-              <Image
-                src="/images/processSection/gotoArrow.svg"
-                alt="Go"
-                width={24}
-                height={24}
-                className="w-6 h-6"
-                unoptimized
-              />
-            </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
         .service-card {
-          min-height: 280px;
+          min-height: 180px;
+        }
+        @media (min-width: 768px) {
+          .service-card {
+            min-height: 220px;
+          }
         }
       `}</style>
     </section>
