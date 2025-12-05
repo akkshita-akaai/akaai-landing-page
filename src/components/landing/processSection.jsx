@@ -143,7 +143,7 @@ export default function ProcessSection() {
                 alt=""
                 width={24}
                 height={24}
-                className="w-6 h-6 -mt-2 ml-4 invert brightness-0 invert"
+                className="w-6 h-6 -mt-0 ml-10 invert brightness-0 invert"
                 unoptimized
               />
             </div>
