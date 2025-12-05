@@ -31,11 +31,11 @@ export default function GraphSection() {
               <h3 className="text-[#1C1C1C] text-lg font-medium text-center mb-4">
                 Narrative Clarity Improvement
               </h3>
+              <div className="text-5xl md:text-6xl font-normal text-[#1C1C1C]">
+                  82%
+                </div>
               <div className="relative w-full flex-1 flex items-end justify-center pb-4">
                 <Gauge percentage={82} />
-                <span className="absolute bottom-4 text-5xl md:text-6xl font-normal text-[#1C1C1C]">
-                  82%
-                </span>
               </div>
             </div>
 
@@ -44,11 +44,12 @@ export default function GraphSection() {
               <h3 className="text-[#1C1C1C] text-lg font-medium text-center mb-4">
                 Brand Consistency Boost
               </h3>
+                 <div className="text-5xl md:text-6xl font-normal text-[#1C1C1C]">
+                  76%
+                </div>
               <div className="relative w-full flex-1 flex items-end justify-center pb-4">
                 <Gauge percentage={76} />
-                <span className="absolute bottom-4 text-5xl md:text-6xl font-normal text-[#1C1C1C]">
-                  76%
-                </span>
+             
               </div>
             </div>
           </div>
@@ -71,37 +72,35 @@ export default function GraphSection() {
 
 function Gauge({ percentage }) {
   // SVG configuration
-  const radius = 80;
-  const strokeWidth = 16;
-  const normalizedRadius = radius - strokeWidth / 2;
-  const circumference = normalizedRadius * 2 * Math.PI;
-  // We only want a semi-circle (50% of circumference)
-  const arcLength = circumference / 2;
-  const strokeDashoffset = arcLength - (percentage / 100) * arcLength;
+  const size = 200;
+  const strokeWidth = 20;
+  const radius = (size - strokeWidth) / 2;
+  const circumference = radius * Math.PI; // Half circle circumference
+  const offset = circumference - (percentage / 100) * circumference;
 
   return (
     <svg
-      height={radius}
-      width={radius * 2}
-      viewBox={`0 0 ${radius * 2} ${radius}`}
+      width={size}
+      height={size / 2 + strokeWidth}
+      viewBox={`0 0 ${size} ${size / 2 + strokeWidth}`}
       className="overflow-visible"
     >
-      {/* Background Track */}
+      {/* Background Track (Light beige semi-circle) */}
       <path
-        d={`M${strokeWidth / 2},${radius} a${normalizedRadius},${normalizedRadius} 0 1,1 ${normalizedRadius * 2},0`}
+        d={`M ${strokeWidth / 2} ${size / 2} A ${radius} ${radius} 0 0 1 ${size - strokeWidth / 2} ${size / 2}`}
         fill="none"
-        stroke="#D4CFC7" // Slightly darker than card bg for track
+        stroke="#D4CFC7"
         strokeWidth={strokeWidth}
         strokeLinecap="round"
       />
-      {/* Progress Arc */}
+      {/* Progress Arc (Dark red semi-circle) */}
       <path
-        d={`M${strokeWidth / 2},${radius} a${normalizedRadius},${normalizedRadius} 0 1,1 ${normalizedRadius * 2},0`}
+        d={`M ${strokeWidth / 2} ${size / 2} A ${radius} ${radius} 0 0 1 ${size - strokeWidth / 2} ${size / 2}`}
         fill="none"
         stroke="#8B1E1E"
         strokeWidth={strokeWidth}
-        strokeDasharray={`${arcLength} ${circumference}`}
-        strokeDashoffset={strokeDashoffset}
+        strokeDasharray={circumference}
+        strokeDashoffset={offset}
         strokeLinecap="round"
         className="transition-all duration-1000 ease-out"
       />
