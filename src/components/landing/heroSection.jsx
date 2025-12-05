@@ -27,7 +27,9 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* Buttons */}
+       <div className="flex items-center gap-2 mt-4">
+
+
            <Button 
             className="bg-charcoal hover:bg-charcoal/90 text-taupe rounded-md px-8 py-6 text-base font-medium min-w-[180px]"
           >
@@ -35,15 +37,17 @@ export default function HeroSection() {
           </Button>
           <Button 
             variant="outline" 
-            className="border-charcoal text-charcoal hover:bg-charcoal hover:text-beige rounded-md px-8 py-6 text-base font-medium min-w-[180px] bg-transparent"
+            className="border-charcoal text-charcoal rounded-md px-8 py-5.5 text-base font-medium min-w-[180px] bg-transparent"
           >
             Build your narrative
           </Button>
+
+
+       </div>
         </div>
 
       {/* Cards and Bottom Button Container */}
-      <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end z-0 pointer-events-none select-none overflow-hidden h-[60vh]">
-         {/* Cards */}
+      {/* <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end z-0 pointer-events-none select-none overflow-hidden h-[60vh]">
          <motion.img
             src="/images/heroSection/cards.svg"
             alt="Hero Cards Ring"
@@ -52,14 +56,14 @@ export default function HeroSection() {
             transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
             style={{ transformOrigin: "50% 150%" }}
          />
-      </div>
+      </div> */}
       
       {/* Explore All Services Button */}
-      <div className="absolute bottom-8 z-20">
+      {/* <div className="absolute bottom-8 z-20">
           <Button className="bg-cherry hover:bg-cherry/90 text-white rounded-md px-8 py-6 text-base font-medium min-w-[180px]">
             Explore All Services
           </Button>
-      </div>
+      </div> */}
 
     </section>
   );
