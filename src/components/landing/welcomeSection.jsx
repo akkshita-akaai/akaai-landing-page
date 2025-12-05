@@ -62,10 +62,14 @@ export default function WelcomeSection() {
 
         {/* Cards Grid */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-          {cards.map((card) => (
+          {cards.map((card, index) => (
             <div
               key={card.title}
-              className="group relative rounded-2xl p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out bg-[#FAFAFA] hover:bg-gradient-to-br hover:from-[#8B1E1E] hover:to-[#250808] border-2 border-transparent hover:border-[#8B1E1E]"
+              className={`group relative rounded-2xl p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out border-2 border-transparent hover:border-[#8B1E1E] ${
+                index === 0 
+                  ? 'bg-gradient-to-br from-[#6B1515] to-[#4A0F0F] hover:from-[#8B1E1E] hover:to-[#250808]' 
+                  : 'bg-[#e9e4dc]'
+              }`}
             >
               {/* Icon */}
               <div className="mb-6 transition-all duration-500">
@@ -74,28 +78,38 @@ export default function WelcomeSection() {
                   alt={card.title}
                   width={60}
                   height={60}
-                  className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 group-hover:brightness-0 group-hover:invert"
+                  className={`w-12 h-12 md:w-16 md:h-16 transition-all duration-500 ${
+                    index === 0 
+                      ? 'brightness-0 invert' 
+                      : ''
+                  }`}
                   unoptimized
                 />
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-bold mb-3 transition-colors duration-500 group-hover:text-white">
+              <h3 className={`text-2xl md:text-3xl font-bold mb-3 transition-colors duration-500 ${
+                index === 0 ? 'text-white' : ''
+              }`}>
                 {card.title}
               </h3>
 
               {/* Divider */}
-              <div className="w-full h-px bg-black/20 group-hover:bg-white/30 transition-colors duration-500 mb-4" />
+              <div className={`w-full h-px transition-colors duration-500 mb-4 ${
+                index === 0 ? 'bg-white/30' : ''
+              }`} />
 
               {/* Subtitle */}
-              <p className="text-sm md:text-base mb-4 transition-colors duration-500 group-hover:text-white">
+              <p className={`text-sm md:text-base mb-4 transition-colors duration-500 ${
+                index === 0 ? 'text-white' : ''
+              }`}>
                 {card.subtitle}
               </p>
 
               {/* Description - visible only on hover */}
-              <p className="text-sm md:text-base leading-relaxed opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-40 text-white">
+              {/* <p className="text-sm md:text-base leading-relaxed opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-40 text-white">
                 {card.description}
-              </p>
+              </p> */}
             </div>
           ))}
         </div>
