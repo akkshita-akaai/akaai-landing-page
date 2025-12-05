@@ -13,8 +13,8 @@ const navLinks = [
 
 export function Header() {
   return (
-    <header className="relative z-50 bg-[#F8F7F5] border-b border-gray-200/50">
-      <div className="container mx-auto px-6 py-5 grid grid-cols-3 items-center">
+    <header className="relative z-50 bg-[#F8F7F5]">
+      <div className="container mx-auto px-6 py-5 grid grid-cols-1 md:grid-cols-3 items-center">
         {/* Left: Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
@@ -42,7 +42,7 @@ export function Header() {
         </div>
 
         {/* Right: Contact Button */}
-        <div className="flex justify-end">
+        <div className="hidden md:flex justify-end">
            <Button variant="outline" className="rounded-md border border-charcoal text-charcoal hover:bg-charcoal hover:text-beige transition-colors px-8 py-2.5 h-auto text-sm bg-transparent">
             Contact Us
           </Button>

@@ -31,13 +31,13 @@ export default function HeroSection() {
 
 
            <Button 
-            className="bg-charcoal hover:bg-charcoal/90 text-taupe rounded-md px-8 py-6 text-base font-medium min-w-[180px]"
+            className="bg-charcoal hover:bg-charcoal/90 text-taupe rounded-md px-8 py-6 text-base font-medium min-w-[140px]"
           >
             Explore the Lab
           </Button>
           <Button 
             variant="outline" 
-            className="border-charcoal text-charcoal rounded-md px-8 py-5.5 text-base font-medium min-w-[180px] bg-transparent"
+            className="border-charcoal text-charcoal rounded-md px-8 py-5.5 text-base font-medium min-w-[140px] bg-transparent"
           >
             Build your narrative
           </Button>
