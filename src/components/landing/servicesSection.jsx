@@ -51,7 +51,7 @@ export default function ServicesSection() {
       <div className="container max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-light text-charcoal mb-6">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal text-charcoal mb-6">
             Our Process
           </h2>
           <p className="text-base md:text-lg text-charcoal/70 max-w-2xl mx-auto leading-relaxed">
@@ -78,7 +78,7 @@ export default function ServicesSection() {
                 <div className={`${process.align === "left" ? "text-right" : ""}`}>
                   {process.align === "left" && (
                     <>
-                      <h3 className="text-2xl md:text-3xl font-light text-charcoal mb-2">
+                      <h3 className="text-2xl md:text-3xl font-medium text-charcoal mb-2">
                         {process.title}
                       </h3>
                       <p className="text-sm md:text-base text-charcoal/60">
@@ -110,7 +110,7 @@ export default function ServicesSection() {
                 <div className={`${process.align === "right" ? "text-left" : ""}`}>
                   {process.align === "right" && (
                     <>
-                      <h3 className="text-2xl md:text-3xl font-light text-charcoal mb-2">
+                      <h3 className="text-2xl md:text-3xl font-medium text-charcoal mb-2">
                         {process.title}
                       </h3>
                       <p className="text-sm md:text-base text-charcoal/60">

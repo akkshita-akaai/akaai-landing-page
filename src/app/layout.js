@@ -28,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${neueHaasDisplay.variable} ${inter.variable} ${playfair.variable}`}>
-      <body className="font-nhd bg-beige text-charcoal">{children}</body>
+      <body className="bg-beige text-charcoal">{children}</body>
     </html>
   );
 }

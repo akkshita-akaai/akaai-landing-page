@@ -130,7 +130,7 @@ export default function ProcessSection() {
     >
       <div className="container relative z-20 max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-4">
+          <h2 className="text-5xl md:text-7xl font-normal text-white mb-4">
             What We Do
           </h2>
           <p className="text-sm text-gray-400 italic">
@@ -158,7 +158,7 @@ export default function ProcessSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold text-white mb-4 text-center transition-colors duration-300 group-hover:text-[#F8F7F5]">
+              <h3 className="text-xl font-medium text-white mb-4 text-center transition-colors duration-300 group-hover:text-[#F8F7F5]">
                 {service.title}
               </h3>
 
@@ -182,7 +182,7 @@ export default function ProcessSection() {
 
           {/* Last Card - CTA */}
           <div className="group relative bg-[#F8F7F5] rounded-2xl p-6 transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer flex flex-col items-center justify-center text-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#1C1C1C] mb-6 leading-tight">
+            <h3 className="text-2xl md:text-3xl font-medium text-[#1C1C1C] mb-6 leading-tight">
               Let's build your<br />brand story
             </h3>
             <div className="w-12 h-12 bg-[#1C1C1C] rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-45">

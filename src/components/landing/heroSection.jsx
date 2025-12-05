@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative w-full min-h-[calc(100vh-80px)] flex flex-col items-center justify-center overflow-hidden bg-offwhite font-['Arial']">
+    <section id="home" className="relative w-full min-h-[calc(100vh-80px)] flex flex-col items-center justify-center overflow-hidden bg-offwhite">
 
       <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center pb-20">
         
@@ -17,7 +17,7 @@ export default function HeroSection() {
         </h1>
 
         {/* Subtext */}
-        <div className="mt-12 max-w-3xl mx-auto space-y-2 text-charcoal/90 text-base md:text-lg font-sans">
+        <div className="mt-12 max-w-3xl mx-auto space-y-2 text-charcoal/90 text-base md:text-lg">
           <p>
             A Narrative Lab where ideas take shape, stories find voice, and brands become movements.
           </p>

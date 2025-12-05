@@ -11,10 +11,10 @@ const FooterSection = () => {
       <div className="w-full px-4 md:px-8 lg:px-12 mb-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-nhd mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal mb-6 leading-tight">
               The Narrative Doesn't End Here - It Begins.
             </h2>
-            <p className="text-lg md:text-xl text-white/80 font-sans max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed">
               We help brands evolve with intention; shaping meaning, building systems, and creating impact that lasts.
             </p>
           </div>
@@ -24,7 +24,7 @@ const FooterSection = () => {
               href="/contact" 
               className="group relative flex items-center justify-center w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#960019] text-white hover:bg-[#7a0014] transition-colors duration-300"
             >
-              <span className="text-lg font-medium font-sans z-10">Let's Start</span>
+              <span className="text-lg font-medium z-10">Let's Start</span>
             </Link>
           </div>
         </div>
@@ -46,7 +46,7 @@ const FooterSection = () => {
       <div className="w-full px-4 md:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
           <div className="mb-6 md:mb-0">
-            <p className="text-sm text-white/60 font-sans">
+            <p className="text-sm text-white/60">
               &copy; 2025 Akaai All rights reserved
             </p>
           </div>

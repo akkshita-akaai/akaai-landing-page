@@ -110,11 +110,11 @@ export default function ContactSection() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <header className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight">
             <span className="text-[#8B4049]">Bespoke</span>{" "}
-            <span className="italic font-serif">Solutions</span>
+            <span className="italic">Solutions</span>
           </h1>
-          <p className="text-2xl md:text-3xl font-light mt-2">Designed Around You.</p>
+          <p className="text-2xl md:text-3xl font-normal mt-2">Designed Around You.</p>
 
           <p className="text-base md:text-lg max-w-3xl mx-auto leading-relaxed mt-6">
             Every brand deserves its own <span className="italic">rhythm</span>, its own{" "}
@@ -124,7 +124,7 @@ export default function ContactSection() {
         </header>
 
         <div className="relative">
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-black mb-8 md:mb-10">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-normal text-black mb-8 md:mb-10">
             Our Services Include
           </h2>
 
@@ -153,7 +153,7 @@ export default function ContactSection() {
         </div>
 
         <div className="mt-16 md:mt-20">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-black text-center mb-8 md:mb-10">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-normal text-black text-center mb-8 md:mb-10">
             Each brand gets:
           </h3>
 
@@ -212,7 +212,7 @@ function ServiceCard({
           flex flex-col
         "
       >
-        <h4 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight font-serif font-bold text-gray-900 mb-2 md:mb-3">
+        <h4 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-tight font-medium text-gray-900 mb-2 md:mb-3">
           {title}
         </h4>
         <p className="hidden sm:block text-xs md:text-sm lg:text-base xl:text-lg leading-relaxed text-gray-800 flex-1">
@@ -237,7 +237,7 @@ function BenefitChip({ icon, title }) {
         <span className="relative w-8 h-8">
           <Image src={icon} alt="" fill className="object-contain" />
         </span>
-        <h4 className="text-xs md:text-sm lg:text-base font-semibold text-gray-900">
+        <h4 className="text-xs md:text-sm lg:text-base font-medium text-gray-900">
           {title}
         </h4>
       </div>

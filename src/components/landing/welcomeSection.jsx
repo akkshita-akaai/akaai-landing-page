@@ -35,7 +35,7 @@ export default function WelcomeSection() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16">
           <div className="flex flex-col justify-start">
             <div className="flex items-baseline gap-4 mb-2">
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-tight">
                 About
               </h2>
               <div className="flex items-center gap-2">
@@ -49,7 +49,7 @@ export default function WelcomeSection() {
                 />
               </div>
             </div>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-tight">
               the Lab
             </h2>
           </div>
@@ -88,7 +88,7 @@ export default function WelcomeSection() {
               </div>
 
               {/* Title */}
-              <h3 className={`text-2xl md:text-3xl font-bold mb-3 transition-colors duration-500 ${
+              <h3 className={`text-2xl md:text-3xl font-medium mb-3 transition-colors duration-500 ${
                 index === 0 ? 'text-white' : ''
               }`}>
                 {card.title}

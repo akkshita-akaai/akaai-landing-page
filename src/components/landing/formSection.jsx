@@ -22,11 +22,11 @@ const FormSection = () => {
           {/* Left Side - Form */}
           <div className="lg:col-span-2 bg-cherry rounded-[30px] p-8 md:p-12 text-white relative overflow-hidden">
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-6xl font-nhd mb-4">
+              <h2 className="text-4xl md:text-6xl font-normal mb-4">
                 Tell us your <br />
                 Narrative vision *
               </h2>
-              <p className="text-lg md:text-xl mb-12 opacity-90 font-sans">
+              <p className="text-lg md:text-xl mb-12 opacity-90">
                 Every meaningful brand journey starts <br />
                 with a conversation - we are listening!
               </p>
@@ -55,7 +55,7 @@ const FormSection = () => {
                           type="text"
                           name="firstName"
                           placeholder="First Name"
-                          className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition font-sans"
+                          className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition"
                         />
 
                       </div>
@@ -64,7 +64,7 @@ const FormSection = () => {
                           type="text"
                           name="lastName"
                           placeholder="Last Name"
-                          className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition font-sans"
+                          className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition"
                         />
 
                       </div>
@@ -76,7 +76,7 @@ const FormSection = () => {
                           type="text"
                           name="phoneNumber"
                           placeholder="Phone Number"
-                          className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition font-sans"
+                          className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition"
                         />
 
                       </div>
@@ -85,7 +85,7 @@ const FormSection = () => {
                           type="email"
                           name="email"
                           placeholder="Email Id"
-                          className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition font-sans"
+                          className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition"
                         />
 
                       </div>
@@ -97,7 +97,7 @@ const FormSection = () => {
                         name="message"
                         placeholder="Message..."
                         rows="4"
-                        className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition resize-none font-sans"
+                        className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition resize-none"
                       />
 
                     </div>
@@ -106,7 +106,7 @@ const FormSection = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-white text-black px-8 py-4 rounded-full font-semibold border-2 border-transparent hover:bg-[#8B1E1E] hover:text-white hover:border-white transition-all duration-300 disabled:opacity-50 cursor-pointer font-sans"
+                      className="bg-white text-black px-8 py-4 rounded-full font-medium border-2 border-transparent hover:bg-[#8B1E1E] hover:text-white hover:border-white transition-all duration-300 disabled:opacity-50 cursor-pointer"
                     >
                       Submit
                     </button>
@@ -124,8 +124,8 @@ const FormSection = () => {
                  <Image src="/images/formSection/address.svg" alt="Address" width={24} height={24} />
               </div>
               <div>
-                <h3 className="text-xl font-nhd mb-1 text-charcoal">Address</h3>
-                <p className="text-sm opacity-80 leading-relaxed text-charcoal font-sans">
+                <h3 className="text-xl font-medium mb-1 text-charcoal">Address</h3>
+                <p className="text-sm opacity-80 leading-relaxed text-charcoal">
                   LGF, MGF Metropolis Mall, MG Road, Gurgaon-122002, Haryana
                 </p>
               </div>
@@ -137,8 +137,8 @@ const FormSection = () => {
                 <Image src="/images/formSection/call.svg" alt="Call" width={24} height={24} />
               </div>
               <div>
-                <h3 className="text-xl font-nhd mb-1 text-charcoal">Call Us</h3>
-                <p className="text-sm opacity-80 text-charcoal font-sans">+91 99101 76157</p>
+                <h3 className="text-xl font-medium mb-1 text-charcoal">Call Us</h3>
+                <p className="text-sm opacity-80 text-charcoal">+91 99101 76157</p>
               </div>
             </div>
 
@@ -148,8 +148,8 @@ const FormSection = () => {
                 <Image src="/images/formSection/email.svg" alt="Email" width={24} height={24} />
               </div>
               <div>
-                <h3 className="text-xl font-nhd mb-1 text-charcoal">Email Us</h3>
-                <p className="text-sm opacity-80 text-charcoal font-sans">collab@theakaaiproject.com</p>
+                <h3 className="text-xl font-medium mb-1 text-charcoal">Email Us</h3>
+                <p className="text-sm opacity-80 text-charcoal">collab@theakaaiproject.com</p>
               </div>
             </div>
 
@@ -159,14 +159,14 @@ const FormSection = () => {
                 <Image src="/images/formSection/deck.svg" alt="Deck" width={24} height={24} />
               </div>
               <div>
-                <h3 className="text-xl font-nhd mb-1 text-charcoal">Download our Deck</h3>
-                <a href="#" className="text-sm text-cherry underline underline-offset-4 font-medium font-sans">Download Now</a>
+                <h3 className="text-xl font-medium mb-1 text-charcoal">Download our Deck</h3>
+                <a href="#" className="text-sm text-cherry underline underline-offset-4 font-medium">Download Now</a>
               </div>
             </div>
 
             {/* Social Media */}
             <div className="bg-charcoal text-white rounded-[20px] p-6 mt-auto">
-              <h3 className="text-xl font-nhd mb-4">Follow Us on Social Media</h3>
+              <h3 className="text-xl font-medium mb-4">Follow Us on Social Media</h3>
               <div className="flex gap-4">
                  <a href="#" className="hover:opacity-80 transition">
                     <Image src="/images/formSection/linkedIn.svg" alt="LinkedIn" width={40} height={40} />
