@@ -40,11 +40,33 @@ const FormSection = () => {
                   message: "",
                 }}
                 validationSchema={validationSchema}
-                onSubmit={(values, { setSubmitting }) => {
-                  setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
+                onSubmit={async (values, { setSubmitting, resetForm }) => {
+                  const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdS4dvxQiVCX-1gI9QcF9CVvx7n3RBDHkVSPzGMW_eQ4BHbUg/formResponse";
+                  
+                  const formData = new FormData();
+                  formData.append("entry.1508006951", values.firstName);
+                  formData.append("entry.2047362165", values.lastName);
+                  formData.append("entry.481613425", values.phoneNumber);
+                  formData.append("entry.1798456278", values.email);
+                  formData.append("entry.182023449", values.message);
+                  formData.append("fvv", "1");
+                  formData.append("fbzx", "-6563299944563589162");
+                  formData.append("pageHistory", "0");
+
+                  try {
+                    await fetch(GOOGLE_FORM_ACTION_URL, {
+                      method: "POST",
+                      mode: "no-cors",
+                      body: formData,
+                    });
+                    alert("Thank you! Your message has been sent.");
+                    resetForm();
+                  } catch (error) {
+                    console.error("Form submission error", error);
+                    alert("Something went wrong. Please try again.");
+                  } finally {
                     setSubmitting(false);
-                  }, 400);
+                  }
                 }}
               >
                 {({ isSubmitting }) => (
