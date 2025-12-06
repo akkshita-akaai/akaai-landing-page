@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function NarrativeSection() {
   const scrollContainerRef = useRef(null);
@@ -9,42 +10,42 @@ export default function NarrativeSection() {
     {
       title: "Technology Solutions",
       description: "Story-based content, calendar creation, campaign design.",
-      image: "/images/narrativeSection/technologySolutions.svg",
+      image: "/images/narrativeSection/technologySolutions.jpg",
     },
     {
       title: "Enterprise Solutions",
       description: "Story-based content, calendar creation, campaign design.",
-      image: "/images/narrativeSection/enterpriseSolution.svg",
+      image: "/images/narrativeSection/enterpriseSolution.png",
     },
     {
       title: "Brand Solutions",
       description: "Google + Meta storytelling, narrative-led ad copy, emotional funnels.",
-      image: "/images/narrativeSection/brandSolution.svg",
+      image: "/images/narrativeSection/brandSolution.png",
     },
     {
       title: "Strategy & Consultation",
       description: "Google Docs content strategies for ads and social.",
-      image: "/images/narrativeSection/strategyConsultation.svg",
+      image: "/images/narrativeSection/strategyConsultation.png",
     },
     {
       title: "Community Building",
       description: "LinkedIn positioning for founders & brand communities.",
-      image: "/images/narrativeSection/communityBuilding.svg",
+      image: "/images/narrativeSection/communityBuilding.png",
     },
     {
       title: "Training, Learning & Development",
       description: "Training materials and development.",
-      image: "/images/narrativeSection/training.svg",
+      image: "/images/narrativeSection/training.png",
     },
     {
       title: "Brand Shoots and Film Scripting",
       description: "Narrative film and story-driven visuals.",
-      image: "/images/narrativeSection/brandShoots.svg",
+      image: "/images/narrativeSection/brandShoots.png",
     },
     {
       title: "Thought Leadership",
       description: "Corporate-level work design and build.",
-      image: "/images/narrativeSection/thoughtLeadership.svg",
+      image: "/images/narrativeSection/thoughtLeadership.png",
     },
   ];
 
@@ -96,12 +97,13 @@ export default function NarrativeSection() {
             >
               <div className="group relative h-full rounded-2xl flex flex-col items-center">
                 {/* Circular image container */}
-                <div className="w-full aspect-square rounded-full overflow-hidden mb-6 bg-[#F8F7F5] bg-opacity-5 flex items-center justify-center">
-                  <img
+                <div className="w-full aspect-square rounded-full overflow-hidden mb-6 bg-[#F8F7F5] bg-opacity-5 flex items-center justify-center relative">
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover"
-                    style={{ transform: 'translateZ(0)', WebkitBackfaceVisibility: 'hidden' }}
+                    fill
+                    sizes="(max-width: 768px) 280px, 320px"
+                    className="object-cover"
                   />
                 </div>
 
