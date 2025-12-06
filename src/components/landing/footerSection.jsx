@@ -32,12 +32,13 @@ const FooterSection = () => {
 
       {/* Banner Image */}
       <div className="w-full mb-10">
-        <div className="relative w-full aspect-[3/1] md:aspect-[4/1]">
+        <div className="relative w-full">
             <Image 
               src="/images/footerSection/banner.svg" 
               alt="Akaai Banner" 
-              fill
-              className="object-cover object-center"
+              width={1440}
+              height={336}
+              className="w-full h-auto"
               unoptimized
             />
         </div>
