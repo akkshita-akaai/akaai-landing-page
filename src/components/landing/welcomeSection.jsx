@@ -65,7 +65,7 @@ export default function WelcomeSection() {
           {cards.map((card, index) => (
             <div
               key={card.title}
-              className="group relative rounded-2xl p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out border-2 border-transparent hover:border-[#8B1E1E] bg-gradient-to-br from-[#6B1515] to-[#4A0F0F] hover:from-[#8B1E1E] hover:to-[#250808]"
+              className="group relative rounded-[16px] p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out border-2 border-transparent hover:border-[#8B1E1E] bg-gradient-to-br from-[#6B1515] to-[#4A0F0F] hover:from-[#8B1E1E] hover:to-[#250808]"
             >
               {/* Icon */}
               <div className="mb-6 transition-all duration-500">
