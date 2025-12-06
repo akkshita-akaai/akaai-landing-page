@@ -39,7 +39,7 @@ export default function HeroSection() {
           <Button 
             variant="outline" 
             className="border-charcoal text-charcoal hover:bg-charcoal hover:text-white rounded-md px-8 py-5.5 text-base font-medium min-w-[140px] bg-transparent cursor-pointer transition-all duration-300"
-            onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('formSection')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Build your narrative
           </Button>
