@@ -34,18 +34,18 @@ export default function WelcomeSection() {
         {/* Header */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16">
           <div className="flex flex-col justify-start">
-            <div className="flex items-baseline gap-4 mb-2">
+            <div className="flex items-start gap-4">
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-tight">
                 About
               </h2>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col items-start gap-1 mt-2">
                 <span className="text-[#8B1E1E] text-sm md:text-base whitespace-nowrap">( Narrative lab. )</span>
                 <Image 
                   src="/images/welcomeSection/leftPointingRoundedArrow.svg"
                   alt="Arrow"
                   width={40}
                   height={40}
-                  className="w-6 h-6 md:w-8 md:h-8"
+                  className="w-6 h-6 md:w-8 md:h-8 ml-6"
                 />
               </div>
             </div>
@@ -65,11 +65,7 @@ export default function WelcomeSection() {
           {cards.map((card, index) => (
             <div
               key={card.title}
-              className={`group relative rounded-2xl p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out border-2 border-transparent hover:border-[#8B1E1E] ${
-                index === 0 
-                  ? 'bg-gradient-to-br from-[#6B1515] to-[#4A0F0F] hover:from-[#8B1E1E] hover:to-[#250808]' 
-                  : 'bg-[#e9e4dc]'
-              }`}
+              className="group relative rounded-2xl p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out border-2 border-transparent hover:border-[#8B1E1E] bg-gradient-to-br from-[#6B1515] to-[#4A0F0F] hover:from-[#8B1E1E] hover:to-[#250808]"
             >
               {/* Icon */}
               <div className="mb-6 transition-all duration-500">
@@ -78,31 +74,21 @@ export default function WelcomeSection() {
                   alt={card.title}
                   width={60}
                   height={60}
-                  className={`w-12 h-12 md:w-16 md:h-16 transition-all duration-500 ${
-                    index === 0 
-                      ? 'brightness-0 invert' 
-                      : ''
-                  }`}
+                  className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 brightness-0 invert"
                   unoptimized
                 />
               </div>
 
               {/* Title */}
-              <h3 className={`text-2xl md:text-3xl font-medium mb-3 transition-colors duration-500 ${
-                index === 0 ? 'text-white' : ''
-              }`}>
+              <h3 className="text-2xl md:text-3xl font-medium mb-3 transition-colors duration-500 text-white">
                 {card.title}
               </h3>
 
               {/* Divider */}
-              <div className={`w-full h-px transition-colors duration-500 mb-4 ${
-                index === 0 ? 'bg-white/30' : ''
-              }`} />
+              <div className="w-full h-px transition-colors duration-500 mb-4 bg-white/30" />
 
               {/* Subtitle */}
-              <p className={`text-sm md:text-base mb-4 transition-colors duration-500 ${
-                index === 0 ? 'text-white' : ''
-              }`}>
+              <p className="text-sm md:text-base mb-4 transition-colors duration-500 text-white">
                 {card.subtitle}
               </p>
 
