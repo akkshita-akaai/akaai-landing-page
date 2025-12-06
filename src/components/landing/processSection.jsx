@@ -134,8 +134,8 @@ export default function ProcessSection() {
             <h2 className="text-5xl md:text-7xl font-normal text-white">
               What We Do
             </h2>
-            <div className="flex flex-col items-start -mt-2 -ml-10 ">
-              <p className="text-sm text-gray-400 italic">
+            <div className="flex flex-col items-start -mt-8 -ml-8 ">
+              <p className="text-sm text-[#8B1E1E] italic">
                 ( Narrative lab. )
               </p>
               <Image
@@ -143,7 +143,11 @@ export default function ProcessSection() {
                 alt=""
                 width={24}
                 height={24}
-                className="w-6 h-6 -mt-0 ml-10 invert brightness-0 invert"
+                className="w-6 h-6 -mt-0 ml-10"
+                style={{
+                  filter:
+                    "brightness(0) saturate(100%) invert(13%) sepia(61%) saturate(5427%) hue-rotate(355deg) brightness(90%) contrast(104%)",
+                }}
                 unoptimized
               />
             </div>
