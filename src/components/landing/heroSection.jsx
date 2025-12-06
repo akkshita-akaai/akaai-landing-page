@@ -31,14 +31,14 @@ export default function HeroSection() {
 
 
            <Button 
-            className="bg-[#C4B5A6] hover:bg-[#8B1E1E] text-charcoal hover:text-white rounded-md px-8 py-6 text-base font-medium min-w-[140px] cursor-pointer transition-all duration-300"
+            className="bg-[#C4B5A6] hover:bg-[#8B1E1E] text-charcoal hover:text-white rounded-md px-4 md:px-8 py-6 text-base font-medium md:min-w-[140px] min-w-[120px] cursor-pointer transition-all duration-300"
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Explore the Lab
           </Button>
           <Button 
             variant="outline" 
-            className="border-charcoal text-charcoal hover:bg-charcoal hover:text-white rounded-md px-8 py-5.5 text-base font-medium min-w-[140px] bg-transparent cursor-pointer transition-all duration-300"
+            className="border-charcoal text-charcoal hover:bg-charcoal hover:text-white rounded-md px-4 md:px-8 py-5.5 text-base font-medium md:min-w-[140px] min-w-[120px] bg-transparent cursor-pointer transition-all duration-300"
             onClick={() => document.getElementById('formSection')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Build your narrative
