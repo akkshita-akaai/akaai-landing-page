@@ -197,7 +197,15 @@ export default function ProcessSection() {
           ))}
 
           {/* Last Card - CTA */}
-          <div className="service-card group relative bg-[#F8F7F5] rounded-lg p-5 md:p-6 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+          <div 
+            className="service-card group relative bg-[#F8F7F5] rounded-lg p-5 md:p-6 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            onClick={() => {
+              const formSection = document.getElementById('formSection');
+              if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             {/* Arrow Icon - Top Right */}
             <div className="flex justify-end">
               <div className="w-8 h-8 bg-[#1C1C1C] rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
