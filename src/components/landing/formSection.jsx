@@ -117,9 +117,9 @@ const FormSection = () => {
           </div>
 
           {/* Right Side - Contact Info */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 h-full">
             {/* Address */}
-            <div className="bg-beige rounded-[20px] p-6 flex items-start gap-4">
+            <div className="bg-beige rounded-[20px] p-6 flex-1 flex items-start gap-4">
               <div className="bg-cherry rounded-full p-3 shrink-0 w-12 h-12 flex items-center justify-center">
                  <Image src="/images/formSection/address.svg" alt="Address" width={24} height={24} unoptimized />
               </div>
@@ -132,7 +132,7 @@ const FormSection = () => {
             </div>
 
             {/* Call Us */}
-            <div className="bg-beige rounded-[20px] p-6 flex items-center gap-4">
+            <a href="tel:+919910176157" className="bg-beige rounded-[20px] p-6 flex-1 flex items-center gap-4 hover:brightness-95 transition-all duration-300">
               <div className="bg-cherry rounded-full p-3 shrink-0 w-12 h-12 flex items-center justify-center">
                 <Image src="/images/formSection/call.svg" alt="Call" width={24} height={24} unoptimized />
               </div>
@@ -140,10 +140,10 @@ const FormSection = () => {
                 <h3 className="text-xl font-medium mb-1 text-charcoal">Call Us</h3>
                 <p className="text-sm opacity-80 text-charcoal">+91 99101 76157</p>
               </div>
-            </div>
+            </a>
 
             {/* Email Us */}
-            <div className="bg-beige rounded-[20px] p-6 flex items-center gap-4">
+            <a href="mailto:collab@theakaaiproject.com" className="bg-beige rounded-[20px] p-6 flex-1 flex items-center gap-4 hover:brightness-95 transition-all duration-300">
               <div className="bg-cherry rounded-full p-3 shrink-0 w-12 h-12 flex items-center justify-center">
                 <Image src="/images/formSection/email.svg" alt="Email" width={24} height={24} unoptimized />
               </div>
@@ -151,10 +151,10 @@ const FormSection = () => {
                 <h3 className="text-xl font-medium mb-1 text-charcoal">Email Us</h3>
                 <p className="text-sm opacity-80 text-charcoal">collab@theakaaiproject.com</p>
               </div>
-            </div>
+            </a>
 
             {/* Download Deck */}
-            <div className="bg-beige rounded-[20px] p-6 flex items-center gap-4">
+            <div className="bg-beige rounded-[20px] p-6 flex-1 flex items-center gap-4">
               <div className="bg-cherry rounded-full p-3 shrink-0 w-12 h-12 flex items-center justify-center">
                 <Image src="/images/formSection/deck.svg" alt="Deck" width={24} height={24} unoptimized />
               </div>
@@ -165,7 +165,7 @@ const FormSection = () => {
             </div>
 
             {/* Social Media */}
-            <div className="bg-charcoal text-white rounded-[20px] p-6 mt-auto">
+            <div className="bg-charcoal text-white rounded-[20px] p-6 flex-1">
               <h3 className="text-xl font-medium mb-4">Follow Us on Social Media</h3>
               <div className="flex gap-4">
                  <a href="#" className="hover:opacity-80 transition">
