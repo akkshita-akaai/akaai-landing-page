@@ -16,7 +16,10 @@ export default function GraphSection() {
             idea to full-scale rollout, refinement, and growth.
           </p>
           <div>
-            <button className="bg-[#8B1E1E] text-[#F8F7F5] px-8 py-4 rounded-full text-lg font-medium hover:bg-[#6d1717] transition-colors duration-300">
+            <button 
+              onClick={() => document.getElementById('formSection')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-[#8B1E1E] text-[#F8F7F5] px-8 py-4 rounded-full text-lg font-medium hover:bg-[#6d1717] transition-colors duration-300 cursor-pointer"
+            >
               Let's Craft Your Boutique Narrative
             </button>
           </div>

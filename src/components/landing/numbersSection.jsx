@@ -56,7 +56,10 @@ export default function NumbersSection() {
                 story
               </h2>
 
-              <button className="bg-[#F8F7F5] text-[#1C1C1C] px-6 py-3 rounded-md text-sm md:text-base font-medium border border-[#D4CFC7] hover:bg-white transition-colors duration-300 w-fit">
+              <button 
+                onClick={() => document.getElementById('formSection')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-[#F8F7F5] text-[#1C1C1C] px-6 py-3 rounded-md text-sm md:text-base font-medium border border-[#D4CFC7] hover:bg-white transition-colors duration-300 w-fit cursor-pointer"
+              >
                 Let's Craft Your Boutique Narrative
               </button>
             </div>
