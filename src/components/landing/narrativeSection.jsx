@@ -51,18 +51,29 @@ export default function NarrativeSection() {
   return (
     <section
       id="narrative-section"
-      className="py-20 px-4 md:px-8 lg:px-12 relative overflow-hidden bg-[#1C1C1C]"
+      className="py-20 relative overflow-hidden bg-[#1C1C1C]"
     >
-      <div className="container px-4 md:px-8 lg:px-12">
+      <div className="px-16">
         {/* Header with title and CTA */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#F8F7F5]">
             Our Services Include:
           </h2>
-          <button className="px-6 py-3 bg-[#F8F7F5] text-[#1C1C1C] text-sm md:text-base font-medium rounded-md hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap">
+          <button 
+            className="px-6 py-3 bg-[#F8F7F5] text-[#1C1C1C] text-sm md:text-base font-medium rounded-md hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap cursor-pointer"
+            onClick={() => {
+              const formSection = document.getElementById('formSection');
+              if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             Let's Craft Your Boutique Narrative
           </button>
         </div>
+
+        {/* Horizontal separator line */}
+        <div className="w-full h-px bg-[#F8F7F520] bg-opacity-20 mb-16"></div>
       </div>
 
       {/* Horizontal scrolling carousel - Full width */}
@@ -80,7 +91,7 @@ export default function NarrativeSection() {
               key={index}
               className="flex-shrink-0 w-[280px] md:w-[320px] snap-start"
             >
-              <div className="group relative h-full bg-transparent bg-opacity-10 rounded-2xl p-6 hover:bg-opacity-15 transition-all duration-300 flex flex-col items-center">
+              <div className="group relative h-full rounded-2xl flex flex-col items-center">
                 {/* Circular image container */}
                 <div className="w-full aspect-square rounded-full overflow-hidden mb-6 bg-[#F8F7F5] bg-opacity-5 flex items-center justify-center">
                   <img
@@ -91,17 +102,20 @@ export default function NarrativeSection() {
                   />
                 </div>
 
-                {/* Service title and arrow */}
-                <div className="flex items-center justify-center mb-3 w-full">
-                  <h3 className="text-lg md:text-xl font-medium text-[#F8F7F5] leading-tight text-center">
-                    {service.title}
-                  </h3>
-                </div>
+                {/* Card container with title and description */}
+                <div className="w-full bg-[#F8F7F510] bg-opacity-10 rounded-xl p-4">
+                  {/* Service title */}
+                  <div className="flex items-center justify-center mb-3 w-full">
+                    <h3 className="text-lg md:text-xl font-medium text-[#F8F7F5] leading-tight text-center">
+                      {service.title}
+                    </h3>
+                  </div>
 
-                {/* Service description */}
-                <p className="text-sm text-[#F8F7F5] text-opacity-70 text-center">
-                  {service.description}
-                </p>
+                  {/* Service description */}
+                  <p className="text-sm text-[#F8F7F5] text-opacity-70 text-center">
+                    {service.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
