@@ -168,10 +168,10 @@ const FormSection = () => {
             <div className="bg-charcoal text-white rounded-[20px] p-6 flex-1">
               <h3 className="text-xl font-medium mb-4">Follow Us on Social Media</h3>
               <div className="flex gap-4">
-                 <a href="#" className="hover:opacity-80 transition">
+                 <a href="https://www.linkedin.com/company/the-akaai-project/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
                     <Image src="/images/formSection/linkedIn.svg" alt="LinkedIn" width={40} height={40} unoptimized />
                  </a>
-                 <a href="#" className="hover:opacity-80 transition">
+                 <a href="https://www.instagram.com/theakaaiproject/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
                     <Image src="/images/formSection/insta.svg" alt="Instagram" width={40} height={40} unoptimized />
                  </a>
               </div>

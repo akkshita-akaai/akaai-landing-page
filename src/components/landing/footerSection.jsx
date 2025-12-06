@@ -53,7 +53,7 @@ const FooterSection = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <Link href="#" className="hover:opacity-80 transition-opacity">
+            <Link href="https://www.linkedin.com/company/the-akaai-project/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <Image 
                 src="/images/footerSection/linkedIn.svg" 
                 alt="LinkedIn" 
@@ -62,7 +62,7 @@ const FooterSection = () => {
                 unoptimized
               />
             </Link>
-            <Link href="#" className="hover:opacity-80 transition-opacity">
+            <Link href="https://www.instagram.com/theakaaiproject/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <Image 
                 src="/images/footerSection/insta.svg" 
                 alt="Instagram" 
