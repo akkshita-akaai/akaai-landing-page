@@ -8,7 +8,7 @@ const navLinks = [
   { name: "About Us", href: "#about" },
   { name: "Process", href: "#services" },
   { name: "What we do", href: "#process" },
-  { name: "Services", href: "#numbers" },
+  { name: "Services", href: "#narrative-section" },
 ];
 
 export function Header() {
@@ -43,7 +43,11 @@ export function Header() {
 
         {/* Right: Contact Button */}
         <div className="hidden md:flex justify-end">
-           <Button variant="outline" className="rounded-md border border-charcoal text-charcoal hover:bg-charcoal hover:text-beige transition-colors px-8 py-2.5 h-auto text-sm bg-transparent">
+           <Button 
+            variant="outline" 
+            className="rounded-md border border-charcoal text-charcoal hover:bg-charcoal hover:text-beige transition-colors px-8 py-2.5 h-auto text-sm bg-transparent cursor-pointer"
+            onClick={() => document.getElementById('formSection')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Contact Us
           </Button>
         </div>

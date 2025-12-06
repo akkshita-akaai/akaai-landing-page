@@ -134,7 +134,7 @@ export default function ProcessSection() {
             <h2 className="text-5xl md:text-7xl font-normal text-white">
               What We Do
             </h2>
-            <div className="flex flex-col items-start -mt-2 ml-2">
+            <div className="flex flex-col items-start -mt-2 -ml-10 ">
               <p className="text-sm text-gray-400 italic">
                 ( Narrative lab. )
               </p>
@@ -154,10 +154,13 @@ export default function ProcessSection() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="service-card group relative bg-[#2A2A2A] rounded-lg p-5 md:p-6 transition-all duration-300 hover:bg-[#333333] cursor-pointer"
+              className="service-card group relative bg-[#2A2A2A] rounded-lg p-5 md:p-6 transition-all duration-300 cursor-pointer flex flex-col overflow-hidden"
             >
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-lg" />
+              
               {/* Icon */}
-              <div className="mb-4">
+              <div className="relative z-10">
                 <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
                   <Image
                     src={service.icon}
@@ -170,13 +173,16 @@ export default function ProcessSection() {
                 </div>
               </div>
 
+              {/* Flexible spacer - shrinks on hover */}
+              <div className="flex-grow transition-all duration-300 group-hover:flex-grow-0 min-h-[60px] md:min-h-[80px] group-hover:min-h-[16px] md:group-hover:min-h-[20px]" />
+
               {/* Title */}
-              <h3 className="text-base md:text-lg font-medium text-white mb-2 transition-colors duration-300">
+              <h3 className="relative z-10 text-base md:text-lg font-medium text-white mb-0 group-hover:mb-2 transition-all duration-300">
                 {service.title}
               </h3>
 
               {/* Bullet Points - Hidden by default, visible on hover/tap */}
-              <ul className="space-y-1 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-40 group-focus:opacity-100 group-focus:max-h-40">
+              <ul className="relative z-10 space-y-1 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-40 group-focus:opacity-100 group-focus:max-h-40">
                 {service.points.map((point, idx) => (
                   <li
                     key={idx}
