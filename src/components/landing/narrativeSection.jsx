@@ -9,43 +9,43 @@ export default function NarrativeSection() {
   const services = [
     {
       title: "Technology Solutions",
-      description: "Story-based content, calendar creation, campaign design.",
+      description: "Future-ready tools that streamline, scale, and strengthen your digital ecosystem.",
       image: "/images/narrativeSection/technologySolutions.jpg",
     },
     {
-      title: "Enterprise Solutions",
-      description: "Story-based content, calendar creation, campaign design.",
-      image: "/images/narrativeSection/enterpriseSolution.png",
+      title: "Thought Leadership",
+      description: "Insightful narratives that positions you as the voice that leads",
+      image: "/images/narrativeSection/thoughtLeadership.png",
     },
     {
-      title: "Brand Solutions",
-      description: "Google + Meta storytelling, narrative-led ad copy, emotional funnels.",
-      image: "/images/narrativeSection/brandSolution.png",
-    },
-    {
-      title: "Strategy & Consultation",
-      description: "Google Docs content strategies for ads and social.",
-      image: "/images/narrativeSection/strategyConsultation.png",
-    },
-    {
-      title: "Community Building",
-      description: "LinkedIn positioning for founders & brand communities.",
+      title: "Community",
+      description: "Engagement systems that turn audiences into loyal, active communities.",
       image: "/images/narrativeSection/communityBuilding.png",
     },
     {
+      title: "Strategy & Consultation",
+      description: "Focused strategic guidance that sharpens clarity and accelerates growth.",
+      image: "/images/narrativeSection/strategyConsultation.png",
+    },
+    {
+      title: "Brand Solutions",
+      description: "Cohesive brand refinement for clearer, stronger, consistent expression.",
+      image: "/images/narrativeSection/brandSolution.png",
+    },
+    {
       title: "Training, Learning & Development",
-      description: "Training materials and development.",
+      description: "Skill-building programs that upgrade teams for modern marketing.",
       image: "/images/narrativeSection/training.png",
     },
     {
-      title: "Brand Shoots and Film Scripting",
-      description: "Narrative film and story-driven visuals.",
+      title: "Brand Shoots & Film Scripting",
+      description: "Story-driven shoots that shape how your brand is seen and remembered.",
       image: "/images/narrativeSection/brandShoots.png",
     },
     {
-      title: "Thought Leadership",
-      description: "Corporate-level work design and build.",
-      image: "/images/narrativeSection/thoughtLeadership.png",
+      title: "Enterprise Solutions",
+      description: "Integrated systems that simplify workflows and unify operations.",
+      image: "/images/narrativeSection/enterpriseSolution.png",
     },
   ];
 
