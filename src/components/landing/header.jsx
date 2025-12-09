@@ -38,12 +38,12 @@ export function Header() {
 
         {/* Center: Logo (Absolute Centered) */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-             <Link href="/" className="relative block w-[120px] h-[120px] md:w-[221px] md:h-[229px]">
-             <Image
+          <Link href="/" className="relative block w-[250px] h-[149px]">
+            <Image
               src="/images/logo/The Akaai project-01.png"
               alt="The Akaai Project"
               fill
-              className="object-contain"
+              className="object-cover"
               priority
             />
           </Link>
@@ -51,8 +51,8 @@ export function Header() {
 
         {/* Right: Contact Button (Desktop) */}
         <div className="hidden md:flex justify-end ml-auto">
-           <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             className="rounded-md border border-charcoal text-charcoal hover:bg-charcoal hover:text-beige transition-colors px-8 py-2.5 h-auto text-sm bg-transparent cursor-pointer"
             onClick={() => document.getElementById('formSection')?.scrollIntoView({ behavior: 'smooth' })}
           >
