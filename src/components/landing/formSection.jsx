@@ -42,7 +42,7 @@ const FormSection = () => {
                 validationSchema={validationSchema}
                 onSubmit={async (values, { setSubmitting, resetForm }) => {
                   const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdS4dvxQiVCX-1gI9QcF9CVvx7n3RBDHkVSPzGMW_eQ4BHbUg/formResponse";
-                  
+
                   const formData = new FormData();
                   formData.append("entry.1508006951", values.firstName);
                   formData.append("entry.2047362165", values.lastName);
@@ -143,12 +143,12 @@ const FormSection = () => {
             {/* Address */}
             <div className="bg-beige rounded-[20px] p-6 flex-1 flex items-start gap-4">
               <div className="bg-cherry rounded-full p-3 shrink-0 w-12 h-12 flex items-center justify-center">
-                 <Image src="/images/formSection/address.svg" alt="Address" width={24} height={24} unoptimized />
+                <Image src="/images/formSection/address.svg" alt="Address" width={24} height={24} unoptimized />
               </div>
               <div>
                 <h3 className="text-xl font-medium mb-1 text-charcoal">Address</h3>
                 <p className="text-sm opacity-80 leading-relaxed text-charcoal">
-                  LGF, MGF Metropolis Mall, MG Road, Gurgaon-122002, Haryana
+                  LGF (007), MGF Metropolis Mall, MG Road, Gurgaon-122002, Haryana
                 </p>
               </div>
             </div>
@@ -190,12 +190,12 @@ const FormSection = () => {
             <div className="bg-charcoal text-white rounded-[20px] p-6 flex-1">
               <h3 className="text-xl font-medium mb-4">Follow Us on Social Media</h3>
               <div className="flex gap-4">
-                 <a href="https://www.linkedin.com/company/the-akaai-project/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
-                    <Image src="/images/formSection/linkedIn.svg" alt="LinkedIn" width={40} height={40} unoptimized />
-                 </a>
-                 <a href="https://www.instagram.com/theakaaiproject/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
-                    <Image src="/images/formSection/insta.svg" alt="Instagram" width={40} height={40} unoptimized />
-                 </a>
+                <a href="https://www.linkedin.com/company/the-akaai-project/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
+                  <Image src="/images/formSection/linkedIn.svg" alt="LinkedIn" width={40} height={40} unoptimized />
+                </a>
+                <a href="https://www.instagram.com/theakaaiproject/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
+                  <Image src="/images/formSection/insta.svg" alt="Instagram" width={40} height={40} unoptimized />
+                </a>
               </div>
             </div>
           </div>
