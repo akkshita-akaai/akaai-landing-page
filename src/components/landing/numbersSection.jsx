@@ -19,7 +19,7 @@ export default function NumbersSection() {
     {
       id: 3,
       value: "4+",
-      label: "Industries in Specific",
+      label: "Industries",
       icon: "/images/numberStory/industries.svg",
     },
     {
@@ -37,7 +37,7 @@ export default function NumbersSection() {
         <div className="lg:col-span-1 bg-[#EBE7E0] rounded-[2rem] p-8 md:p-12 flex flex-col justify-between relative overflow-hidden min-h-[500px]">
           {/* Background Pattern */}
           <div className="absolute inset-0 z-0">
-             <Image
+            <Image
               src="/images/numberStory/boxbg.svg"
               alt="Background Pattern"
               fill
@@ -56,16 +56,16 @@ export default function NumbersSection() {
                 story
               </h2>
 
-              <button 
+              <button
                 onClick={() => document.getElementById('formSection')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-[#F8F7F5] text-[#1C1C1C] px-6 py-3 rounded-md text-sm md:text-base font-medium border border-[#D4CFC7] hover:bg-white transition-colors duration-300 w-fit cursor-pointer"
+                className="px-6 py-3 bg-[#F8F7F5] text-[#1C1C1C] text-sm md:text-base font-medium rounded-md hover:bg-[#8B1E1E] hover:text-white transition-all duration-300 whitespace-nowrap cursor-pointer"
               >
                 Let's Craft Your Boutique Narrative
               </button>
             </div>
 
             <p className="text-base md:text-lg text-[#1C1C1C] leading-relaxed max-w-sm mt-12">
-              Every number tells a story - of campaigns shaped with intention,
+              Every number tells a story - of campaigns structured with intention,
               brands guided with clarity, and outcomes built through strategy.
             </p>
           </div>
@@ -89,7 +89,7 @@ export default function NumbersSection() {
                   />
                 </div>
               </div>
-              
+
               <div className="mt-auto">
                 <span className="text-5xl md:text-6xl font-normal text-[#1C1C1C] block mb-2">
                   {stat.value}
