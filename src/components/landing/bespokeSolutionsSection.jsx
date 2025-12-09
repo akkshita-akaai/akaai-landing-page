@@ -12,8 +12,8 @@ export default function BespokeSolutionsSection() {
           <br />
           Designed Around You.
         </h2>
-        
-        <p className="text-base md:text-lg text-[#F8F7F5] max-w-3xl mx-auto leading-relaxed">
+
+        <p className="text-lg md:text-2xl text-[#F8F7F5] max-w-3xl mx-auto leading-relaxed">
           Every brand deserves its own rhythm and its own roadmap. We craft narratives and
           strategies that are uniquely yours, built with intention and insight.
         </p>
