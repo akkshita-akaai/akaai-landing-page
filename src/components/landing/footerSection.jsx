@@ -18,29 +18,28 @@ const FooterSection = () => {
               We help brands evolve with intention; shaping meaning, building systems, and creating impact that lasts.
             </p>
           </div>
-          
-          <div>
-            <Link 
-              href="/contact" 
-              className="group relative flex items-center justify-center w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#960019] text-white hover:bg-[#7a0014] transition-colors duration-300"
-            >
-              <span className="text-lg font-medium z-10">Let's Start</span>
-            </Link>
+
+          <div className="w-full flex items-center justify-center md:justify-end">
+            <div className="flex items-center justify-center text-lg font-medium z-10 group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#960019] text-white hover:bg-[#7a0014] transition-colors duration-300 cursor-pointer"
+              onClick={() => document.getElementById('formSection')?.scrollIntoView({ behavior: 'smooth' })}
+            >Let's Start</div>
           </div>
+
+
         </div>
       </div>
 
       {/* Banner Image */}
       <div className="w-full mb-10">
         <div className="relative w-full">
-            <Image 
-              src="/images/footerSection/banner.svg" 
-              alt="Akaai Banner" 
-              width={1440}
-              height={336}
-              className="w-full h-auto"
-              unoptimized
-            />
+          <Image
+            src="/images/footerSection/banner.svg"
+            alt="Akaai Banner"
+            width={1440}
+            height={336}
+            className="w-full h-auto"
+            unoptimized
+          />
         </div>
       </div>
 
@@ -55,19 +54,19 @@ const FooterSection = () => {
 
           <div className="flex items-center gap-4">
             <Link href="https://www.linkedin.com/company/the-akaai-project/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <Image 
-                src="/images/footerSection/linkedIn.svg" 
-                alt="LinkedIn" 
-                width={40} 
+              <Image
+                src="/images/footerSection/linkedIn.svg"
+                alt="LinkedIn"
+                width={40}
                 height={40}
                 unoptimized
               />
             </Link>
             <Link href="https://www.instagram.com/theakaaiproject/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <Image 
-                src="/images/footerSection/insta.svg" 
-                alt="Instagram" 
-                width={40} 
+              <Image
+                src="/images/footerSection/insta.svg"
+                alt="Instagram"
+                width={40}
                 height={40}
                 unoptimized
               />

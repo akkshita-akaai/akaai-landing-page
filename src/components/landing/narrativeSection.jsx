@@ -60,8 +60,8 @@ export default function NarrativeSection() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#F8F7F5]">
             Our Services Include:
           </h2>
-          <button 
-            className="px-6 py-3 bg-[#F8F7F5] text-[#1C1C1C] text-sm md:text-base font-medium rounded-md hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap cursor-pointer"
+          <button
+            className="px-6 py-3 bg-[#F8F7F5] text-[#1C1C1C] text-sm md:text-base font-medium rounded-md hover:bg-[#8B1E1E] hover:text-white transition-all duration-300 whitespace-nowrap cursor-pointer"
             onClick={() => {
               const formSection = document.getElementById('formSection');
               if (formSection) {
@@ -92,7 +92,7 @@ export default function NarrativeSection() {
               key={index}
               className="flex-shrink-0 w-[280px] md:w-[320px] snap-start"
               style={{
-                marginLeft : index === 0 ? "16px" : ""
+                marginLeft: index === 0 ? "16px" : ""
               }}
             >
               <div className="group relative h-full rounded-2xl flex flex-col items-center">
@@ -127,9 +127,9 @@ export default function NarrativeSection() {
 
           {/* Custom Request Card */}
           <div className="flex-shrink-0 w-[280px] md:w-[320px] snap-start mr-16">
-            <div 
+            <div
               className="relative h-full rounded-2xl flex flex-col justify-end p-8 border border-[#F8F7F5] border-opacity-10 overflow-hidden"
-              style={{ 
+              style={{
                 backgroundImage: "url('/images/narrativeSection/bulbBg.svg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
