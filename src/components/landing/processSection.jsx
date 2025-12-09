@@ -161,8 +161,8 @@ export default function ProcessSection() {
               className="service-card group relative bg-[#2A2A2A] rounded-lg p-5 md:p-6 transition-all duration-300 cursor-pointer flex flex-col overflow-hidden"
             >
               {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-lg" />
-              
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-lg" />
+
               {/* Icon */}
               <div className="relative z-10">
                 <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
@@ -201,8 +201,8 @@ export default function ProcessSection() {
           ))}
 
           {/* Last Card - CTA */}
-          <div 
-            className="service-card group relative bg-[#F8F7F5] rounded-lg p-5 md:p-6 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+          <div
+            className="service-card group relative bg-[#F8F7F5] hover:bg-[#8B1E1E] rounded-lg p-5 md:p-6 transition-all duration-300 cursor-pointer flex flex-col justify-between"
             onClick={() => {
               const formSection = document.getElementById('formSection');
               if (formSection) {
@@ -223,9 +223,9 @@ export default function ProcessSection() {
                 />
               </div>
             </div>
-            
+
             {/* Text - Bottom Left */}
-            <h3 className="text-lg md:text-xl font-medium text-[#1C1C1C] leading-tight mt-auto">
+            <h3 className="text-lg md:text-xl font-medium text-[#1C1C1C] group-hover:text-white transition-colors duration-300 leading-tight mt-auto">
               Let's build your<br />brand story
             </h3>
           </div>
