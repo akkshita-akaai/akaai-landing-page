@@ -16,7 +16,7 @@ export default function GraphSection() {
             idea to full-scale rollout, refinement, and growth.
           </p>
           <div>
-            <button 
+            <button
               onClick={() => document.getElementById('formSection')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-[#8B1E1E] text-[#F8F7F5] px-8 py-4 rounded-full text-lg font-medium hover:bg-[#6d1717] transition-colors duration-300 cursor-pointer"
             >
@@ -35,8 +35,8 @@ export default function GraphSection() {
                 Narrative Clarity Improvement
               </h3>
               <div className="text-5xl md:text-6xl font-normal text-[#1C1C1C]">
-                  82%
-                </div>
+                82%
+              </div>
               <div className="relative w-full flex-1 flex items-end justify-center pb-4">
                 <Gauge percentage={82} />
               </div>
@@ -47,26 +47,30 @@ export default function GraphSection() {
               <h3 className="text-[#1C1C1C] text-lg font-medium text-center mb-4">
                 Brand Consistency Boost
               </h3>
-                 <div className="text-5xl md:text-6xl font-normal text-[#1C1C1C]">
-                  76%
-                </div>
+              <div className="text-5xl md:text-6xl font-normal text-[#1C1C1C]">
+                76%
+              </div>
               <div className="relative w-full flex-1 flex items-end justify-center pb-4">
                 <Gauge percentage={76} />
-             
+
               </div>
             </div>
           </div>
 
           {/* Graph Image */}
-          <div className="w-full rounded-[2rem] overflow-hidden">
-            <Image
-              src="/images/graphSection/largePlot.svg"
-              alt="Growth Graph"
-              width={800}
-              height={400}
-              className="w-full h-auto object-cover"
-              unoptimized
-            />
+          <div className="w-full rounded-[2rem] h-[306px] overflow-hidden">
+            <video
+              width="800"
+              height="300"
+              className="w-full object-contain"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src="/images/graphSection/trimmed.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
