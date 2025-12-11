@@ -98,14 +98,11 @@ export default function NarrativeSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[280px] md:w-[320px] snap-start"
-              style={{
-                marginLeft: index === 0 ? "16px" : ""
-              }}
+              className={`flex-shrink-0 w-[280px] md:w-[320px] snap-start ${index === 0 ? "ml-8" : ""}`}
             >
-              <div className="relative rounded-2xl flex flex-col items-center">
+              <div className="relative rounded-2xl flex flex-col items-center h-full justify-between">
                 {/* Circular image container */}
-                <div className="w-full aspect-square rounded-full overflow-hidden mb-20 bg-[#F8F7F5] bg-opacity-5 flex items-center justify-center relative flex-shrink-0">
+                <div className="w-full aspect-square rounded-full overflow-hidden mb-10 bg-[#F8F7F5] bg-opacity-5 flex items-center justify-center relative flex-shrink-0">
                   <Image
                     src={service.image}
                     alt={service.title}
