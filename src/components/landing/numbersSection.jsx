@@ -2,29 +2,35 @@
 
 import Image from "next/image";
 
+import { NumberTicker } from "@/components/magicui/number-ticker";
+
 export default function NumbersSection() {
   const stats = [
     {
       id: 1,
-      value: "30+",
+      value: 30,
+      suffix: "+",
       label: "Campaigns delivered",
       icon: "/images/numberStory/campaignsDelivered.svg",
     },
     {
       id: 2,
-      value: "10+",
+      value: 10,
+      suffix: "+",
       label: "Brands Served",
       icon: "/images/numberStory/brandsServed.svg",
     },
     {
       id: 3,
-      value: "4+",
+      value: 4,
+      suffix: "+",
       label: "Industries",
       icon: "/images/numberStory/industries.svg",
     },
     {
       id: 4,
-      value: "85%",
+      value: 85,
+      suffix: "%",
       label: "Average % elevation in digital presence",
       icon: "/images/numberStory/average.svg",
     },
@@ -91,8 +97,12 @@ export default function NumbersSection() {
               </div>
 
               <div className="mt-auto">
-                <span className="text-5xl md:text-6xl font-normal text-[#1C1C1C] block mb-2">
-                  {stat.value}
+                <span className="text-5xl md:text-6xl font-normal text-[#1C1C1C] flex items-baseline mb-2">
+                  <NumberTicker
+                    value={stat.value}
+                    className="text-5xl md:text-6xl font-normal text-[#1C1C1C] dark:text-[#1C1C1C]"
+                  />
+                  {stat.suffix}
                 </span>
                 <p className="text-lg text-[#1C1C1C]">{stat.label}</p>
               </div>
