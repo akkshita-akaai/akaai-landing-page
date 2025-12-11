@@ -9,42 +9,50 @@ export default function NarrativeSection() {
   const services = [
     {
       title: "Technology Solutions",
-      description: "Future-ready tools that streamline, scale, and strengthen your digital ecosystem.",
+      shortDescription: "Future-ready tools that streamline, scale, and strengthen your digital ecosystem.",
+      detailedDescription: "Technology-enabled solutions built in collaboration with leading platforms designed to accelerate performance, enhance operational efficiency, and empower your brand with intelligent, future-ready capabilities. From integration to implementation, we help you unlock systems that scale, automate, and strengthen every touchpoint of your digital ecosystem.",
       image: "/images/narrativeSection/technologySolutions.jpg",
     },
     {
       title: "Thought Leadership",
-      description: "Insightful narratives that positions you as the voice that leads",
+      shortDescription: "Insightful narratives that positions you as the voice that leads",
+      detailedDescription: "Insight-led content and strategic storytelling that deepen credibility, shape perception, and position you as a trusted, authoritative voice; strengthening influence across your industry and audience.",
       image: "/images/narrativeSection/thoughtLeadership.png",
     },
     {
       title: "Community",
-      description: "Engagement systems that turn audiences into loyal, active communities.",
+      shortDescription: "Engagement systems that turn audiences into loyal, active communities.",
+      detailedDescription: "Meaningful, engagement-driven initiatives designed to foster connection, build loyalty, and cultivate brand advocates; transforming audiences into communities that participate, share, and stay.",
       image: "/images/narrativeSection/communityBuilding.png",
     },
     {
       title: "Strategy & Consultation",
-      description: "Focused strategic guidance that sharpens clarity and accelerates growth.",
+      shortDescription: "Focused strategic guidance that sharpens clarity and accelerates growth.",
+      detailedDescription: "Custom strategic guidance designed for specific brand challenges; offering high-touch consultation, audits, GTM direction, and advisory support that sharpens clarity and accelerates growth.",
       image: "/images/narrativeSection/strategyConsultation.png",
     },
     {
       title: "Brand Solutions",
-      description: "Cohesive brand refinement for clearer, stronger, consistent expression.",
+      shortDescription: "Cohesive brand refinement for clearer, stronger, consistent expression.",
+      detailedDescription: "Integrated brand solutions that refine your identity, sharpen your messaging, and strengthen how your brand shows up across touch points; ensuring every expression feels consistent, intentional, and built for long-term relevance.",
       image: "/images/narrativeSection/brandSolution.png",
     },
     {
       title: "Training, Learning & Development",
-      description: "Skill-building programs that upgrade teams for modern marketing.",
+      shortDescription: "Skill-building programs that upgrade teams for modern marketing.",
+      detailedDescription: "Training programs built to equip your teams with the latest marketing capabilities, platform innovations, and performance-driven techniques; enabling them to adopt new technologies, scale impact, and execute with confidence.",
       image: "/images/narrativeSection/training.png",
     },
     {
       title: "Brand Shoots & Film Scripting",
-      description: "Story-driven shoots that shape how your brand is seen and remembered.",
+      shortDescription: "Story-driven shoots that shape how your brand is seen and remembered.",
+      detailedDescription: "We craft narrative-driven scripts and produce brand-aligned shoots that translate your identity into powerful, memorable visuals. From defining your story to shaping how it’s captured, we ensure every frame resonates emotionally, communicates with clarity, and elevates how your brand is seen and remembered.",
       image: "/images/narrativeSection/brandShoots.png",
     },
     {
       title: "Enterprise Solutions",
-      description: "Integrated systems that simplify workflows and unify operations.",
+      shortDescription: "Integrated systems that simplify workflows and unify operations.",
+      detailedDescription: "Enterprise solutions that integrate systems, unify data, and streamline workflows; enabling seamless information flow across your organisation and creating smarter, more efficient business operations.",
       image: "/images/narrativeSection/enterpriseSolution.png",
     },
   ];
@@ -95,9 +103,9 @@ export default function NarrativeSection() {
                 marginLeft: index === 0 ? "16px" : ""
               }}
             >
-              <div className="group relative h-full rounded-2xl flex flex-col items-center">
+              <div className="relative rounded-2xl flex flex-col items-center">
                 {/* Circular image container */}
-                <div className="w-full aspect-square rounded-full overflow-hidden mb-6 bg-[#F8F7F5] bg-opacity-5 flex items-center justify-center relative">
+                <div className="w-full aspect-square rounded-full overflow-hidden mb-20 bg-[#F8F7F5] bg-opacity-5 flex items-center justify-center relative flex-shrink-0">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -108,18 +116,27 @@ export default function NarrativeSection() {
                 </div>
 
                 {/* Card container with title and description */}
-                <div className="w-full bg-[#F8F7F510] bg-opacity-10 rounded-xl p-4 flex-grow flex flex-col justify-center">
+                <div className="group w-full bg-[#F8F7F510] bg-opacity-10 rounded-xl p-4 min-h-[100px] md:min-h-[120px] flex flex-col justify-center transition-all duration-300 cursor-pointer hover:bg-[#F8F7F520]">
                   {/* Service title */}
-                  <div className="flex items-center justify-center mb-3 w-full">
+                  <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:mb-3">
                     <h3 className="text-lg md:text-xl font-medium text-[#F8F7F5] leading-tight text-center">
                       {service.title}
                     </h3>
                   </div>
 
-                  {/* Service description */}
-                  <p className="text-sm text-[#F8F7F5] text-opacity-70 text-center">
-                    {service.description}
-                  </p>
+                  {/* Short Description (Visible by default, hidden on hover) */}
+                  <div className="max-h-[100px] opacity-100 overflow-hidden transition-all duration-300 group-hover:max-h-0 group-hover:opacity-0">
+                    <p className="text-sm text-[#F8F7F5] text-opacity-70 text-center leading-relaxed">
+                      {service.shortDescription}
+                    </p>
+                  </div>
+
+                  {/* Detailed Description (Hidden by default, visible on hover) */}
+                  <div className="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[500px] group-hover:opacity-100">
+                    <p className="text-sm text-[#F8F7F5] text-opacity-70 text-center leading-relaxed">
+                      {service.detailedDescription}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
