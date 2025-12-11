@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 
 export default function GraphSection() {
   return (
@@ -28,41 +29,32 @@ export default function GraphSection() {
         {/* Right Column: Stats & Graph */}
         <div className="flex flex-col gap-8">
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
             {/* Card 1 */}
-            <div className="bg-[#E9E4DC] rounded-[2rem] p-8 flex flex-col items-center justify-between aspect-square md:aspect-auto md:h-[320px]">
-              <h3 className="text-[#1C1C1C] text-lg font-medium text-center mb-4">
+            <div className="bg-[#E9E4DC] rounded-[2rem] pt-6 px-4 md:pt-8 md:px-8 flex flex-col items-center justify-between h-[200px] md:h-[320px] md:aspect-auto overflow-hidden relative">
+              <h3 className="text-[#1C1C1C] text-sm md:text-lg font-medium text-center mb-2 md:mb-4 z-10 leading-tight">
                 Narrative Clarity Improvement
               </h3>
-              <div className="text-5xl md:text-6xl font-normal text-[#1C1C1C]">
-                82%
-              </div>
-              <div className="relative w-full flex-1 flex items-end justify-center pb-4">
+              <div className="flex flex-col items-center justify-end flex-1 w-full translate-y-2">
                 <Gauge percentage={82} />
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-[#E9E4DC] rounded-[2rem] p-8 flex flex-col items-center justify-between aspect-square md:aspect-auto md:h-[320px]">
-              <h3 className="text-[#1C1C1C] text-lg font-medium text-center mb-4">
+            <div className="bg-[#E9E4DC] rounded-[2rem] pt-6 px-4 md:pt-8 md:px-8 flex flex-col items-center justify-between h-[200px] md:h-[320px] md:aspect-auto overflow-hidden relative">
+              <h3 className="text-[#1C1C1C] text-sm md:text-lg font-medium text-center mb-2 md:mb-4 z-10 leading-tight">
                 Brand Consistency Boost
               </h3>
-              <div className="text-5xl md:text-6xl font-normal text-[#1C1C1C]">
-                76%
-              </div>
-              <div className="relative w-full flex-1 flex items-end justify-center pb-4">
+              <div className="flex flex-col items-center justify-end flex-1 w-full translate-y-2">
                 <Gauge percentage={76} />
-
               </div>
             </div>
           </div>
 
           {/* Graph Image */}
-          <div className="w-full rounded-[2rem] h-[306px] overflow-hidden">
+          <div className="w-full rounded-[2rem] h-[306px] overflow-hidden bg-[#E9E4DC] relative">
             <video
-              width="800"
-              height="300"
-              className="w-full object-contain"
+              className="w-full h-full object-cover"
               autoPlay
               loop
               muted
@@ -79,39 +71,83 @@ export default function GraphSection() {
 }
 
 function Gauge({ percentage }) {
+  const [animatedPercentage, setAnimatedPercentage] = useState(0);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          // Add a small delay for better visual effect
+          setTimeout(() => {
+            setAnimatedPercentage(percentage);
+          }, 200);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [percentage]);
+
   // SVG configuration
-  const size = 200;
-  const strokeWidth = 20;
+  const size = 260; // Increased size slightly to fill width better
+  const strokeWidth = 25;
   const radius = (size - strokeWidth) / 2;
   const circumference = radius * Math.PI; // Half circle circumference
-  const offset = circumference - (percentage / 100) * circumference;
+  const offset = circumference - (animatedPercentage / 100) * circumference;
+
+  // Unique ID for gradient
+  const gradientId = `gauge-gradient-${percentage}`;
 
   return (
-    <svg
-      width={size}
-      height={size / 2 + strokeWidth}
-      viewBox={`0 0 ${size} ${size / 2 + strokeWidth}`}
-      className="overflow-visible"
-    >
-      {/* Background Track (Light beige semi-circle) */}
-      <path
-        d={`M ${strokeWidth / 2} ${size / 2} A ${radius} ${radius} 0 0 1 ${size - strokeWidth / 2} ${size / 2}`}
-        fill="none"
-        stroke="#D4CFC7"
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-      />
-      {/* Progress Arc (Dark red semi-circle) */}
-      <path
-        d={`M ${strokeWidth / 2} ${size / 2} A ${radius} ${radius} 0 0 1 ${size - strokeWidth / 2} ${size / 2}`}
-        fill="none"
-        stroke="#8B1E1E"
-        strokeWidth={strokeWidth}
-        strokeDasharray={circumference}
-        strokeDashoffset={offset}
-        strokeLinecap="round"
-        className="transition-all duration-1000 ease-out"
-      />
-    </svg>
+    <div ref={containerRef} className="flex flex-col items-center justify-end w-full">
+      {/* Percentage Text - Centered above the gauge */}
+      <div className="text-3xl md:text-4xl lg:text-6xl font-normal text-[#1C1C1C] text-center mb-2 md:mb-4 ml-2 md:ml-4">
+        {percentage}%
+      </div>
+
+      {/* SVG Gauge */}
+      <svg
+        width="100%"
+        viewBox={`0 0 ${size} ${size / 2 + strokeWidth / 2}`}
+        className="overflow-visible block"
+        style={{ maxWidth: '260px' }}
+      >
+        {/* Gradient Definition */}
+        <defs>
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#FF9696" />
+            <stop offset="64%" stopColor="#8B1E1E" />
+            <stop offset="100%" stopColor="#8B1E1E" />
+          </linearGradient>
+        </defs>
+
+        {/* Background Track */}
+        <path
+          d={`M ${strokeWidth / 2} ${size / 2} A ${radius} ${radius} 0 0 1 ${size - strokeWidth / 2} ${size / 2}`}
+          fill="none"
+          stroke="#D4CFC7"
+          strokeWidth={strokeWidth}
+        />
+        {/* Progress Arc with Gradient */}
+        <path
+          d={`M ${strokeWidth / 2} ${size / 2} A ${radius} ${radius} 0 0 1 ${size - strokeWidth / 2} ${size / 2}`}
+          fill="none"
+          stroke={`url(#${gradientId})`}
+          strokeWidth={strokeWidth}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          style={{
+            transition: 'stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1)'
+          }}
+        />
+      </svg>
+    </div>
   );
 }
