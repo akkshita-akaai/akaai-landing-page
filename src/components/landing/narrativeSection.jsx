@@ -148,7 +148,7 @@ export default function NarrativeSection() {
             <div className="h-full rounded-2xl flex flex-col overflow-hidden bg-[#EAEAEA]">
               {/* Top Image Area */}
               <div
-                className="relative h-[240px] w-full shrink-0"
+                className="relative h-[220px] w-full shrink-0"
                 style={{
                   backgroundImage: "url('/images/narrativeSection/bulbBg.svg')",
                   backgroundSize: 'cover',
@@ -158,7 +158,7 @@ export default function NarrativeSection() {
               />
 
               {/* Bottom Content Area */}
-              <div className="flex-grow p-8 flex flex-col justify-between">
+              <div className="flex-grow p-8 !pt-0 flex flex-col justify-between">
                 <div>
                   <h3 className="text-3xl md:text-4xl font-normal text-[#8B1E1E] mb-4 leading-tight text-left">
                     Something Else in Mind?
