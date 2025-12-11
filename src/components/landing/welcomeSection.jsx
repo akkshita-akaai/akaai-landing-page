@@ -40,7 +40,7 @@ export default function WelcomeSection() {
               </h2>
               <div className="flex flex-col items-start gap-1 mt-2">
                 <span className="text-[#8B1E1E] text-sm md:text-base whitespace-nowrap">( Narrative lab. )</span>
-                <Image 
+                <Image
                   src="/images/welcomeSection/leftPointingRoundedArrow.svg"
                   alt="Arrow"
                   width={40}
@@ -65,41 +65,48 @@ export default function WelcomeSection() {
           {cards.map((card, index) => (
             <div
               key={card.title}
-              className="group relative rounded-[16px] p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out border-2 border-transparent hover:border-[#8B1E1E] bg-gradient-to-br from-[#6B1515] to-[#4A0F0F] hover:from-[#8B1E1E] hover:to-[#250808]"
+              className="group relative rounded-[16px] p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out border-2 border-transparent hover:border-[#8B1E1E] bg-[#EBE9E4] hover:bg-gradient-to-br hover:from-[#6B1515] hover:to-[#4A0F0F] flex flex-col h-full min-h-[350px]"
             >
               {/* Icon */}
-              <div className="mb-6 transition-all duration-500">
+              <div className="transition-all duration-500 flex-shrink-0">
                 <Image
                   src={card.icon}
                   alt={card.title}
                   width={60}
                   height={60}
-                  className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 brightness-0 invert"
+                  className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 group-hover:scale-110 [filter:brightness(0)_saturate(100%)_invert(13%)_sepia(61%)_saturate(5427%)_hue-rotate(355deg)_brightness(90%)_contrast(104%)] group-hover:[filter:brightness(0)_invert(1)]"
                   unoptimized
                 />
               </div>
 
-              {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-medium mb-3 transition-colors duration-500 text-white">
-                {card.title}
-              </h3>
+              {/* Flexible spacer - shrinks on hover */}
+              <div className="flex-grow transition-all duration-500 group-hover:flex-grow-0 min-h-[40px] group-hover:min-h-[20px]" />
 
-              {/* Divider */}
-              <div className="w-full h-px transition-colors duration-500 mb-4 bg-white/30" />
+              {/* Content Container */}
+              <div className="relative z-10 flex flex-col justify-end">
+                {/* Title */}
+                <h3 className="text-2xl md:text-3xl font-medium mb-3 transition-colors duration-500 text-[#1C1C1C] group-hover:text-white">
+                  {card.title}
+                </h3>
 
-              {/* Subtitle */}
-              <p className="text-sm md:text-base mb-4 transition-colors duration-500 text-white">
-                {card.subtitle}
-              </p>
+                {/* Divider */}
+                <div className="w-full h-px transition-colors duration-500 mb-4 bg-[#1C1C1C]/20 group-hover:bg-white/30" />
 
-              {/* Description - visible only on hover */}
-              {/* <p className="text-sm md:text-base leading-relaxed opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-40 text-white">
-                {card.description}
-              </p> */}
+                {/* Subtitle */}
+                <p className="text-sm md:text-base mb-4 transition-colors duration-500 text-[#1C1C1C] group-hover:text-white">
+                  {card.subtitle}
+                </p>
+
+                {/* Description - visible only on hover */}
+                <p className="text-sm md:text-base leading-relaxed opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-[200px] text-white">
+                  {card.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </div>
+
     </section>
   );
 }
