@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 
 export default function NarrativeSection() {
   const scrollContainerRef = useRef(null);
+  const [activeService, setActiveService] = useState(null);
 
   const services = [
     {
@@ -89,7 +90,7 @@ export default function NarrativeSection() {
       <div className="relative w-full">
         <div
           ref={scrollContainerRef}
-          className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory pl-4 md:pl-8 lg:pl-12"
+          className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory pl-4 md:pl-8 lg:pl-12 items-end"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
@@ -113,23 +114,26 @@ export default function NarrativeSection() {
                 </div>
 
                 {/* Card container with title and description */}
-                <div className="group w-full bg-[#F8F7F510] bg-opacity-10 rounded-xl p-4 min-h-[100px] md:min-h-[120px] flex flex-col justify-center transition-all duration-300 cursor-pointer hover:bg-[#F8F7F520]">
+                <div
+                  className={`group w-full bg-[#F8F7F510] bg-opacity-10 rounded-xl p-4 min-h-[100px] md:min-h-[120px] flex flex-col justify-center transition-all duration-300 cursor-pointer hover:bg-[#F8F7F520] ${activeService === index ? 'active' : ''}`}
+                  onClick={() => setActiveService(activeService === index ? null : index)}
+                >
                   {/* Service title */}
-                  <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:mb-3">
+                  <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:mb-3 group-[.active]:mb-3">
                     <h3 className="text-lg md:text-xl font-medium text-[#F8F7F5] leading-tight text-center">
                       {service.title}
                     </h3>
                   </div>
 
                   {/* Short Description (Visible by default, hidden on hover) */}
-                  <div className="max-h-[100px] opacity-100 overflow-hidden transition-all duration-300 group-hover:max-h-0 group-hover:opacity-0">
+                  <div className="max-h-[100px] opacity-100 overflow-hidden transition-all duration-300 group-hover:max-h-0 group-hover:opacity-0 group-[.active]:max-h-0 group-[.active]:opacity-0">
                     <p className="text-sm text-[#F8F7F5] text-opacity-70 text-center leading-relaxed">
                       {service.shortDescription}
                     </p>
                   </div>
 
                   {/* Detailed Description (Hidden by default, visible on hover) */}
-                  <div className="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[500px] group-hover:opacity-100">
+                  <div className="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[500px] group-hover:opacity-100 group-[.active]:max-h-[500px] group-[.active]:opacity-100">
                     <p className="text-sm text-[#F8F7F5] text-opacity-70 text-center leading-relaxed">
                       {service.detailedDescription}
                     </p>

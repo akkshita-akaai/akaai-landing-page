@@ -1,8 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 
 export default function ProcessSection() {
+  const [activeProcess, setActiveProcess] = useState(null);
+
   const services = [
     {
       id: 1,
@@ -158,10 +161,11 @@ export default function ProcessSection() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="service-card group relative bg-[#2A2A2A] rounded-lg p-5 md:p-6 transition-all duration-300 cursor-pointer flex flex-col overflow-hidden"
+              className={`service-card group relative bg-[#2A2A2A] rounded-lg p-5 md:p-6 transition-all duration-300 cursor-pointer flex flex-col overflow-hidden ${activeProcess === service.id ? 'active' : ''}`}
+              onClick={() => setActiveProcess(activeProcess === service.id ? null : service.id)}
             >
               {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-lg" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/5 opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-300 pointer-events-none rounded-lg" />
 
               {/* Icon */}
               <div className="relative z-10">
@@ -178,15 +182,15 @@ export default function ProcessSection() {
               </div>
 
               {/* Flexible spacer - shrinks on hover */}
-              <div className="flex-grow transition-all duration-300 group-hover:flex-grow-0 min-h-[60px] md:min-h-[80px] group-hover:min-h-[16px] md:group-hover:min-h-[20px]" />
+              <div className="flex-grow transition-all duration-300 group-hover:flex-grow-0 group-[.active]:flex-grow-0 min-h-[60px] md:min-h-[80px] group-hover:min-h-[16px] md:group-hover:min-h-[20px] group-[.active]:min-h-[16px] md:group-[.active]:min-h-[20px]" />
 
               {/* Title */}
-              <h3 className="relative z-10 text-base md:text-lg font-medium text-white mb-0 group-hover:mb-2 transition-all duration-300">
+              <h3 className="relative z-10 text-base md:text-lg font-medium text-white mb-0 group-hover:mb-2 group-[.active]:mb-2 transition-all duration-300">
                 {service.title}
               </h3>
 
               {/* Bullet Points - Hidden by default, visible on hover/tap */}
-              <ul className="relative z-10 space-y-1 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-40 group-focus:opacity-100 group-focus:max-h-40">
+              <ul className="relative z-10 space-y-1 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-[.active]:opacity-100 group-hover:max-h-40 group-[.active]:max-h-40 group-focus:opacity-100 group-focus:max-h-40">
                 {service.points.map((point, idx) => (
                   <li
                     key={idx}

@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function WelcomeSection() {
+  const [activeCard, setActiveCard] = useState(null);
+
   const cards = [
     {
       title: "Strategy lab",
@@ -65,7 +70,8 @@ export default function WelcomeSection() {
           {cards.map((card, index) => (
             <div
               key={card.title}
-              className="group relative rounded-[16px] p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out border-2 border-transparent hover:border-[#8B1E1E] bg-[#EBE9E4] hover:bg-gradient-to-br hover:from-[#6B1515] hover:to-[#4A0F0F] flex flex-col h-full min-h-[350px]"
+              className={`group relative rounded-[16px] p-8 md:p-10 overflow-hidden transition-all duration-500 ease-in-out border-2 border-transparent hover:border-[#8B1E1E] [&.active]:border-[#8B1E1E] bg-[#EBE9E4] hover:bg-gradient-to-br [&.active]:bg-gradient-to-br hover:from-[#6B1515] [&.active]:from-[#6B1515] hover:to-[#4A0F0F] [&.active]:to-[#4A0F0F] flex flex-col h-full min-h-[350px] cursor-pointer ${activeCard === index ? 'active' : ''}`}
+              onClick={() => setActiveCard(activeCard === index ? null : index)}
             >
               {/* Icon */}
               <div className="transition-all duration-500 flex-shrink-0">
@@ -74,31 +80,31 @@ export default function WelcomeSection() {
                   alt={card.title}
                   width={60}
                   height={60}
-                  className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 group-hover:scale-110 [filter:brightness(0)_saturate(100%)_invert(13%)_sepia(61%)_saturate(5427%)_hue-rotate(355deg)_brightness(90%)_contrast(104%)] group-hover:[filter:brightness(0)_invert(1)]"
+                  className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 group-hover:scale-110 group-[.active]:scale-110 [filter:brightness(0)_saturate(100%)_invert(13%)_sepia(61%)_saturate(5427%)_hue-rotate(355deg)_brightness(90%)_contrast(104%)] group-hover:[filter:brightness(0)_invert(1)] group-[.active]:[filter:brightness(0)_invert(1)]"
                   unoptimized
                 />
               </div>
 
               {/* Flexible spacer - shrinks on hover */}
-              <div className="flex-grow transition-all duration-500 group-hover:flex-grow-0 min-h-[40px] group-hover:min-h-[20px]" />
+              <div className="flex-grow transition-all duration-500 group-hover:flex-grow-0 group-[.active]:flex-grow-0 min-h-[40px] group-hover:min-h-[20px] group-[.active]:min-h-[20px]" />
 
               {/* Content Container */}
               <div className="relative z-10 flex flex-col justify-end">
                 {/* Title */}
-                <h3 className="text-2xl md:text-3xl font-medium mb-3 transition-colors duration-500 text-[#1C1C1C] group-hover:text-white">
+                <h3 className="text-2xl md:text-3xl font-medium mb-3 transition-colors duration-500 text-[#1C1C1C] group-hover:text-white group-[.active]:text-white">
                   {card.title}
                 </h3>
 
                 {/* Divider */}
-                <div className="w-full h-px transition-colors duration-500 mb-4 bg-[#1C1C1C]/20 group-hover:bg-white/30" />
+                <div className="w-full h-px transition-colors duration-500 mb-4 bg-[#1C1C1C]/20 group-hover:bg-white/30 group-[.active]:bg-white/30" />
 
                 {/* Subtitle */}
-                <p className="text-sm md:text-base mb-4 transition-colors duration-500 text-[#1C1C1C] group-hover:text-white">
+                <p className="text-sm md:text-base mb-4 transition-colors duration-500 text-[#1C1C1C] group-hover:text-white group-[.active]:text-white">
                   {card.subtitle}
                 </p>
 
                 {/* Description - visible only on hover */}
-                <p className="text-sm md:text-base leading-relaxed opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-[200px] text-white">
+                <p className="text-sm md:text-base leading-relaxed opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-[.active]:opacity-100 group-hover:max-h-[200px] group-[.active]:max-h-[200px] text-white">
                   {card.description}
                 </p>
               </div>
