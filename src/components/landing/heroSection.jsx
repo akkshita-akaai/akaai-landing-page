@@ -2,12 +2,22 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 export default function HeroSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 768); // match Tailwind md
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   return (
     <section
       id="home"
-      className="relative w-full min-h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-0 overflow-hidden bg-offwhite"
+      className="relative w-full min-h-[calc(100vh-200px)] flex flex-col items-center justify-center gap-0 overflow-hidden bg-offwhite"
     >
       <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center justify-center pt-12 md:pt-20">
         {/* Main Headline */}
@@ -53,22 +63,28 @@ export default function HeroSection() {
       </div>
 
       {/* Cards and Bottom Button Container */}
-      <div className="relative w-full flex flex-col items-center justify-end z-0 pointer-events-none select-none overflow-hidden -mt-6 md:-mt-10">
+      <div className="relative w-full flex flex-col items-center justify-end z-0 pointer-events-none select-none overflow-hidden mt-3">
         <motion.img
           src="/images/heroSection/cards.svg"
           alt="Hero Cards Ring"
-          className="w-[200%] md:w-full h-auto object-cover origin-bottom translate-y-[20%]"
-          animate={{ rotate: [-15, 15, -15] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-          style={{ transformOrigin: "50% 150%" }}
+          className="
+      h-[500px] w-auto max-w-none object-cover origin-bottom translate-y-[10%]
+      lg:h-auto lg:w-full lg:max-w-full lg:translate-y-[20%]
+    "
+          animate={
+            isMobile
+              ? { rotate: [-50, 50, -50] }   // bigger swing on small screens
+              : { rotate: [-15, 15, -15] }   // original swing on md+
+          }
+          transition={{ duration: isMobile ? 30 : 20, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ transformOrigin: '50% 150%' }}
         />
+
         {/* Explore All Services Button */}
-        <div className="absolute bottom-8 z-20 pointer-events-auto">
+        <div className="absolute bottom-20 z-20 pointer-events-auto">
           <Button
             onClick={() =>
-              document
-                .getElementById("process")
-                ?.scrollIntoView({ behavior: "smooth" })
+              document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })
             }
             className="bg-cherry hover:bg-cherry/90 text-white rounded-md px-8 py-6 text-base font-medium min-w-[180px] cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300"
           >
