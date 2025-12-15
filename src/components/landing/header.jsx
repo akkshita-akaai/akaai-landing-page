@@ -38,7 +38,7 @@ export function Header() {
 
         {/* Center: Logo (Absolute Centered) */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <Link href="/" className="relative block w-[250px] h-[149px]">
+          <Link href="/" className="relative block w-[150px] md:w-[250px] h-[149px]">
             <Image
               src="/images/logo/The Akaai project-01.png"
               alt="The Akaai Project"
@@ -53,7 +53,7 @@ export function Header() {
         <div className="hidden md:flex justify-end ml-auto">
           <Button
             variant="outline"
-            className="rounded-md border border-charcoal text-charcoal hover:bg-charcoal hover:text-beige transition-colors px-8 py-2.5 h-auto text-sm bg-transparent cursor-pointer"
+            className="rounded-md border border-charcoal text-charcoal hover:bg-[#8B1E1E] hover:border-[#8B1E1E] hover:text-beige transition-colors px-8 py-2.5 h-auto text-sm bg-transparent cursor-pointer"
             onClick={() => document.getElementById('formSection')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Contact Us

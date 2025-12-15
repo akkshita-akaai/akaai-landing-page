@@ -148,7 +148,9 @@ const FormSection = () => {
               <div>
                 <h3 className="text-xl font-medium mb-1 text-charcoal">Address</h3>
                 <p className="text-sm opacity-80 leading-relaxed text-charcoal">
-                  LGF (007), MGF Metropolis Mall, MG Road, Gurgaon-122002, Haryana
+                  LGF-007, MGF Metropolis <br />
+                  MG Road, Gurugram- 122002 <br />
+                  Haryana
                 </p>
               </div>
             </div>
@@ -172,6 +174,7 @@ const FormSection = () => {
               <div>
                 <h3 className="text-xl font-medium mb-1 text-charcoal">Email Us</h3>
                 <p className="text-sm opacity-80 text-charcoal">collab@theakaaiproject.com</p>
+                <p className="text-sm opacity-80 text-charcoal">akkshitakalra@theakaaiproject.com</p>
               </div>
             </a>
 

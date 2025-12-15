@@ -10,7 +10,7 @@ export default function WelcomeSection() {
     {
       title: "Strategy lab",
       subtitle: "Where brands find purpose",
-      description: "We distill insight into strategy: clarifying your brand's purpose, audience, and competitive edge to build a narrative system that drives alignment, coherence, and measurable impact.",
+      description: "We distill insight into strategy, clarifying your brand's purpose, audience, and competitive edge to build a narrative system that drives alignment, coherence, and measurable impact.",
       icon: "/images/welcomeSection/strategyLab.svg"
     },
     {
@@ -28,7 +28,7 @@ export default function WelcomeSection() {
     {
       title: "Social Lab",
       subtitle: "Where stories go Social",
-      description: "We turn stories into conversations; building relevance, community, and culture across platforms through content that adapts, resonates, and stays ahead of the moment.",
+      description: "We turn stories into conversations, building relevance, community, and culture across platforms through content that adapts, resonates, and stays ahead of the moment.",
       icon: "/images/welcomeSection/socialLab.svg"
     },
   ];
@@ -75,13 +75,20 @@ export default function WelcomeSection() {
             >
               {/* Icon */}
               <div className="transition-all duration-500 flex-shrink-0">
-                <Image
-                  src={card.icon}
-                  alt={card.title}
-                  width={60}
-                  height={60}
-                  className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 group-hover:scale-110 group-[.active]:scale-110 [filter:brightness(0)_saturate(100%)_invert(13%)_sepia(61%)_saturate(5427%)_hue-rotate(355deg)_brightness(90%)_contrast(104%)] group-hover:[filter:brightness(0)_invert(1)] group-[.active]:[filter:brightness(0)_invert(1)]"
-                  unoptimized
+                <div
+                  className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 group-hover:scale-110 group-[.active]:scale-110 bg-[#8B1E1E] group-hover:bg-white group-[.active]:bg-white"
+                  style={{
+                    maskImage: `url(${card.icon})`,
+                    WebkitMaskImage: `url(${card.icon})`,
+                    maskSize: "contain",
+                    WebkitMaskSize: "contain",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskPosition: "center",
+                    WebkitMaskPosition: "center",
+                  }}
+                  role="img"
+                  aria-label={card.title}
                 />
               </div>
 

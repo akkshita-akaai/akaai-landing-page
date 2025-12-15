@@ -33,7 +33,7 @@ export default function HeroSection() {
           </p>
           <p>
             We aren't just here to sell your brand. We're here to script your story, visualise your essence, and amplify it-
-            through strategy; creative and media- across every platform, every pixel, every post.
+            through strategy, creative and media- across every platform, every pixel, every post.
           </p>
         </div>
 
