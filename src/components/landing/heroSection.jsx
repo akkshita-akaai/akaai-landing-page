@@ -17,7 +17,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative w-full min-h-[calc(100vh-200px)] flex flex-col items-center justify-center gap-0 overflow-hidden bg-offwhite"
+      className="relative w-full min-h-[calc(100vh-200px)] flex flex-col items-center justify-center gap-0 overflow-visible bg-offwhite"
     >
       <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center justify-center pt-12 md:pt-20">
         {/* Main Headline */}
@@ -63,25 +63,9 @@ export default function HeroSection() {
       </div>
 
       {/* Cards and Bottom Button Container */}
-      <div className="relative w-full flex flex-col items-center justify-end z-0 pointer-events-none select-none overflow-hidden mt-3">
-        <motion.img
-          src="/images/heroSection/cards.svg"
-          alt="Hero Cards Ring"
-          className="
-      h-[500px] w-auto max-w-none object-cover origin-bottom translate-y-[10%]
-      lg:h-auto lg:w-full lg:max-w-full lg:translate-y-[20%]
-    "
-          animate={
-            isMobile
-              ? { rotate: [-50, 50, -50] }   // bigger swing on small screens
-              : { rotate: [-15, 15, -15] }   // original swing on md+
-          }
-          transition={{ duration: isMobile ? 30 : 20, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ transformOrigin: '50% 150%' }}
-        />
-
-        {/* Explore All Services Button */}
-        <div className="absolute bottom-20 z-20 pointer-events-auto">
+      <div className="relative w-full max-w-[100vw] flex flex-col items-center justify-start z-0 pointer-events-none select-none overflow-x-clip overflow-y-visible mt-8 md:mt-12">
+        {/* Explore All Services Button - Positioned relative to container top */}
+        <div className="absolute top-[400px] z-20 pointer-events-auto">
           <Button
             onClick={() =>
               document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })
@@ -91,6 +75,14 @@ export default function HeroSection() {
             Explore All Services
           </Button>
         </div>
+
+        <motion.img
+          src="/images/heroSection/cardsCircle.svg"
+          alt="Hero Cards Ring"
+          className="w-[1400px] md:w-[1728px] max-w-none object-contain origin-center translate-y-[5%] -mb-[200%] md:-mb-[1200px]"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 100, repeat: Infinity, ease: 'linear' }}
+        />
       </div>
     </section>
   );

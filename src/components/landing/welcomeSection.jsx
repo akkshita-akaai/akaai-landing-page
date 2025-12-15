@@ -34,7 +34,7 @@ export default function WelcomeSection() {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-24 px-4 md:px-8 lg:px-12 bg-[#FAFAFA]">
+    <section id="about" className="relative z-10 py-16 md:py-24 px-4 md:px-8 lg:px-12 bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16">
