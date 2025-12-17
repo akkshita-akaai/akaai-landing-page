@@ -41,16 +41,16 @@ const FormSection = () => {
                 }}
                 validationSchema={validationSchema}
                 onSubmit={async (values, { setSubmitting, resetForm }) => {
-                  const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdS4dvxQiVCX-1gI9QcF9CVvx7n3RBDHkVSPzGMW_eQ4BHbUg/formResponse";
+                  const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfjzTuHuzDxwBwwSxd5-2Q3pQW7zPCb6hGrt6ch5NT_VxgRlA/formResponse";
 
                   const formData = new FormData();
-                  formData.append("entry.1508006951", values.firstName);
-                  formData.append("entry.2047362165", values.lastName);
-                  formData.append("entry.481613425", values.phoneNumber);
-                  formData.append("entry.1798456278", values.email);
-                  formData.append("entry.182023449", values.message);
+                  formData.append("entry.533421557", values.firstName);
+                  formData.append("entry.208342428", values.lastName);
+                  formData.append("entry.1058450232", values.phoneNumber);
+                  formData.append("entry.957661082", values.email);
+                  formData.append("entry.820576915", values.message);
                   formData.append("fvv", "1");
-                  formData.append("fbzx", "-6563299944563589162");
+                  formData.append("fbzx", "3614406870637939872");
                   formData.append("pageHistory", "0");
 
                   try {
@@ -79,7 +79,6 @@ const FormSection = () => {
                           placeholder="First Name"
                           className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition"
                         />
-
                       </div>
                       <div>
                         <Field
@@ -88,7 +87,6 @@ const FormSection = () => {
                           placeholder="Last Name"
                           className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition"
                         />
-
                       </div>
                     </div>
 
@@ -100,7 +98,6 @@ const FormSection = () => {
                           placeholder="Phone Number"
                           className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition"
                         />
-
                       </div>
                       <div>
                         <Field
@@ -109,7 +106,6 @@ const FormSection = () => {
                           placeholder="Email Id"
                           className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition"
                         />
-
                       </div>
                     </div>
 
@@ -121,7 +117,6 @@ const FormSection = () => {
                         rows="4"
                         className="w-full bg-white/10 border border-white/20 rounded-lg p-4 placeholder-white/60 focus:outline-none focus:border-white transition resize-none"
                       />
-
                     </div>
 
                     {/* Submit Button */}

@@ -21,7 +21,7 @@ export default function NarrativeSection() {
       image: "/images/narrativeSection/thoughtLeadership.png",
     },
     {
-      title: "Community",
+      title: "Community Building",
       shortDescription: "Engagement systems that turn audiences into loyal, active communities.",
       detailedDescription: "Meaningful, engagement-driven initiatives designed to foster connection, build loyalty, and cultivate brand advocates; transforming audiences into communities that participate, share, and stay.",
       image: "/images/narrativeSection/communityBuilding.png",

@@ -15,7 +15,7 @@ export default function WelcomeSection() {
     },
     {
       title: "Visual Lab",
-      subtitle: "where emotions become identity",
+      subtitle: "Where emotions become identity",
       description: "We turn your brand's truth into design - building identities and systems that convey emotion, create clarity, and feel instantly recognizable.",
       icon: "/images/welcomeSection/visualLab.svg"
     },
