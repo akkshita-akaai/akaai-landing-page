@@ -1,6 +1,20 @@
 "use client";
 
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
 export default function BrandBenefitsSection() {
+  const sectionRef = useRef(null);
+
+  // Track scroll progress within the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Transform scroll progress to line height
+  const lineHeight = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "100%"]);
+
   const benefits = [
     "1:1 Consultation",
     "Custom Audit",
@@ -9,8 +23,17 @@ export default function BrandBenefitsSection() {
   ];
 
   return (
-    <section className="w-full bg-[#8B1E1E] py-12 px-4 md:px-8 lg:px-12">
-      <div className="max-w-[1400px] mx-auto bg-[#E9E4DC] rounded-[2rem] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-12">
+    <section ref={sectionRef} className="w-full bg-[#8B1E1E] py-12 px-4 md:px-8 lg:px-12 relative">
+      {/* Scroll-triggered cherry red line - Full section height, behind content */}
+      <motion.div
+        className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-cherry origin-top top-0 z-0"
+        style={{
+          height: lineHeight,
+          minHeight: '0px'
+        }}
+      />
+
+      <div className="max-w-[1400px] mx-auto bg-[#E9E4DC] rounded-[2rem] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-12 relative z-10">
         {/* Heading */}
         <div className="flex-shrink-0 max-w-md">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#1C1C1C] leading-tight uppercase">

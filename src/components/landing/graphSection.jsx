@@ -2,11 +2,32 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function GraphSection() {
+  const sectionRef = useRef(null);
+
+  // Track scroll progress within the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Transform scroll progress to line height
+  const lineHeight = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "100%"]);
+
   return (
-    <section className="w-full bg-[#F8F7F5] py-16 px-4 md:px-8 lg:px-12">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section ref={sectionRef} className="w-full bg-[#F8F7F5] py-16 px-4 md:px-8 lg:px-12 relative">
+      {/* Scroll-triggered cherry red line - Full section height, behind content */}
+      <motion.div
+        className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-cherry origin-top top-0 z-0"
+        style={{
+          height: lineHeight,
+          minHeight: '0px'
+        }}
+      />
+
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
         {/* Left Column: Text Content */}
         <div className="flex flex-col gap-8">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#1C1C1C] leading-[1.1]">

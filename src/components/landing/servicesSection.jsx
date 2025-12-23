@@ -1,6 +1,19 @@
-import { motion } from "framer-motion";
+"use client";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function ServicesSection() {
+  const sectionRef = useRef(null);
+
+  // Track scroll progress within the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Transform scroll progress to line height - starts when section enters view
+  const lineHeight = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "100%"]);
   const processes = [
     {
       title: "Diagnose",
@@ -47,8 +60,17 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="relative overflow-hidden bg-offwhite py-20 px-4 md:px-8 lg:px-12">
-      <div className="container max-w-4xl mx-auto">
+    <section ref={sectionRef} id="services" className="relative overflow-hidden bg-offwhite py-20 px-4 md:px-8 lg:px-12">
+      {/* Scroll-triggered cherry red line - Full section height, behind content */}
+      <motion.div
+        className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-cherry origin-top top-0 z-0"
+        style={{
+          height: lineHeight,
+          minHeight: '0px'
+        }}
+      />
+
+      <div className="container max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal text-charcoal mb-6">
@@ -61,8 +83,6 @@ export default function ServicesSection() {
 
         {/* Process Steps */}
         <div className="relative">
-          {/* Vertical Connecting Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#8B1E1E]/20 to-transparent -translate-x-1/2" />
 
           {processes.map((process, index) => (
             <motion.div

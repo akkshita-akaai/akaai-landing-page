@@ -1,11 +1,21 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useEffect, useState, useRef } from "react";
 
 export default function HeroSection() {
   const [isMobile, setIsMobile] = useState(false);
+  const sectionRef = useRef(null);
+
+  // Track scroll progress within the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  });
+
+  // Transform scroll progress to line height - starts at 30% scroll (when button is reached)
+  const lineHeight = useTransform(scrollYProgress, [0.3, 0.9], ["0%", "100%"]);
 
   useEffect(() => {
     const update = () => setIsMobile(window.innerWidth < 768); // match Tailwind md
@@ -16,6 +26,7 @@ export default function HeroSection() {
 
   return (
     <section
+      ref={sectionRef}
       id="home"
       className="relative w-full min-h-[calc(100vh-200px)] flex flex-col items-center justify-center gap-0 overflow-visible bg-offwhite"
     >
@@ -75,6 +86,17 @@ export default function HeroSection() {
             Explore All Services
           </Button>
         </div>
+
+        {/* Scroll-triggered cherry red line - Centered on screen */}
+        <motion.div
+          className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-cherry origin-top z-10"
+          style={{
+            top: '460px',
+            height: lineHeight,
+            minHeight: '0px',
+            maxHeight: 'calc(100% - 460px)'
+          }}
+        />
 
         <motion.img
           src="/images/heroSection/cardsCircle.svg"
