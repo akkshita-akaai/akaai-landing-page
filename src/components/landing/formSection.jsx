@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 const validationSchema = Yup.object({
   firstName: Yup.string().required("Required"),
@@ -15,9 +15,29 @@ const validationSchema = Yup.object({
 });
 
 const FormSection = () => {
+  const sectionRef = useRef(null);
+
+  // Track scroll progress within the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Transform scroll progress to line height
+  const lineHeight = useTransform(scrollYProgress, [0.34, 0.8], ["0%", "100%"]);
+
   return (
-    <section className="bg-offwhite py-24" id="formSection">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+    <section ref={sectionRef} className="bg-offwhite py-24 relative" id="formSection">
+      {/* Scroll-triggered cherry red line - Full section height, behind content */}
+      <motion.div
+        className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-cherry origin-top top-0 z-0"
+        style={{
+          height: lineHeight,
+          minHeight: '0px'
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Side - Form */}
           <div className="lg:col-span-2 bg-cherry rounded-[30px] p-8 md:p-12 text-white relative overflow-hidden">

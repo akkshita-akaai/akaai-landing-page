@@ -1,10 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import { NumberTicker } from "@/components/magicui/number-ticker";
 
 export default function NumbersSection() {
+  const sectionRef = useRef(null);
+
+  // Track scroll progress within the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Transform scroll progress to line height
+  const lineHeight = useTransform(scrollYProgress, [0.35, 0.8], ["0%", "100%"]);
+
   const stats = [
     {
       id: 1,
@@ -37,8 +50,17 @@ export default function NumbersSection() {
   ];
 
   return (
-    <section className="w-full bg-[#F8F7F5] py-16 px-4 md:px-8 lg:px-12">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <section ref={sectionRef} className="w-full bg-[#F8F7F5] py-16 px-4 md:px-8 lg:px-12 relative">
+      {/* Scroll-triggered cherry red line - Full section height, behind content */}
+      <motion.div
+        className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-cherry origin-top top-0 z-0"
+        style={{
+          height: lineHeight,
+          minHeight: '0px'
+        }}
+      />
+
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">
         {/* Left Column: Narrative Content */}
         <div className="lg:col-span-1 bg-[#EBE7E0] rounded-[2rem] p-8 md:p-12 flex flex-col justify-between relative overflow-hidden min-h-[500px]">
           {/* Background Pattern */}

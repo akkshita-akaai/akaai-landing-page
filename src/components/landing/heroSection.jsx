@@ -91,10 +91,10 @@ export default function HeroSection() {
         <motion.div
           className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-cherry origin-top z-10"
           style={{
-            top: '460px',
+            top: '448px',
             height: lineHeight,
             minHeight: '0px',
-            maxHeight: 'calc(100% - 460px)'
+            maxHeight: 'calc(100% - 448px)'
           }}
         />
 
