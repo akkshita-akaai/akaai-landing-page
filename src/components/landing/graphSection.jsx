@@ -28,8 +28,14 @@ export default function GraphSection() {
       />
 
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
-        {/* Left Column: Text Content */}
-        <div className="flex flex-col gap-8 bg-[#F8F7F5]">
+        {/* Left Column: Text Content - fades in once */}
+        <motion.div
+          className="flex flex-col gap-8 bg-[#F8F7F5]"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#1C1C1C] leading-[1.1]">
             From Inception To Execution, Your Narrative Has A Partner
           </h2>
@@ -45,10 +51,16 @@ export default function GraphSection() {
               Let's Craft Your Boutique Narrative
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right Column: Stats & Graph */}
-        <div className="flex flex-col gap-8">
+        {/* Right Column: Stats & Graph - fades in once */}
+        <motion.div
+          className="flex flex-col gap-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           {/* Stats Cards */}
           <div className="grid grid-cols-2 gap-4 md:gap-6">
             {/* Card 1 */}
@@ -85,7 +97,7 @@ export default function GraphSection() {
               Your browser does not support the video tag.
             </video>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

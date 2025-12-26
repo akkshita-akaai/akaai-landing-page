@@ -56,8 +56,14 @@ export default function WelcomeSection() {
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16 bg-offwhite  md:bg-transparent">
+        {/* Header - fades in once as line reaches it */}
+        <motion.div
+          className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16 bg-offwhite md:bg-transparent"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="flex flex-col justify-start">
             <div className="flex items-start gap-4">
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-tight">
@@ -83,10 +89,16 @@ export default function WelcomeSection() {
               We're not an agency, because you don't need one. You need strategists and thinkers, storytellers and media architects who dive deep into your narrative and sculpt it into something unforgettable. At The Akaai Project, we blend strategy, creativity, and storytelling to create brands that breathe, feel, and connect. We design narratives, not just templates. We build brand presence, not noise.
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+        {/* Cards Grid - fades in once as line reaches it */}
+        <motion.div
+          className="grid md:grid-cols-2 gap-4 md:gap-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           {cards.map((card, index) => (
             <div
               key={card.title}
@@ -137,7 +149,7 @@ export default function WelcomeSection() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
     </section>
