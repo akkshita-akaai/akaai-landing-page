@@ -26,7 +26,7 @@ export default function BrandBenefitsSection() {
     <section ref={sectionRef} className="w-full bg-[#8B1E1E] py-12 px-4 md:px-8 lg:px-12 relative">
       {/* Scroll-triggered cherry red line - Full section height, behind content */}
       <motion.div
-        className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-cherry origin-top top-0 z-0"
+        className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-cherry origin-top top-0 z-0"
         style={{
           height: lineHeight,
           minHeight: '0px'

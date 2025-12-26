@@ -13,7 +13,7 @@ export default function ServicesSection() {
   });
 
   // Transform scroll progress to line height - starts when section enters view
-  const lineHeight = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "100%"]);
+  const lineHeight = useTransform(scrollYProgress, [0.2, 0.8], ["0%", "100%"]);
   const processes = [
     {
       title: "Diagnose",
@@ -63,7 +63,7 @@ export default function ServicesSection() {
     <section ref={sectionRef} id="services" className="relative overflow-hidden bg-offwhite py-20 px-4 md:px-8 lg:px-12">
       {/* Scroll-triggered cherry red line - Full section height, behind content */}
       <motion.div
-        className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-cherry origin-top top-0 z-0"
+        className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-cherry origin-top top-0 z-0"
         style={{
           height: lineHeight,
           minHeight: '0px'
@@ -72,7 +72,7 @@ export default function ServicesSection() {
 
       <div className="container max-w-4xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 bg-offwhite">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal text-charcoal mb-6">
             Our Process
           </h2>

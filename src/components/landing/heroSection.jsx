@@ -89,7 +89,7 @@ export default function HeroSection() {
 
         {/* Scroll-triggered cherry red line - Centered on screen */}
         <motion.div
-          className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-cherry origin-top z-10"
+          className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-cherry origin-top z-10"
           style={{
             top: '460px',
             height: lineHeight,

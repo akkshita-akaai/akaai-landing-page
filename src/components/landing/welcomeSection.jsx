@@ -1,10 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function WelcomeSection() {
   const [activeCard, setActiveCard] = useState(null);
+  const sectionRef = useRef(null);
+
+  // Track scroll progress within the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Transform scroll progress to line height
+  const lineHeight = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "100%"]);
 
   const cards = [
     {
@@ -34,10 +45,19 @@ export default function WelcomeSection() {
   ];
 
   return (
-    <section id="about" className="relative z-10 py-16 md:py-24 px-4 md:px-8 lg:px-12 bg-[#FAFAFA]">
-      <div className="max-w-7xl mx-auto">
+    <section ref={sectionRef} id="about" className="relative z-10 py-16 md:py-24 px-4 md:px-8 lg:px-12 bg-offwhite">
+      {/* Scroll-triggered cherry red line - Full section height, behind content */}
+      <motion.div
+        className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-cherry origin-top top-0 z-0"
+        style={{
+          height: lineHeight,
+          minHeight: '0px'
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16 bg-offwhite  md:bg-transparent">
           <div className="flex flex-col justify-start">
             <div className="flex items-start gap-4">
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-tight">

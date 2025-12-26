@@ -20,7 +20,7 @@ export default function GraphSection() {
     <section ref={sectionRef} className="w-full bg-[#F8F7F5] py-16 px-4 md:px-8 lg:px-12 relative">
       {/* Scroll-triggered cherry red line - Full section height, behind content */}
       <motion.div
-        className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-cherry origin-top top-0 z-0"
+        className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-cherry origin-top top-0 z-0"
         style={{
           height: lineHeight,
           minHeight: '0px'
@@ -29,7 +29,7 @@ export default function GraphSection() {
 
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
         {/* Left Column: Text Content */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 bg-[#F8F7F5]">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#1C1C1C] leading-[1.1]">
             From Inception To Execution, Your Narrative Has A Partner
           </h2>
