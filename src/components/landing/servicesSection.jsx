@@ -93,7 +93,7 @@ export default function ServicesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="relative mb-20 last:mb-0"
             >
-              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-8 md:gap-16">
+              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:gap-8 md:gap-16">
                 {/* Left Content */}
                 <div className={`${process.align === "left" ? "text-right" : ""}`}>
                   {process.align === "left" && (

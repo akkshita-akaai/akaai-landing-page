@@ -10,7 +10,9 @@ export default function ProcessSection() {
     {
       id: 1,
       title: "Strategic Alliances",
-      icon: "/images/processSection/strategicAlliances.svg",
+      icon: "/images/processSection/Strategic.gif",
+      width: 60,
+      height: 37.5,
       points: [
         "OEM/Partnerships",
         "Publishers & Networks",
@@ -21,7 +23,9 @@ export default function ProcessSection() {
     {
       id: 2,
       title: "Data & Insights",
-      icon: "/images/processSection/dataInsights.svg",
+      icon: "/images/processSection/dataInsights.gif",
+      width: 60,
+      height: 37.5,
       points: [
         "Market & Audience Research",
         "Surveys, Systems and First hand Feedback",
@@ -32,7 +36,9 @@ export default function ProcessSection() {
     {
       id: 3,
       title: "Brand Building",
-      icon: "/images/processSection/brandBuilding.svg",
+      icon: "/images/processSection/Brand building.gif",
+      width: 50,
+      height: 50,
       points: [
         "Strategy & Positioning",
         "Identity & Guidelines",
@@ -43,7 +49,9 @@ export default function ProcessSection() {
     {
       id: 4,
       title: "Brand Solutioning",
-      icon: "/images/processSection/brandSolutioning.svg",
+      icon: "/images/processSection/Brand solutioning.gif",
+      width: 50,
+      height: 50,
       points: [
         "Integrated Campaigns",
         "Digital-first Experiences",
@@ -55,7 +63,9 @@ export default function ProcessSection() {
     {
       id: 5,
       title: "Brand Consultation",
-      icon: "/images/processSection/brandConsultation.svg",
+      icon: "/images/processSection/Brand consultation.gif",
+      width: 70,
+      height: 60,
       points: [
         "Brand Audits",
         "Narrative and Advisory",
@@ -65,7 +75,9 @@ export default function ProcessSection() {
     {
       id: 6,
       title: "Brand Innovation",
-      icon: "/images/processSection/brandInnovation.svg",
+      icon: "/images/processSection/Brand Innovation.gif",
+      width: 70,
+      height: 60,
       points: [
         "New Product Concepts",
         "Trend Mapping",
@@ -75,7 +87,9 @@ export default function ProcessSection() {
     {
       id: 7,
       title: "Brand Management",
-      icon: "/images/processSection/brandManagement.svg",
+      icon: "/images/processSection/Brand Management.gif",
+      width: 60,
+      height: 60,
       points: [
         "Narrative & Reputation Control, ORM",
         "Channel and platform Optimization",
@@ -86,7 +100,9 @@ export default function ProcessSection() {
     {
       id: 8,
       title: "Content Marketing",
-      icon: "/images/processSection/contentMarketing.svg",
+      icon: "/images/processSection/Content marketing.gif",
+      width: 50,
+      height: 45,
       points: [
         "Multi-format Storytelling Systems",
         "Platform-specific Content Architecture",
@@ -97,7 +113,9 @@ export default function ProcessSection() {
     {
       id: 9,
       title: "Digital Marketing",
-      icon: "/images/processSection/digitalMarketing.svg",
+      icon: "/images/processSection/Digital marketing.gif",
+      width: 50,
+      height: 50,
       points: [
         "SEO / SEM / SMM",
         "Publisher, Website and App monetisation",
@@ -109,7 +127,9 @@ export default function ProcessSection() {
     {
       id: 10,
       title: "Performance Marketing",
-      icon: "/images/processSection/performanceMarketing.svg",
+      icon: "/images/processSection/Performance marketing.gif",
+      width: 80,
+      height: 60,
       points: [
         "Mobile, Tech, OEM's, Affiliates",
         "UA & App Growth"
@@ -118,7 +138,9 @@ export default function ProcessSection() {
     {
       id: 11,
       title: "Packaging & Design",
-      icon: "/images/processSection/packagingDesign.svg",
+      icon: "/images/processSection/Packaging & Design.gif",
+      width: 50,
+      height: 40,
       points: [
         "Packaging Systems",
         "Retail, Display & Merchandising"
@@ -169,13 +191,14 @@ export default function ProcessSection() {
 
               {/* Icon */}
               <div className="relative z-10">
-                <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                <div className="flex items-center justify-start">
                   <Image
                     src={service.icon}
                     alt={service.title}
-                    width={48}
-                    height={48}
-                    className="w-full h-full object-contain"
+                    width={service.width || 48}
+                    height={service.height || 48}
+                    className="abosolute top-0"
+                    style={{ width: service.width ? `${service.width}px` : '48px', height: service.height ? `${service.height}px` : '48px' }}
                     unoptimized
                   />
                 </div>
