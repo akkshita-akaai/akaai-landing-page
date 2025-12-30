@@ -16,11 +16,11 @@ const validationSchema = Yup.object({
 
 const FormSection = () => {
   const sectionRef = useRef(null);
-  const [startOffset, setStartOffset] = useState(0.25);
+  const [startOffset, setStartOffset] = useState(0.3);
 
   useEffect(() => {
     const updateOffset = () => {
-      setStartOffset(window.innerWidth < 768 ? 0.2 : 0.25);
+      setStartOffset(window.innerWidth < 768 ? 0.2 : 0.3);
     };
 
     updateOffset();
