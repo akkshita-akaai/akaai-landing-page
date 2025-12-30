@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -16,6 +16,17 @@ const validationSchema = Yup.object({
 
 const FormSection = () => {
   const sectionRef = useRef(null);
+  const [startOffset, setStartOffset] = useState(0.25);
+
+  useEffect(() => {
+    const updateOffset = () => {
+      setStartOffset(window.innerWidth < 768 ? 0.2 : 0.25);
+    };
+
+    updateOffset();
+    window.addEventListener("resize", updateOffset);
+    return () => window.removeEventListener("resize", updateOffset);
+  }, []);
 
   // Track scroll progress within the section
   const { scrollYProgress } = useScroll({
@@ -24,7 +35,7 @@ const FormSection = () => {
   });
 
   // Transform scroll progress to line height
-  const lineHeight = useTransform(scrollYProgress, [0.34, 0.8], ["0%", "100%"]);
+  const lineHeight = useTransform(scrollYProgress, [startOffset, 0.8], ["0%", "100%"]);
 
   return (
     <section ref={sectionRef} className="bg-offwhite py-24 relative" id="formSection">
