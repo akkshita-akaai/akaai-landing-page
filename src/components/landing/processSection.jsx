@@ -76,8 +76,8 @@ export default function ProcessSection() {
       id: 6,
       title: "Brand Innovation",
       icon: "/images/processSection/Brand Innovation.gif",
-      width: 70,
-      height: 60,
+      width: 60,
+      height: 50,
       points: [
         "New Product Concepts",
         "Trend Mapping",
