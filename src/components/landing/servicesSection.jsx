@@ -90,8 +90,13 @@ export default function ServicesSection() {
     const rect = section.getBoundingClientRect();
     const vh = window.innerHeight;
 
-    // progress 0 when section is just below viewport, 1 when it has fully scrolled past
-    const progress = Math.max(0, Math.min(1, (vh - rect.top) / (rect.height + vh)));
+    // Raw progress: 0 when section enters viewport, 1 when fully scrolled past
+    const rawProgress = (vh - rect.top) / (rect.height + vh);
+
+    // Add buffer: line starts after 20% scroll progress (adjust this value to start later/earlier)
+    const bufferStart = 0.2;
+    const progress = Math.max(0, Math.min(1, (rawProgress - bufferStart) / (1 - bufferStart)));
+
     const offset = totalLen * (1 - progress);
     path.style.strokeDashoffset = `${offset}`;
   };
