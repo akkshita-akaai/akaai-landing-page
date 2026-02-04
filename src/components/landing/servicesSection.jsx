@@ -220,7 +220,7 @@ export default function ServicesSection() {
               key={process.title}
               className="relative mb-20 last:mb-0"
             >
-              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:gap-8 md:gap-16">
+              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 sm:gap-8 md:gap-16">
                 {/* Left Content */}
                 <div className={`${process.align === "left" ? "text-right" : ""}`}>
                   {process.align === "left" && (
